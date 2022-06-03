@@ -18,6 +18,8 @@ class _loginsState extends State<logins> {
   var ac_data1 = "";
   var ac_data2 = "";
   bool pit_pass = false;
+  TextEditingController phoneController = TextEditingController();
+  TextEditingController passwordController = TextEditingController();
   @override
   Widget build(BuildContext context) {
     return Scaffold(
@@ -55,6 +57,7 @@ class _loginsState extends State<logins> {
                   height: 40,
                 ),
                 TextFormField(
+                  controller: phoneController,
                   validator: MultiValidator([
                     RequiredValidator(
                         errorText: "ກະລຸນາປ້ອນຂໍ້ມູນຂອງທ່ານໃຫ້ຖຶກຕ້ອງ")
@@ -75,6 +78,7 @@ class _loginsState extends State<logins> {
                   height: 25,
                 ),
                 TextFormField(
+                  controller: passwordController,
                   validator: MultiValidator([
                     RequiredValidator(
                         errorText: "ກະລຸນາໃສ່ລະຫັດຜ່ານຂອງທ່ານໃຫ້ຖຶກຕ້ອງ")
@@ -132,6 +136,7 @@ class _loginsState extends State<logins> {
                         ),
                         onPressed: () {
                           formkey.currentState!.validate();
+                          
                         }),
                   ),
                 ),

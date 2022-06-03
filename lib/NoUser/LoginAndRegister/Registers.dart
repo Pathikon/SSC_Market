@@ -3,6 +3,7 @@ import 'package:flutter/src/foundation/key.dart';
 import 'package:flutter/src/widgets/framework.dart';
 import 'package:form_field_validator/form_field_validator.dart';
 import 'package:page_transition/page_transition.dart';
+import 'package:ssc_market/Api_Handler.dart';
 import 'package:ssc_market/NoUser/About.dart';
 
 class registers extends StatefulWidget {
@@ -36,6 +37,16 @@ class _registersState extends State<registers> {
     'ເມືອງສັງທອງ',
     'ເມືອງປາກງື່ມ',
   ];
+
+  ApiHandler apiHandler = ApiHandler();
+  TextEditingController nameController = TextEditingController();
+  TextEditingController lastnameController = TextEditingController();
+  TextEditingController villageController = TextEditingController();
+  TextEditingController phoneController = TextEditingController();
+  TextEditingController passwordController = TextEditingController();
+  TextEditingController genderController = TextEditingController();
+  TextEditingController districtController = TextEditingController();
+  TextEditingController provinceController = TextEditingController();
   @override
   Widget build(BuildContext context) {
     return Scaffold(
@@ -73,6 +84,7 @@ class _registersState extends State<registers> {
                   height: 20,
                 ),
                 TextFormField(
+                  controller: nameController,
                   validator: MultiValidator([
                     RequiredValidator(
                         errorText: "ກະລຸນາປ້ອນຂໍ້ມູນຂອງທ່ານໃຫ້ຖຶກຕ້ອງ")
@@ -89,6 +101,7 @@ class _registersState extends State<registers> {
                   height: 10,
                 ),
                 TextFormField(
+                  controller: lastnameController,
                   validator: MultiValidator([
                     RequiredValidator(
                         errorText: "ກະລຸນາປ້ອນຂໍ້ມູນຂອງທ່ານໃຫ້ຖຶກຕ້ອງ")
@@ -142,6 +155,7 @@ class _registersState extends State<registers> {
                         onChanged: (String? newValue3) {
                           setState(() {
                             dropdowngender = newValue3!;
+                            
                           });
                         },
                       ),
@@ -153,7 +167,7 @@ class _registersState extends State<registers> {
                 ),
                 SizedBox(
                   child: Text(
-                    "ທີ່ຢູ່ຂອງທ່ານປັດຈຸບັນ",
+                    "ທີ່ຢູ່ປັດຈຸບັນ",
                     textAlign: TextAlign.start,
                     style: TextStyle(fontSize: 18),
                   ),
@@ -238,6 +252,7 @@ class _registersState extends State<registers> {
                 SizedBox(
                   width: 300,
                   child: TextFormField(
+                    controller: villageController,
                     validator: MultiValidator([
                       RequiredValidator(
                           errorText: "ກະລຸນາປ້ອນຂໍ້ມູນຂອງທ່ານໃຫ້ຖຶກຕ້ອງ")
@@ -257,6 +272,7 @@ class _registersState extends State<registers> {
                   height: 10,
                 ),
                 TextFormField(
+                  controller: phoneController,
                   validator: ((value) {
                     if (value!.isNotEmpty && value.length < 8) {
                       return 'ກະລຸນາປ້ອນເບີໂທລະສັບຂອງທ່ານໃຫ້ຄົບ 8 ຕົວເລກ';
@@ -287,6 +303,7 @@ class _registersState extends State<registers> {
                   height: 10,
                 ),
                 TextFormField(
+                  controller: passwordController,
                   validator: MultiValidator([
                     RequiredValidator(
                         errorText: "ກະລຸນາປ້ອນຂໍ້ມູນຂອງທ່ານໃຫ້ຖຶກຕ້ອງ")
@@ -307,7 +324,19 @@ class _registersState extends State<registers> {
                   height: 50,
                   child: ElevatedButton.icon(
                     onPressed: () {
-                      formkey.currentState!.validate();
+                      Map<String,String>data={
+                        "first_name":nameController.text,
+                        "last_name":lastnameController.text,
+                        "village":villageController.text,
+                        "district":dropdownvalue2,
+                        "province":dropdownvalue,
+                        "phone":phoneController.text,
+                        "password":passwordController.text,
+                        "gender":dropdowngender
+                        
+                      };
+                      print(data);
+                      apiHandler.post("/user/register",data);
                     },
                     label: Icon(Icons.insert_chart),
                     icon: Text(
