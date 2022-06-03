@@ -1,5 +1,9 @@
 import 'package:flutter/material.dart';
 import 'package:page_transition/page_transition.dart';
+import 'package:ssc_market/NoUser/Homeother/Condition.dart';
+import 'package:ssc_market/NoUser/Homeother/Settings.dart';
+import 'package:ssc_market/NoUser/Homeother/aboutAppAndcreator.dart';
+import 'package:ssc_market/NoUser/Homepage/Staff.dart';
 import 'package:ssc_market/NoUser/info_login.dart';
 
 class other extends StatefulWidget {
@@ -79,7 +83,11 @@ class _otherState extends State<other> {
                         color: Colors.black45,
                         fontWeight: FontWeight.bold),
                   ),
-                  press: () {},
+                  press: () {
+                    Navigator.of(context).push(PageTransition(
+                        type: PageTransitionType.rightToLeft,
+                        child: condition()));
+                  },
                 ),
                 Divider(),
                 ProfileMenu(
@@ -95,7 +103,11 @@ class _otherState extends State<other> {
                         color: Colors.black45,
                         fontWeight: FontWeight.bold),
                   ),
-                  press: () {},
+                  press: () {
+                    Navigator.of(context).push(PageTransition(
+                        type: PageTransitionType.rightToLeft,
+                        child: staffall()));
+                  },
                 ),
                 Divider(),
                 ProfileMenu(
@@ -111,7 +123,11 @@ class _otherState extends State<other> {
                         color: Colors.black45,
                         fontWeight: FontWeight.bold),
                   ),
-                  press: () {},
+                  press: () {
+                    Navigator.of(context).push(PageTransition(
+                        type: PageTransitionType.rightToLeft,
+                        child: settings()));
+                  },
                 ),
                 Divider(),
                 ProfileMenu(
@@ -127,7 +143,11 @@ class _otherState extends State<other> {
                         color: Colors.black45,
                         fontWeight: FontWeight.bold),
                   ),
-                  press: () {},
+                  press: () {
+                    Navigator.of(context).push(PageTransition(
+                        type: PageTransitionType.rightToLeft,
+                        child: aboutappAndcreator()));
+                  },
                 ),
               ],
             ),
