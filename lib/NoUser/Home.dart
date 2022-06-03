@@ -5,6 +5,9 @@ import 'package:flutter_svg/flutter_svg.dart';
 import 'package:page_transition/page_transition.dart';
 
 import 'package:ssc_market/NoUser/Homemarket/AllMarket.dart';
+import 'package:ssc_market/NoUser/Homepage/Map_sscmarket.dart';
+import 'package:ssc_market/NoUser/Homepage/Staff.dart';
+import 'package:ssc_market/NoUser/Homepage/about_bookingAndRental.dart';
 
 class home extends StatefulWidget {
   const home({Key? key}) : super(key: key);
@@ -72,8 +75,8 @@ class _homeState extends State<home> {
                     mainAxisSpacing: 20,
                     children: <Widget>[
                       MenuCard(
-                        pics: "assets/icons/market.png",
-                        titals: "ຮ້ານຄ້າທັງໝົດ",
+                        pics: "assets/icons/shops.png",
+                        titals: "ເຊົ່າ & ຈອງຮ້ານຄ້າ",
                         oks: () {
                           Navigator.of(context).push(PageTransition(
                               type: PageTransitionType.rightToLeft,
@@ -81,24 +84,31 @@ class _homeState extends State<home> {
                         },
                       ),
                       MenuCard(
-                        pics: "assets/icons/market.png",
-                        titals: "ຮ້ານຄ້າທົ່ວໄປ",
-                        oks: () {},
+                        pics: "assets/icons/map.png",
+                        titals: "ແຜນຜັງຮ້ານຄ້າ",
+                        oks: () {
+                          Navigator.of(context).push(PageTransition(
+                              type: PageTransitionType.rightToLeft,
+                              child: mapsscmarket()));
+                        },
                       ),
                       MenuCard(
-                        pics: "assets/icons/market.png",
-                        titals: "ຮ້ານຄ້າທົ່ວໄປ",
-                        oks: () {},
+                        pics: "assets/icons/steward.png",
+                        titals: "ຕິດຕໍ່ພະນັກງານ",
+                        oks: () {
+                          Navigator.of(context).push(PageTransition(
+                              type: PageTransitionType.rightToLeft,
+                              child: staffall()));
+                        },
                       ),
                       MenuCard(
-                        pics: "assets/icons/market.png",
-                        titals: "ຮ້ານຄ້າທົ່ວໄປ",
-                        oks: () {},
-                      ),
-                      MenuCard(
-                        pics: "assets/icons/market.png",
-                        titals: "ຮ້ານຄ້າທົ່ວໄປ",
-                        oks: () {},
+                        pics: "assets/icons/booking.png",
+                        titals: "ຂໍ້ມູນການເຊົ່າ & ຈອງ",
+                        oks: () {
+                          Navigator.of(context).push(PageTransition(
+                              type: PageTransitionType.rightToLeft,
+                              child: about_bkAndRen()));
+                        },
                       ),
                     ],
                   ),
@@ -144,11 +154,15 @@ class MenuCard extends StatelessWidget {
           onTap: oks,
           child: Column(children: <Widget>[
             Spacer(),
-            Image.asset(pics),
+            Image.asset(
+              pics,
+              width: 100,
+              height: 100,
+            ),
             Spacer(),
             Text(
               titals,
-              style: TextStyle(fontSize: 20),
+              style: TextStyle(fontSize: 18),
             ),
             Spacer()
           ]),
