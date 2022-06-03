@@ -149,7 +149,8 @@ class profile extends StatelessWidget {
                   topRight: Radius.circular(0),
                   bottomLeft: Radius.circular(20),
                   bottomRight: Radius.circular(20),
-                )),
+                )
+                ),
             padding: EdgeInsets.all(10),
             child: Column(
               children: [
