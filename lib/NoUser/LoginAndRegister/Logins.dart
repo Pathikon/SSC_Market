@@ -1,8 +1,11 @@
+import 'dart:convert';
+
 import 'package:flutter/src/foundation/key.dart';
 import 'package:flutter/src/widgets/framework.dart';
 import 'package:flutter/material.dart';
 import 'package:form_field_validator/form_field_validator.dart';
 import 'package:page_transition/page_transition.dart';
+import 'package:ssc_market/Api_Handler.dart';
 import 'package:ssc_market/NoUser/About.dart';
 import 'package:ssc_market/NoUser/BottomBar.dart';
 
@@ -20,6 +23,7 @@ class _loginsState extends State<logins> {
   bool pit_pass = false;
   TextEditingController phoneController = TextEditingController();
   TextEditingController passwordController = TextEditingController();
+  ApiHandler apiHandler = ApiHandler();
   @override
   Widget build(BuildContext context) {
     return Scaffold(
@@ -67,7 +71,7 @@ class _loginsState extends State<logins> {
                       border: OutlineInputBorder(
                           borderRadius: BorderRadius.circular(15)),
                       icon: Icon(Icons.person),
-                      hintText: "Email ເຂົ້າໃຊ້ຂອງທ່ານ"),
+                      hintText: "ເບີໂທຂອງທ່ານ"),
                   onSaved: (User_email) {},
                 ),
                 SizedBox(
@@ -134,9 +138,21 @@ class _loginsState extends State<logins> {
                           style: TextStyle(
                               fontSize: 18, fontWeight: FontWeight.bold),
                         ),
-                        onPressed: () {
+                        onPressed: () async{
                           formkey.currentState!.validate();
+                          Map<String,String>data={
+                            "phone":phoneController.text,
+                            "password":passwordController.text
+                          };
+                          var response = await apiHandler.post("/user/login", data);
                           
+                          if(response.statusCode==200||response.statusCode==201){
+                            Map<String,dynamic> output = json.decode(response.body);
+                            print(output['token']);
+                          }else{
+                            Map<String, dynamic> output = json.decode(response.body);
+                            print(output['message']);
+                          }
                         }),
                   ),
                 ),
