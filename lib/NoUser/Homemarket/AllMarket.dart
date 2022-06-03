@@ -3,8 +3,9 @@ import 'package:flutter/src/foundation/key.dart';
 import 'package:flutter/src/widgets/framework.dart';
 import 'package:page_transition/page_transition.dart';
 import 'package:ssc_market/NoUser/BottomBar.dart';
+import 'package:ssc_market/NoUser/Homemarket/AllMarket/Gold.dart';
 
-import 'Apparel.dart';
+import 'AllMarket/Apparel.dart';
 
 class allmarket extends StatefulWidget {
   const allmarket({Key? key}) : super(key: key);
@@ -79,29 +80,38 @@ class _allmarketState extends State<allmarket> {
                   width: 20,
                 ),
                 Container(
-                  padding: EdgeInsets.all(10),
-                  width: 125,
-                  height: 200,
-                  decoration: BoxDecoration(
-                    color: Color(0xffFFD609),
-                    borderRadius: BorderRadius.circular(12),
-                    boxShadow: [
-                      BoxShadow(
-                          color: Colors.grey.withOpacity(0.5),
-                          spreadRadius: -23,
-                          blurRadius: 17,
-                          offset: Offset(1.0, 17.0))
-                    ],
-                  ),
-                  child: Column(
-                    mainAxisAlignment: MainAxisAlignment.center,
-                    children: [
-                      Text(
-                        "ໂຊນຂາຍເຄື່ອງສັບສິນມີຄ່າ",
-                        style: TextStyle(color: Colors.white, fontSize: 25),
-                        textAlign: TextAlign.center,
-                      )
-                    ],
+                  child: InkWell(
+                    onTap: () {
+                      Navigator.of(context).push(PageTransition(
+                          type: PageTransitionType.rightToLeft,
+                          child: golds()));
+                    },
+                    child: Container(
+                      padding: EdgeInsets.all(10),
+                      width: 125,
+                      height: 200,
+                      decoration: BoxDecoration(
+                        color: Color(0xffFFD609),
+                        borderRadius: BorderRadius.circular(12),
+                        boxShadow: [
+                          BoxShadow(
+                              color: Colors.grey.withOpacity(0.5),
+                              spreadRadius: -23,
+                              blurRadius: 17,
+                              offset: Offset(1.0, 17.0))
+                        ],
+                      ),
+                      child: Column(
+                        mainAxisAlignment: MainAxisAlignment.center,
+                        children: [
+                          Text(
+                            "ໂຊນຂາຍເຄື່ອງສັບສິນມີຄ່າ",
+                            style: TextStyle(color: Colors.white, fontSize: 25),
+                            textAlign: TextAlign.center,
+                          )
+                        ],
+                      ),
+                    ),
                   ),
                 ),
               ],

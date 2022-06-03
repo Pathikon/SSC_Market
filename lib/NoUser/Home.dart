@@ -1,7 +1,4 @@
 import 'package:flutter/material.dart';
-import 'package:flutter/src/foundation/key.dart';
-import 'package:flutter/src/widgets/framework.dart';
-import 'package:flutter_svg/flutter_svg.dart';
 import 'package:page_transition/page_transition.dart';
 
 import 'package:ssc_market/NoUser/Homemarket/AllMarket.dart';
@@ -41,7 +38,7 @@ class _homeState extends State<home> {
                     height: 55,
                     width: 55,
                     child: Icon(
-                      Icons.mail,
+                      Icons.power_settings_new,
                       color: Colors.white,
                       size: 35,
                     ),
