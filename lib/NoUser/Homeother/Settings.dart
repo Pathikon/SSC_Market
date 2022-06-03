@@ -59,7 +59,9 @@ class _settingsState extends State<settings> {
                                     ),
                                     SizedBox(
                                       child: InkWell(
-                                        onTap: () {},
+                                        onTap: () {
+                                          Navigator.pop(context);
+                                        },
                                         child: Icon(
                                           Icons.cancel,
                                           color: Colors.white,
@@ -74,33 +76,36 @@ class _settingsState extends State<settings> {
                           ),
                           content: Container(
                             padding: EdgeInsets.all(0),
-                            height: 150,
-                            child: Column(children: [
-                              Divider(),
-                              Container(
-                                child: Row(
-                                  children: [
-                                    SizedBox(
-                                      child: Image.asset(
-                                        "assets/icons/laos.png",
-                                        width: 40,
-                                        height: 40,
+                            height: 75,
+                            child: FlatButton(
+                              onPressed: () {},
+                              child: Column(children: [
+                                Divider(),
+                                Container(
+                                  child: Row(
+                                    children: [
+                                      SizedBox(
+                                        child: Image.asset(
+                                          "assets/icons/laos.png",
+                                          width: 40,
+                                          height: 40,
+                                        ),
                                       ),
-                                    ),
-                                    SizedBox(
-                                      width: 20,
-                                    ),
-                                    SizedBox(
-                                      child: Text(
-                                        "ພາສາລາວ",
-                                        style: TextStyle(fontSize: 20),
+                                      SizedBox(
+                                        width: 20,
                                       ),
-                                    )
-                                  ],
+                                      SizedBox(
+                                        child: Text(
+                                          "ພາສາລາວ",
+                                          style: TextStyle(fontSize: 20),
+                                        ),
+                                      )
+                                    ],
+                                  ),
                                 ),
-                              ),
-                              Divider(),
-                            ]),
+                                Divider(),
+                              ]),
+                            ),
                           ),
                         ));
               },
