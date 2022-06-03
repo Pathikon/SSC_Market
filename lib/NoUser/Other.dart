@@ -1,4 +1,10 @@
 import 'package:flutter/material.dart';
+import 'package:page_transition/page_transition.dart';
+import 'package:ssc_market/NoUser/Homeother/Condition.dart';
+import 'package:ssc_market/NoUser/Homeother/Settings.dart';
+import 'package:ssc_market/NoUser/Homeother/aboutAppAndcreator.dart';
+import 'package:ssc_market/NoUser/Homepage/Staff.dart';
+import 'package:ssc_market/NoUser/info_login.dart';
 
 class other extends StatefulWidget {
   const other({Key? key}) : super(key: key);
@@ -35,7 +41,7 @@ class _otherState extends State<other> {
                   height: 20,
                 ),
                 Image.asset(
-                  'assets/icons/market.png',
+                  'assets/icons/logo.png',
                   height: 120,
                 ),
                 SizedBox(
@@ -57,7 +63,11 @@ class _otherState extends State<other> {
                         color: Colors.black45,
                         fontWeight: FontWeight.bold),
                   ),
-                  press: () {},
+                  press: () {
+                    Navigator.of(context).push(PageTransition(
+                        type: PageTransitionType.rightToLeft,
+                        child: infologin()));
+                  },
                 ),
                 Divider(),
                 ProfileMenu(
@@ -73,7 +83,11 @@ class _otherState extends State<other> {
                         color: Colors.black45,
                         fontWeight: FontWeight.bold),
                   ),
-                  press: () {},
+                  press: () {
+                    Navigator.of(context).push(PageTransition(
+                        type: PageTransitionType.rightToLeft,
+                        child: condition()));
+                  },
                 ),
                 Divider(),
                 ProfileMenu(
@@ -83,13 +97,17 @@ class _otherState extends State<other> {
                     size: 30,
                   ),
                   text: Text(
-                    "   ຂໍ້ມູນຕິດຕໍ່່ສອບຖາມໂດຍກົງ",
+                    "   ຂໍ້ມູນຕິດຕໍ່່ & ສອບຖາມພະນັກງານ",
                     style: TextStyle(
                         fontSize: 18,
                         color: Colors.black45,
                         fontWeight: FontWeight.bold),
                   ),
-                  press: () {},
+                  press: () {
+                    Navigator.of(context).push(PageTransition(
+                        type: PageTransitionType.rightToLeft,
+                        child: staffall()));
+                  },
                 ),
                 Divider(),
                 ProfileMenu(
@@ -105,7 +123,11 @@ class _otherState extends State<other> {
                         color: Colors.black45,
                         fontWeight: FontWeight.bold),
                   ),
-                  press: () {},
+                  press: () {
+                    Navigator.of(context).push(PageTransition(
+                        type: PageTransitionType.rightToLeft,
+                        child: settings()));
+                  },
                 ),
                 Divider(),
                 ProfileMenu(
@@ -121,7 +143,11 @@ class _otherState extends State<other> {
                         color: Colors.black45,
                         fontWeight: FontWeight.bold),
                   ),
-                  press: () {},
+                  press: () {
+                    Navigator.of(context).push(PageTransition(
+                        type: PageTransitionType.rightToLeft,
+                        child: aboutappAndcreator()));
+                  },
                 ),
               ],
             ),

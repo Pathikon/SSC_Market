@@ -51,7 +51,7 @@ class _allmarketState extends State<allmarket> {
                       width: 200,
                       height: 200,
                       decoration: BoxDecoration(
-                        color: Color(0xffe4780f),
+                        color: Color(0xffFFE478),
                         borderRadius: BorderRadius.circular(12),
                         boxShadow: [
                           BoxShadow(
@@ -66,7 +66,8 @@ class _allmarketState extends State<allmarket> {
                         children: [
                           Text(
                             "ໂຊນຂາຍເຄື່ອງນຸ່ງຮົ່ມ",
-                            style: TextStyle(color: Colors.white, fontSize: 25),
+                            style:
+                                TextStyle(color: Colors.black54, fontSize: 25),
                             textAlign: TextAlign.center,
                           )
                         ],
@@ -82,7 +83,7 @@ class _allmarketState extends State<allmarket> {
                   width: 125,
                   height: 200,
                   decoration: BoxDecoration(
-                    color: Colors.amberAccent,
+                    color: Color(0xffFFD609),
                     borderRadius: BorderRadius.circular(12),
                     boxShadow: [
                       BoxShadow(
@@ -113,7 +114,7 @@ class _allmarketState extends State<allmarket> {
               width: 345,
               height: 150,
               decoration: BoxDecoration(
-                color: Colors.amberAccent,
+                color: Color(0xff66E5E1),
                 borderRadius: BorderRadius.circular(12),
                 boxShadow: [
                   BoxShadow(
@@ -128,7 +129,7 @@ class _allmarketState extends State<allmarket> {
                 children: [
                   Text(
                     "ໂຊນຂາຍເຄື່ອງໃຊ້ໄຟຟ້າ ແລະ ເຄື່ອງໃຊ້ໃນຄົວເຮືອນ",
-                    style: TextStyle(color: Colors.white, fontSize: 25),
+                    style: TextStyle(color: Colors.black54, fontSize: 25),
                     textAlign: TextAlign.center,
                   )
                 ],
@@ -144,7 +145,7 @@ class _allmarketState extends State<allmarket> {
                   width: 165,
                   height: 200,
                   decoration: BoxDecoration(
-                    color: Colors.amberAccent,
+                    color: Color(0xff66E56B),
                     borderRadius: BorderRadius.circular(12),
                     boxShadow: [
                       BoxShadow(
@@ -173,7 +174,7 @@ class _allmarketState extends State<allmarket> {
                   width: 165,
                   height: 200,
                   decoration: BoxDecoration(
-                    color: Colors.amberAccent,
+                    color: Color(0xffFF8161),
                     borderRadius: BorderRadius.circular(12),
                     boxShadow: [
                       BoxShadow(

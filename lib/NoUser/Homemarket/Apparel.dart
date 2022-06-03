@@ -1,9 +1,6 @@
-import 'package:flutter/cupertino.dart';
 import 'package:flutter/material.dart';
-import 'package:flutter/src/foundation/key.dart';
-import 'package:flutter/src/widgets/framework.dart';
 import 'package:page_transition/page_transition.dart';
-import 'package:ssc_market/NoUser/BkingAndHire.dart';
+import 'package:ssc_market/NoUser/info_login.dart';
 
 class apparel extends StatefulWidget {
   const apparel({Key? key}) : super(key: key);
@@ -45,7 +42,7 @@ class _apparelState extends State<apparel> {
                           ontap: () {
                             Navigator.of(context).push(PageTransition(
                                 type: PageTransitionType.rightToLeft,
-                                child: bkanehire()));
+                                child: infologin()));
                             setState(() {
                               String idroom = "APL01";
                             });
