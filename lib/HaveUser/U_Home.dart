@@ -1,19 +1,21 @@
 import 'package:flutter/material.dart';
 import 'package:flutter/services.dart';
 import 'package:page_transition/page_transition.dart';
-import 'package:ssc_market/HaveUser/U_BottomBar.dart';
-import 'package:ssc_market/NoUser/Homemarket/AllMarket.dart';
+import 'package:ssc_market/HaveUser/Homepage/haveU_bookingAndRent.dart';
+import 'package:ssc_market/HaveUser/Homepage/profiles.dart';
+import 'package:ssc_market/NoUser/Homepage/Map_sscmarket.dart';
 import 'package:ssc_market/NoUser/Homepage/Staff.dart';
 import 'package:ssc_market/NoUser/Homepage/about_bookingAndRental.dart';
 
-class home extends StatefulWidget {
-  const home({Key? key}) : super(key: key);
+class u_home extends StatefulWidget {
+  const u_home({Key? key}) : super(key: key);
 
   @override
-  State<home> createState() => _homeState();
+  State<u_home> createState() => _u_homeState();
 }
 
-class _homeState extends State<home> {
+class _u_homeState extends State<u_home> {
+  var username = "ປາທິກອນ ພົມມະສານ";
   @override
   Widget build(BuildContext context) {
     var size = MediaQuery.of(context).size;
@@ -31,20 +33,18 @@ class _homeState extends State<home> {
             child: Column(
               crossAxisAlignment: CrossAxisAlignment.start,
               children: <Widget>[
-                Container(
-                  child: InkWell(
-                    onTap: () => SystemNavigator.pop,
-                    child: Align(
-                      alignment: Alignment.centerRight,
-                      child: Container(
-                        alignment: Alignment.center,
-                        height: 55,
-                        width: 55,
-                        child: Icon(
-                          Icons.power_settings_new,
-                          color: Colors.white,
-                          size: 35,
-                        ),
+                InkWell(
+                  onTap: () => SystemNavigator.pop,
+                  child: Align(
+                    alignment: Alignment.centerRight,
+                    child: Container(
+                      alignment: Alignment.center,
+                      height: 55,
+                      width: 55,
+                      child: Icon(
+                        Icons.power_settings_new,
+                        color: Colors.white,
+                        size: 35,
                       ),
                     ),
                   ),
@@ -52,12 +52,64 @@ class _homeState extends State<home> {
                 Container(
                   margin: EdgeInsets.symmetric(vertical: 10),
                 ),
-                Text(
-                  "ສະບາຍດີ",
-                  style: TextStyle(
-                      color: Colors.white,
-                      fontSize: 30,
-                      fontWeight: FontWeight.bold),
+                Row(
+                  children: [
+                    Container(
+                      child: Text(
+                        "ສະບາຍດີ",
+                        style: TextStyle(
+                            color: Colors.white,
+                            fontSize: 30,
+                            fontWeight: FontWeight.bold),
+                      ),
+                    ),
+                    SizedBox(
+                      width: 10,
+                    ),
+                    InkWell(
+                      onTap: () {
+                        Navigator.of(context).push(PageTransition(
+                            type: PageTransitionType.rightToLeft,
+                            child: profiles()));
+                      },
+                      child: Container(
+                        height: 60,
+                        width: 240,
+                        padding: EdgeInsets.all(10),
+                        decoration: BoxDecoration(
+                            color: Colors.white,
+                            borderRadius: BorderRadius.circular(10)),
+                        child: Center(
+                          child: Row(
+                            children: [
+                              Container(
+                                height: 50,
+                                child: ClipRRect(
+                                  borderRadius: BorderRadius.circular(600),
+                                  child: Image.asset(
+                                    "assets/images/pelou.jpg",
+                                    height: 50,
+                                  ),
+                                ),
+                              ),
+                              SizedBox(
+                                width: 10,
+                              ),
+                              Container(
+                                child: Text(
+                                  username,
+                                  style: TextStyle(
+                                      color: Colors.grey,
+                                      fontSize: 22,
+                                      fontWeight: FontWeight.bold),
+                                ),
+                              ),
+                            ],
+                          ),
+                        ),
+                      ),
+                    ),
+                  ],
                 ),
                 Text(
                   "ຕະຫຼາດສີແສງຈັນ ຍິນດີຕ້ອນຮັບ",
@@ -77,21 +129,12 @@ class _homeState extends State<home> {
                     mainAxisSpacing: 20,
                     children: <Widget>[
                       MenuCard(
-                        pics: "assets/icons/shops.png",
-                        titals: "ເຊົ່າ & ຈອງຮ້ານຄ້າ",
-                        oks: () {
-                          Navigator.of(context).push(PageTransition(
-                              type: PageTransitionType.rightToLeft,
-                              child: allmarket()));
-                        },
-                      ),
-                      MenuCard(
                         pics: "assets/icons/map.png",
                         titals: "ແຜນຜັງຮ້ານຄ້າ",
                         oks: () {
                           Navigator.of(context).push(PageTransition(
                               type: PageTransitionType.rightToLeft,
-                              child: u_bottombar()));
+                              child: mapsscmarket()));
                         },
                       ),
                       MenuCard(
@@ -109,7 +152,7 @@ class _homeState extends State<home> {
                         oks: () {
                           Navigator.of(context).push(PageTransition(
                               type: PageTransitionType.rightToLeft,
-                              child: about_bkAndRen()));
+                              child: u_bookingAndrent()));
                         },
                       ),
                     ],
