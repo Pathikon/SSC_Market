@@ -15,9 +15,12 @@ class apparel extends StatefulWidget {
 class _apparelState extends State<apparel> {
   final String idroom = "";
   ApiHandler apiHandler = ApiHandler();
+  List output = [];
+  void initState() {
+    super.initState();
+    loadData();
+  }
 
-
-  
   @override
   Widget build(BuildContext context) {
     return Scaffold(
@@ -25,8 +28,7 @@ class _apparelState extends State<apparel> {
         centerTitle: true,
         title: Text("ໂຂນຂາຍເຄື່ອງນຸ່ງຮົ່ມ"),
         leading: IconButton(
-          onPressed: () => Navigator.pop(context)
-          ,
+          onPressed: () => Navigator.pop(context),
           icon: Icon(Icons.arrow_back_ios),
         ),
       ),
@@ -44,7 +46,24 @@ class _apparelState extends State<apparel> {
                       crossAxisSpacing: 20,
                       mainAxisSpacing: 20,
                       children: <Widget>[
-                        
+                        for (var i in output)
+                          InkWell(
+                            onTap: () {},
+                            child: Container(
+                              decoration: BoxDecoration(
+                                borderRadius: BorderRadius.circular(10),
+                                color: Color(0xffFFE478),
+                              ),
+                              child: Center(
+                                child: Text(
+                                  i["id_room"] + " " + i["status"],
+                                  textAlign: TextAlign.center,
+                                  style: TextStyle(
+                                      color: Colors.grey, fontSize: 20),
+                                ),
+                              ),
+                            ),
+                          )
                       ],
                     ),
                   ),
@@ -57,38 +76,11 @@ class _apparelState extends State<apparel> {
     );
   }
 
-
-
-
-  LoadAllData() async {
+  void loadData() async {
     var response = await apiHandler.get("/user/list/rentalroom");
-    List<dynamic>output = json.decode(response.body);
-    
+    setState(() {
+      output = json.decode(response.body);
+    });
   }
-  Widget card1(String title,String status,ontap) {
-    return Container(
-      child: Material(
-        child: InkWell(
-          onTap: ontap,
-          child: Container(
-            decoration: BoxDecoration(
-              color: Color(0xffFFE478),
-              borderRadius: BorderRadius.circular(12),
-            ),
-            child: Center(
-              child: Text(
-                title+ " " + status,
-                textAlign: TextAlign.center,
-                style: TextStyle(color: Colors.grey, fontSize: 20),
-              ),
-            ),
-          ),
-        ),
-      ),
-    );
-  }
-
- 
-    
   
 }
