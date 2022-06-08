@@ -1,6 +1,7 @@
 import 'package:flutter/material.dart';
 import 'package:flutter/services.dart';
 import 'package:page_transition/page_transition.dart';
+import 'package:ssc_market/HaveUser/Homemarket/AllMarket.dart';
 import 'package:ssc_market/HaveUser/Homepage/haveU_bookingAndRent.dart';
 import 'package:ssc_market/HaveUser/Homepage/profiles.dart';
 import 'package:ssc_market/NoUser/Homepage/Map_sscmarket.dart';
@@ -129,12 +130,12 @@ class _u_homeState extends State<u_home> {
                     mainAxisSpacing: 20,
                     children: <Widget>[
                       MenuCard(
-                        pics: "assets/icons/map.png",
-                        titals: "ແຜນຜັງຮ້ານຄ້າ",
+                        pics: "assets/icons/shops.png",
+                        titals: "ເຊົ່າ & ຈອງຮ້ານຄ້າ",
                         oks: () {
                           Navigator.of(context).push(PageTransition(
                               type: PageTransitionType.rightToLeft,
-                              child: mapsscmarket()));
+                              child: allmarket()));
                         },
                       ),
                       MenuCard(

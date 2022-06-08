@@ -5,6 +5,7 @@ import 'package:form_field_validator/form_field_validator.dart';
 import 'package:page_transition/page_transition.dart';
 import 'package:ssc_market/NoUser/About.dart';
 import 'package:ssc_market/NoUser/BottomBar.dart';
+import 'package:ssc_market/NoUser/LoginAndRegister/forgetpassword.dart';
 
 class logins extends StatefulWidget {
   const logins({Key? key}) : super(key: key);
@@ -101,7 +102,11 @@ class _loginsState extends State<logins> {
                   height: 25,
                 ),
                 GestureDetector(
-                  onTap: () {},
+                  onTap: () {
+                    Navigator.of(context).push(PageTransition(
+                        child: forgetpassword(),
+                        type: PageTransitionType.rightToLeft));
+                  },
                   child: Text('ລືມລະຫັັດຜ່ານແມ່ນບໍ່.?',
                       style: TextStyle(
                           fontSize: 15,

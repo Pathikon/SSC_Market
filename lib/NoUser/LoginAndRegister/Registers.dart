@@ -291,12 +291,28 @@ class _registersState extends State<registers> {
                     RequiredValidator(
                         errorText: "ກະລຸນາປ້ອນຂໍ້ມູນຂອງທ່ານໃຫ້ຖຶກຕ້ອງ")
                   ]),
-                  keyboardType: TextInputType.name,
+                  keyboardType: TextInputType.visiblePassword,
                   decoration: InputDecoration(
                       border: OutlineInputBorder(
                           borderRadius: BorderRadius.circular(15)),
                       icon: Icon(Icons.key),
                       hintText: "ສ້າງລະຫັດຜ່ານ"),
+                  onSaved: (User_email) {},
+                ),
+                SizedBox(
+                  height: 20,
+                ),
+                TextFormField(
+                  validator: MultiValidator([
+                    RequiredValidator(
+                        errorText: "ກະລຸນາປ້ອນຂໍ້ມູນຂອງທ່ານໃຫ້ຖຶກຕ້ອງ")
+                  ]),
+                  keyboardType: TextInputType.visiblePassword,
+                  decoration: InputDecoration(
+                      border: OutlineInputBorder(
+                          borderRadius: BorderRadius.circular(15)),
+                      icon: Icon(Icons.password),
+                      hintText: "ຢືນຢັນລະຫັດຜ່ານ"),
                   onSaved: (User_email) {},
                 ),
                 SizedBox(

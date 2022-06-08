@@ -2,14 +2,14 @@ import 'package:flutter/material.dart';
 import 'package:page_transition/page_transition.dart';
 import 'package:ssc_market/NoUser/info_login.dart';
 
-class apparel extends StatefulWidget {
-  const apparel({Key? key}) : super(key: key);
+class electrical extends StatefulWidget {
+  const electrical({Key? key}) : super(key: key);
 
   @override
-  State<apparel> createState() => _apparelState();
+  State<electrical> createState() => _electricalState();
 }
 
-class _apparelState extends State<apparel> {
+class _electricalState extends State<electrical> {
   final String idroom = "APL02";
   final String status = "ບໍ່ວ່າງ";
   @override
@@ -17,7 +17,7 @@ class _apparelState extends State<apparel> {
     return Scaffold(
       appBar: AppBar(
         centerTitle: true,
-        title: Text("ໂຊນຂາຍເຄື່ອງນຸ່ງຮົ່ມ"),
+        title: Text("ໂຊນເຄື່ອງໄຟຟເາ ແລະ ຄົວເຮືອນ"),
         leading: IconButton(
           onPressed: () => Navigator.pop(context),
           icon: Icon(Icons.arrow_back_ios),

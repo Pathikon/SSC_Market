@@ -1,9 +1,10 @@
 import 'package:flutter/material.dart';
-import 'package:flutter/src/foundation/key.dart';
-import 'package:flutter/src/widgets/framework.dart';
 import 'package:page_transition/page_transition.dart';
 import 'package:ssc_market/NoUser/BottomBar.dart';
 import 'package:ssc_market/NoUser/Homemarket/AllMarket/Gold.dart';
+import 'package:ssc_market/NoUser/Homemarket/AllMarket/electrical.dart';
+import 'package:ssc_market/NoUser/Homemarket/AllMarket/food.dart';
+import 'package:ssc_market/NoUser/Homemarket/AllMarket/meat.dart';
 
 import 'AllMarket/Apparel.dart';
 
@@ -119,30 +120,36 @@ class _allmarketState extends State<allmarket> {
             SizedBox(
               height: 15,
             ),
-            Container(
-              padding: EdgeInsets.all(25),
-              width: 345,
-              height: 150,
-              decoration: BoxDecoration(
-                color: Color(0xff66E5E1),
-                borderRadius: BorderRadius.circular(12),
-                boxShadow: [
-                  BoxShadow(
-                      color: Colors.grey.withOpacity(0.5),
-                      spreadRadius: -23,
-                      blurRadius: 17,
-                      offset: Offset(1.0, 17.0))
-                ],
-              ),
-              child: Column(
-                mainAxisAlignment: MainAxisAlignment.center,
-                children: [
-                  Text(
-                    "ໂຊນຂາຍເຄື່ອງໃຊ້ໄຟຟ້າ ແລະ ເຄື່ອງໃຊ້ໃນຄົວເຮືອນ",
-                    style: TextStyle(color: Colors.black54, fontSize: 25),
-                    textAlign: TextAlign.center,
-                  )
-                ],
+            InkWell(
+              onTap: () {
+                Navigator.of(context).push(PageTransition(
+                    type: PageTransitionType.rightToLeft, child: electrical()));
+              },
+              child: Container(
+                padding: EdgeInsets.all(25),
+                width: 345,
+                height: 150,
+                decoration: BoxDecoration(
+                  color: Color(0xff66E5E1),
+                  borderRadius: BorderRadius.circular(12),
+                  boxShadow: [
+                    BoxShadow(
+                        color: Colors.grey.withOpacity(0.5),
+                        spreadRadius: -23,
+                        blurRadius: 17,
+                        offset: Offset(1.0, 17.0))
+                  ],
+                ),
+                child: Column(
+                  mainAxisAlignment: MainAxisAlignment.center,
+                  children: [
+                    Text(
+                      "ໂຊນຂາຍເຄື່ອງໃຊ້ໄຟຟ້າ ແລະ ເຄື່ອງໃຊ້ໃນຄົວເຮືອນ",
+                      style: TextStyle(color: Colors.black54, fontSize: 25),
+                      textAlign: TextAlign.center,
+                    )
+                  ],
+                ),
               ),
             ),
             SizedBox(
@@ -150,59 +157,71 @@ class _allmarketState extends State<allmarket> {
             ),
             Row(
               children: [
-                Container(
-                  padding: EdgeInsets.all(25),
-                  width: 165,
-                  height: 200,
-                  decoration: BoxDecoration(
-                    color: Color(0xff66E56B),
-                    borderRadius: BorderRadius.circular(12),
-                    boxShadow: [
-                      BoxShadow(
-                          color: Colors.grey.withOpacity(0.5),
-                          spreadRadius: -23,
-                          blurRadius: 17,
-                          offset: Offset(1.0, 17.0))
-                    ],
-                  ),
-                  child: Column(
-                    mainAxisAlignment: MainAxisAlignment.center,
-                    children: [
-                      Text(
-                        "ໂຊນຂາຍເຄື່ອງບໍລິໂພກ",
-                        style: TextStyle(color: Colors.white, fontSize: 25),
-                        textAlign: TextAlign.center,
-                      )
-                    ],
+                InkWell(
+                  onTap: () {
+                    Navigator.of(context).push(PageTransition(
+                        type: PageTransitionType.rightToLeft, child: foods()));
+                  },
+                  child: Container(
+                    padding: EdgeInsets.all(25),
+                    width: 165,
+                    height: 200,
+                    decoration: BoxDecoration(
+                      color: Color(0xff66E56B),
+                      borderRadius: BorderRadius.circular(12),
+                      boxShadow: [
+                        BoxShadow(
+                            color: Colors.grey.withOpacity(0.5),
+                            spreadRadius: -23,
+                            blurRadius: 17,
+                            offset: Offset(1.0, 17.0))
+                      ],
+                    ),
+                    child: Column(
+                      mainAxisAlignment: MainAxisAlignment.center,
+                      children: [
+                        Text(
+                          "ໂຊນຂາຍເຄື່ອງບໍລິໂພກ",
+                          style: TextStyle(color: Colors.white, fontSize: 25),
+                          textAlign: TextAlign.center,
+                        )
+                      ],
+                    ),
                   ),
                 ),
                 SizedBox(
                   width: 15,
                 ),
-                Container(
-                  padding: EdgeInsets.all(25),
-                  width: 165,
-                  height: 200,
-                  decoration: BoxDecoration(
-                    color: Color(0xffFF8161),
-                    borderRadius: BorderRadius.circular(12),
-                    boxShadow: [
-                      BoxShadow(
-                          color: Colors.grey.withOpacity(0.5),
-                          spreadRadius: -23,
-                          blurRadius: 17,
-                          offset: Offset(1.0, 17.0))
-                    ],
-                  ),
-                  child: Column(
-                    mainAxisAlignment: MainAxisAlignment.center,
-                    children: [
-                      Text(
-                        "ໂຊນຂາຍຂອງສົດ",
-                        style: TextStyle(color: Colors.white, fontSize: 25),
-                        textAlign: TextAlign.center,
-                      )
-                    ],
+                InkWell(
+                  onTap: () {
+                    Navigator.of(context).push(PageTransition(
+                        type: PageTransitionType.rightToLeft, child: meat()));
+                  },
+                  child: Container(
+                    padding: EdgeInsets.all(25),
+                    width: 165,
+                    height: 200,
+                    decoration: BoxDecoration(
+                      color: Color(0xffFF8161),
+                      borderRadius: BorderRadius.circular(12),
+                      boxShadow: [
+                        BoxShadow(
+                            color: Colors.grey.withOpacity(0.5),
+                            spreadRadius: -23,
+                            blurRadius: 17,
+                            offset: Offset(1.0, 17.0))
+                      ],
+                    ),
+                    child: Column(
+                      mainAxisAlignment: MainAxisAlignment.center,
+                      children: [
+                        Text(
+                          "ໂຊນຂາຍຂອງສົດ",
+                          style: TextStyle(color: Colors.white, fontSize: 25),
+                          textAlign: TextAlign.center,
+                        )
+                      ],
+                    ),
                   ),
                 ),
               ],

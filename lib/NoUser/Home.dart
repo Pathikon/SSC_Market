@@ -86,15 +86,6 @@ class _homeState extends State<home> {
                         },
                       ),
                       MenuCard(
-                        pics: "assets/icons/map.png",
-                        titals: "ແຜນຜັງຮ້ານຄ້າ",
-                        oks: () {
-                          Navigator.of(context).push(PageTransition(
-                              type: PageTransitionType.rightToLeft,
-                              child: u_bottombar()));
-                        },
-                      ),
-                      MenuCard(
                         pics: "assets/icons/steward.png",
                         titals: "ຕິດຕໍ່ພະນັກງານ",
                         oks: () {

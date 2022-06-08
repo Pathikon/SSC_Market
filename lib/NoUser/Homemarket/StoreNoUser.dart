@@ -4,6 +4,7 @@ import 'package:flutter/material.dart';
 import 'package:flutter/src/foundation/key.dart';
 import 'package:flutter/src/widgets/framework.dart';
 import 'package:page_transition/page_transition.dart';
+import 'package:ssc_market/HaveUser/U_BottomBar.dart';
 import 'package:ssc_market/NoUser/LoginAndRegister/Bottombar_lg.dart';
 
 class storeNouser extends StatefulWidget {
@@ -45,7 +46,7 @@ class _storeNouserState extends State<storeNouser> {
                   onPressed: () {
                     Navigator.of(context).push(PageTransition(
                         type: PageTransitionType.rightToLeft,
-                        child: bottombar_lg()));
+                        child: u_bottombar()));
                   },
                   label: Icon(Icons.arrow_forward_ios),
                   icon: Text(

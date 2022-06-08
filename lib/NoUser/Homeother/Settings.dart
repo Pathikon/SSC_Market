@@ -1,8 +1,7 @@
+// ignore_for_file: deprecated_member_use
+
 import 'package:flutter/material.dart';
-import 'package:flutter/src/foundation/key.dart';
-import 'package:flutter/src/widgets/framework.dart';
-import 'package:page_transition/page_transition.dart';
-import 'package:ssc_market/NoUser/Homeother/Condition.dart';
+
 
 class settings extends StatefulWidget {
   const settings({Key? key}) : super(key: key);

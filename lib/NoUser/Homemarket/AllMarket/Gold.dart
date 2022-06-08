@@ -17,7 +17,7 @@ class _goldsState extends State<golds> {
     return Scaffold(
       appBar: AppBar(
         centerTitle: true,
-        title: Text("ໂຂນຂາຍເຄື່ອງຂັບສິນມີຄ່າ"),
+        title: Text("ໂຊນຂາຍເຄື່ອງຂັບສິນມີຄ່າ"),
         leading: IconButton(
           onPressed: () => Navigator.pop(context),
           icon: Icon(Icons.arrow_back_ios),
@@ -159,10 +159,22 @@ class cardk1 extends StatelessWidget {
               borderRadius: BorderRadius.circular(12),
             ),
             child: Center(
-              child: Text(
-                tital + " " + status,
-                textAlign: TextAlign.center,
-                style: TextStyle(color: Colors.grey, fontSize: 20),
+              child: Column(
+                children: [
+                  Text(
+                    tital,
+                    textAlign: TextAlign.center,
+                    style: TextStyle(
+                        color: Color.fromARGB(255, 77, 77, 77),
+                        fontSize: 20,
+                        fontWeight: FontWeight.bold),
+                  ),
+                  Text(
+                    status,
+                    textAlign: TextAlign.center,
+                    style: TextStyle(color: Colors.grey, fontSize: 20),
+                  ),
+                ],
               ),
             ),
           ),
