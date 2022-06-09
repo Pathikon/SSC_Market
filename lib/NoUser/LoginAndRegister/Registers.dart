@@ -1,7 +1,7 @@
+// ignore_for_file: deprecated_member_use
 import 'package:flutter/material.dart';
-import 'package:flutter/src/foundation/key.dart';
-import 'package:flutter/src/widgets/framework.dart';
 import 'package:form_field_validator/form_field_validator.dart';
+import 'package:image_picker/image_picker.dart';
 import 'package:page_transition/page_transition.dart';
 import 'package:ssc_market/NoUser/About.dart';
 
@@ -13,6 +13,37 @@ class registers extends StatefulWidget {
 }
 
 class _registersState extends State<registers> {
+  XFile? _image;
+  late String urlImag;
+  late var imagepath;
+
+  ImagePicker? picker = ImagePicker();
+  Future getimagePic() async {
+    final XFile? pickedFile = await picker!.pickImage(
+      source: ImageSource.gallery,
+      maxWidth: 2000,
+      maxHeight: 2000,
+    );
+    setState(() {
+      _image = pickedFile!;
+      imagepath = _image!.path;
+   
+    });
+  }
+
+  Future getimageCam() async {
+    final XFile? pickedFile = await picker!.pickImage(
+      source: ImageSource.camera,
+      maxWidth: 2000,
+      maxHeight: 2000,
+    );
+    setState(() {
+      _image = pickedFile!;
+      imagepath = _image!.path;
+
+    });
+  }
+
   final formkey = GlobalKey<FormState>();
   String dropdownvalue = "ນະຄອນຫຼວງວຽງຈັນ";
   String dropdownvalue2 = "ເມືອງຈັນທະບູລ";
@@ -300,7 +331,7 @@ class _registersState extends State<registers> {
                   onSaved: (User_email) {},
                 ),
                 SizedBox(
-                  height: 20,
+                  height: 10,
                 ),
                 TextFormField(
                   validator: MultiValidator([
@@ -314,6 +345,37 @@ class _registersState extends State<registers> {
                       icon: Icon(Icons.password),
                       hintText: "ຢືນຢັນລະຫັດຜ່ານ"),
                   onSaved: (User_email) {},
+                ),
+                SizedBox(
+                  height: 20,
+                ),
+                SizedBox(
+                  child: Text("ເລືອກຮູບໂປຣຟາຍຂອງທ່ານ"),
+                ),
+                SizedBox(
+                  height: 20,
+                ),
+                Container(
+                  child: Stack(children: <Widget>[
+                    CircleAvatar(
+                        radius: 50.0,
+                        backgroundImage: _image == null
+                            ? AssetImage("assets/icons/user.png")
+                            : AssetImage(imagepath)),
+                    Positioned(
+                      child: InkWell(
+                        onTap: () {
+                          shows(context);
+                        },
+                        child: Icon(
+                          Icons.camera_alt,
+                          size: 35,
+                        ),
+                      ),
+                      bottom: 0.0,
+                      right: 0.0,
+                    ),
+                  ]),
                 ),
                 SizedBox(
                   height: 20,
@@ -340,6 +402,104 @@ class _registersState extends State<registers> {
               ],
             ),
           ),
+        ),
+      ),
+    );
+  }
+
+  Future<dynamic> shows(BuildContext context) {
+    return showDialog(
+      context: context,
+      builder: (context) => AlertDialog(
+        titlePadding: EdgeInsets.all(0),
+        title: Column(
+          children: [
+            Container(
+              color: Colors.green,
+              child: Row(
+                children: [
+                  Container(
+                      padding: EdgeInsets.all(5),
+                      height: 40,
+                      child: Text(
+                        "ເລືອກຮູບໂປຟາຍຂອງທ່ານ",
+                        textAlign: TextAlign.center,
+                        style: TextStyle(color: Colors.white, fontSize: 18),
+                      )),
+                  SizedBox(
+                    width: 60,
+                  ),
+                  SizedBox(
+                    child: InkWell(
+                      onTap: () {
+                        Navigator.pop(context);
+                      },
+                      child: Icon(
+                        Icons.cancel,
+                        color: Colors.white,
+                        size: 28,
+                      ),
+                    ),
+                  )
+                ],
+              ),
+            ),
+            Container(
+              padding: EdgeInsets.all(0),
+              height: 60,
+              child: FlatButton(
+                onPressed: getimageCam,
+                child: Column(children: [
+                  Divider(),
+                  Container(
+                    child: Row(
+                      children: [
+                        SizedBox(child: Icon(Icons.camera_alt)),
+                        SizedBox(
+                          width: 20,
+                        ),
+                        SizedBox(
+                          child: Text(
+                            "ກ້ອງຖ່າຍຮູບ",
+                            style: TextStyle(fontSize: 20),
+                          ),
+                        )
+                      ],
+                    ),
+                  ),
+                  SizedBox(
+                    height: 10,
+                  ),
+                ]),
+              ),
+            ),
+            Container(
+              padding: EdgeInsets.all(0),
+              height: 60,
+              child: FlatButton(
+                onPressed: getimagePic,
+                child: Column(children: [
+                  Divider(),
+                  Container(
+                    child: Row(
+                      children: [
+                        SizedBox(child: Icon(Icons.photo)),
+                        SizedBox(
+                          width: 20,
+                        ),
+                        SizedBox(
+                          child: Text(
+                            "ຄັງຮູບພາບ",
+                            style: TextStyle(fontSize: 20),
+                          ),
+                        )
+                      ],
+                    ),
+                  ),
+                ]),
+              ),
+            ),
+          ],
         ),
       ),
     );

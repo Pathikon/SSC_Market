@@ -2,14 +2,14 @@ import 'package:flutter/material.dart';
 import 'package:page_transition/page_transition.dart';
 import 'package:ssc_market/NoUser/info_login.dart';
 
-class apparel extends StatefulWidget {
-  const apparel({Key? key}) : super(key: key);
+class u_electrical extends StatefulWidget {
+  const u_electrical({Key? key}) : super(key: key);
 
   @override
-  State<apparel> createState() => _apparelState();
+  State<u_electrical> createState() => _electricalState();
 }
 
-class _apparelState extends State<apparel> {
+class _electricalState extends State<u_electrical> {
   final String idroom = "APL02";
   final String status = "ບໍ່ວ່າງ";
   @override
@@ -17,7 +17,7 @@ class _apparelState extends State<apparel> {
     return Scaffold(
       appBar: AppBar(
         centerTitle: true,
-        title: Text("ໂຊນຂາຍເຄື່ອງນຸ່ງຮົ່ມ"),
+        title: Text("ໂຊນເຄື່ອງໄຟຟ້າ ແລະ ຄົວເຮືອນ"),
         leading: IconButton(
           onPressed: () => Navigator.pop(context),
           icon: Icon(Icons.arrow_back_ios),
@@ -37,51 +37,6 @@ class _apparelState extends State<apparel> {
                       crossAxisSpacing: 20,
                       mainAxisSpacing: 20,
                       children: <Widget>[
-                        cardk1(
-                          tital: idroom,
-                          status: status,
-                          ontap: () {
-                            Navigator.of(context).push(PageTransition(
-                                type: PageTransitionType.rightToLeft,
-                                child: infologin()));
-                          },
-                        ),
-                        cardk1(
-                          tital: idroom,
-                          status: status,
-                          ontap: () {
-                            Navigator.of(context).push(PageTransition(
-                                type: PageTransitionType.rightToLeft,
-                                child: infologin()));
-                          },
-                        ),
-                        cardk1(
-                          tital: idroom,
-                          status: status,
-                          ontap: () {
-                            Navigator.of(context).push(PageTransition(
-                                type: PageTransitionType.rightToLeft,
-                                child: infologin()));
-                          },
-                        ),
-                        cardk1(
-                          tital: idroom,
-                          status: status,
-                          ontap: () {
-                            Navigator.of(context).push(PageTransition(
-                                type: PageTransitionType.rightToLeft,
-                                child: infologin()));
-                          },
-                        ),
-                        cardk1(
-                          tital: idroom,
-                          status: status,
-                          ontap: () {
-                            Navigator.of(context).push(PageTransition(
-                                type: PageTransitionType.rightToLeft,
-                                child: infologin()));
-                          },
-                        ),
                         cardk1(
                           tital: idroom,
                           status: status,
@@ -186,14 +141,26 @@ class cardk1 extends StatelessWidget {
           onTap: ontap,
           child: Container(
             decoration: BoxDecoration(
-              color: Color(0xffFFE478),
+              color: Color(0xff66E5E1),
               borderRadius: BorderRadius.circular(12),
             ),
             child: Center(
-              child: Text(
-                tital + " " + status,
-                textAlign: TextAlign.center,
-                style: TextStyle(color: Colors.grey, fontSize: 20),
+              child: Column(
+                children: [
+                  Text(
+                    tital,
+                    textAlign: TextAlign.center,
+                    style: TextStyle(
+                        color: Color.fromARGB(255, 77, 77, 77),
+                        fontSize: 20,
+                        fontWeight: FontWeight.bold),
+                  ),
+                  Text(
+                    status,
+                    textAlign: TextAlign.center,
+                    style: TextStyle(color: Colors.grey, fontSize: 20),
+                  ),
+                ],
               ),
             ),
           ),

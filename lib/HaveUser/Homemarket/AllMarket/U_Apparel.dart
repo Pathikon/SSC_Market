@@ -1,23 +1,25 @@
 import 'package:flutter/material.dart';
 import 'package:page_transition/page_transition.dart';
+import 'package:ssc_market/HaveUser/Homemarket/Rental.dart';
 import 'package:ssc_market/NoUser/info_login.dart';
 
-class electrical extends StatefulWidget {
-  const electrical({Key? key}) : super(key: key);
+class u_apparel extends StatefulWidget {
+  const u_apparel({Key? key}) : super(key: key);
 
   @override
-  State<electrical> createState() => _electricalState();
+  State<u_apparel> createState() => _u_apparelState();
 }
 
-class _electricalState extends State<electrical> {
+class _u_apparelState extends State<u_apparel> {
   final String idroom = "APL02";
   final String status = "ບໍ່ວ່າງ";
   @override
   Widget build(BuildContext context) {
     return Scaffold(
       appBar: AppBar(
+        elevation: 0,
         centerTitle: true,
-        title: Text("ໂຊນເຄື່ອງໄຟຟເາ ແລະ ຄົວເຮືອນ"),
+        title: Text("ໂຂນຂາຍເຄື່ອງນຸ່ງຮົ່ມ"),
         leading: IconButton(
           onPressed: () => Navigator.pop(context),
           icon: Icon(Icons.arrow_back_ios),
@@ -43,7 +45,7 @@ class _electricalState extends State<electrical> {
                           ontap: () {
                             Navigator.of(context).push(PageTransition(
                                 type: PageTransitionType.rightToLeft,
-                                child: infologin()));
+                                child: rentals()));
                           },
                         ),
                         cardk1(
@@ -190,10 +192,22 @@ class cardk1 extends StatelessWidget {
               borderRadius: BorderRadius.circular(12),
             ),
             child: Center(
-              child: Text(
-                tital + " " + status,
-                textAlign: TextAlign.center,
-                style: TextStyle(color: Colors.grey, fontSize: 20),
+              child: Column(
+                children: [
+                  Text(
+                    tital,
+                    textAlign: TextAlign.center,
+                    style: TextStyle(
+                        color: Color.fromARGB(255, 77, 77, 77),
+                        fontSize: 20,
+                        fontWeight: FontWeight.bold),
+                  ),
+                  Text(
+                    status,
+                    textAlign: TextAlign.center,
+                    style: TextStyle(color: Colors.grey, fontSize: 20),
+                  ),
+                ],
               ),
             ),
           ),

@@ -2,14 +2,14 @@ import 'package:flutter/material.dart';
 import 'package:page_transition/page_transition.dart';
 import 'package:ssc_market/NoUser/info_login.dart';
 
-class golds extends StatefulWidget {
-  const golds({Key? key}) : super(key: key);
+class u_golds extends StatefulWidget {
+  const u_golds({Key? key}) : super(key: key);
 
   @override
-  State<golds> createState() => _goldsState();
+  State<u_golds> createState() => _u_goldsState();
 }
 
-class _goldsState extends State<golds> {
+class _u_goldsState extends State<u_golds> {
   final String idroom = "APL02";
   final String status = "ບໍ່ວ່າງ";
   @override
@@ -159,10 +159,22 @@ class cardk1 extends StatelessWidget {
               borderRadius: BorderRadius.circular(12),
             ),
             child: Center(
-              child: Text(
-                tital + " " + status,
-                textAlign: TextAlign.center,
-                style: TextStyle(color: Colors.grey, fontSize: 20),
+              child: Column(
+                children: [
+                  Text(
+                    tital,
+                    textAlign: TextAlign.center,
+                    style: TextStyle(
+                        color: Color.fromARGB(255, 77, 77, 77),
+                        fontSize: 20,
+                        fontWeight: FontWeight.bold),
+                  ),
+                  Text(
+                    status,
+                    textAlign: TextAlign.center,
+                    style: TextStyle(color: Colors.grey, fontSize: 20),
+                  ),
+                ],
               ),
             ),
           ),

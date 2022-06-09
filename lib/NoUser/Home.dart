@@ -78,7 +78,7 @@ class _homeState extends State<home> {
                     children: <Widget>[
                       MenuCard(
                         pics: "assets/icons/shops.png",
-                        titals: "ເຊົ່າ & ຈອງຮ້ານຄ້າ",
+                        titals: "ແຜນຜັງຮ້ານຄ້າ",
                         oks: () {
                           Navigator.of(context).push(PageTransition(
                               type: PageTransitionType.rightToLeft,

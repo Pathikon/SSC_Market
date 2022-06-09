@@ -2,11 +2,9 @@ import 'package:flutter/material.dart';
 import 'package:flutter/services.dart';
 import 'package:page_transition/page_transition.dart';
 import 'package:ssc_market/HaveUser/Homemarket/AllMarket.dart';
+import 'package:ssc_market/HaveUser/Homepage/Staff.dart';
 import 'package:ssc_market/HaveUser/Homepage/haveU_bookingAndRent.dart';
 import 'package:ssc_market/HaveUser/Homepage/profiles.dart';
-import 'package:ssc_market/NoUser/Homepage/Map_sscmarket.dart';
-import 'package:ssc_market/NoUser/Homepage/Staff.dart';
-import 'package:ssc_market/NoUser/Homepage/about_bookingAndRental.dart';
 
 class u_home extends StatefulWidget {
   const u_home({Key? key}) : super(key: key);
@@ -131,11 +129,20 @@ class _u_homeState extends State<u_home> {
                     children: <Widget>[
                       MenuCard(
                         pics: "assets/icons/shops.png",
-                        titals: "ເຊົ່າ & ຈອງຮ້ານຄ້າ",
+                        titals: "ເຊົ່າຮ້ານຄ້າ",
                         oks: () {
                           Navigator.of(context).push(PageTransition(
                               type: PageTransitionType.rightToLeft,
-                              child: allmarket()));
+                              child: u_allmarket()));
+                        },
+                      ),
+                      MenuCard(
+                        pics: "assets/icons/bookingn.png",
+                        titals: "ຈອງຮ້ານຄ້າ",
+                        oks: () {
+                          Navigator.of(context).push(PageTransition(
+                              type: PageTransitionType.rightToLeft,
+                              child: u_allmarket()));
                         },
                       ),
                       MenuCard(
