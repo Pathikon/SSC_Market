@@ -58,7 +58,7 @@ class datas extends StatelessWidget {
         children: [
           Center(
             child: Container(
-              width: 350,
+              width: double.infinity,
               height: 40,
               decoration: BoxDecoration(
                   color: Colors.green,

@@ -2,6 +2,7 @@ import 'package:flutter/material.dart';
 import 'package:flutter/services.dart';
 import 'package:page_transition/page_transition.dart';
 import 'package:ssc_market/HaveUser/Homemarket/AllMarket.dart';
+import 'package:ssc_market/HaveUser/Homemarket/jbooking.dart';
 import 'package:ssc_market/HaveUser/Homepage/Staff.dart';
 import 'package:ssc_market/HaveUser/Homepage/haveU_bookingAndRent.dart';
 import 'package:ssc_market/HaveUser/Homepage/profiles.dart';
@@ -82,12 +83,12 @@ class _u_homeState extends State<u_home> {
                           child: Row(
                             children: [
                               Container(
-                                height: 50,
+                                height: 40,
                                 child: ClipRRect(
                                   borderRadius: BorderRadius.circular(600),
                                   child: Image.asset(
-                                    "assets/images/pelou.jpg",
-                                    height: 50,
+                                    "assets/icons/user.png",
+                                    height: 35,
                                   ),
                                 ),
                               ),
@@ -98,9 +99,9 @@ class _u_homeState extends State<u_home> {
                                 child: Text(
                                   username,
                                   style: TextStyle(
-                                      color: Colors.grey,
-                                      fontSize: 22,
-                                      fontWeight: FontWeight.bold),
+                                    color: Colors.grey,
+                                    fontSize: 18,
+                                  ),
                                 ),
                               ),
                             ],
@@ -142,7 +143,7 @@ class _u_homeState extends State<u_home> {
                         oks: () {
                           Navigator.of(context).push(PageTransition(
                               type: PageTransitionType.rightToLeft,
-                              child: u_allmarket()));
+                              child: bookings()));
                         },
                       ),
                       MenuCard(
