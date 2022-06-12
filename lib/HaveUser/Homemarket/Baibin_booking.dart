@@ -1,4 +1,6 @@
 import 'package:flutter/material.dart';
+import 'package:page_transition/page_transition.dart';
+import 'package:ssc_market/HaveUser/Homemarket/AllMarket.dart';
 
 class baibin_booking extends StatefulWidget {
   const baibin_booking({Key? key}) : super(key: key);
@@ -12,6 +14,13 @@ class _baibin_bookingState extends State<baibin_booking> {
   Widget build(BuildContext context) {
     return Scaffold(
       appBar: AppBar(
+        leading: IconButton(
+          onPressed: () {
+            Navigator.of(context).pushReplacement(PageTransition(
+                type: PageTransitionType.leftToRight, child: u_allmarket()));
+          },
+          icon: Icon(Icons.cancel_rounded),
+        ),
         elevation: 0,
         title: Text(
           'ໃບບິນການຈອງ',
@@ -112,7 +121,7 @@ class _baibin_bookingState extends State<baibin_booking> {
                           ),
                         ),
                         Container(
-                          child: Text("Pathikone PHOMMASAN",
+                          child: Text("ປາທິກອນ ພົມມະສານ",
                               style: TextStyle(color: Colors.green)),
                         ),
                       ],
@@ -146,7 +155,8 @@ class _baibin_bookingState extends State<baibin_booking> {
                       mainAxisAlignment: MainAxisAlignment.spaceBetween,
                       children: [
                         Container(
-                          child: Text("ໂຊນຂາຍຄຳG01",
+                          width: 150,
+                          child: Text("ໂຊນເຄື່ອງນຸ່ງຮົ່ມAPL01",
                               style: TextStyle(color: Colors.grey)),
                         ),
                         Container(
@@ -214,7 +224,7 @@ class _baibin_bookingState extends State<baibin_booking> {
                               style: TextStyle(color: Colors.grey)),
                         ),
                         Container(
-                          child: Text("77777777",
+                          child: Text("20 93039850",
                               style: TextStyle(color: Colors.grey)),
                         ),
                       ],

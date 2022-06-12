@@ -5,6 +5,8 @@ import 'dart:io';
 import 'package:flutter/material.dart';
 import 'package:flutter/src/foundation/key.dart';
 import 'package:flutter/src/widgets/framework.dart';
+import 'package:page_transition/page_transition.dart';
+import 'package:ssc_market/HaveUser/Homemarket/Tor_Vela_rental.dart';
 
 class u_store extends StatefulWidget {
   const u_store({Key? key}) : super(key: key);
@@ -80,7 +82,7 @@ class _u_storeState extends State<u_store> {
                             ),
                             Divider(),
                             Container(
-                              child: Text("ຮ້ານຂາຍຄຳ",
+                              child: Text("ຮ້ານຂາຍເສື້ອຜ້າທົ່ວໄປ",
                                   style: TextStyle(fontSize: 18)),
                             ),
                             Divider(),
@@ -150,7 +152,11 @@ class _u_storeState extends State<u_store> {
                           color: Colors.green,
                           size: 25,
                         ),
-                        press: () {},
+                        press: () {
+                          Navigator.of(context).push(PageTransition(
+                              type: PageTransitionType.rightToLeft,
+                              child: tor_vela()));
+                        },
                       ),
                       ProfileMenu(
                         icon: Icon(
@@ -225,7 +231,7 @@ class dateline extends StatelessWidget {
             width: 10,
           ),
           SizedBox(
-            child: Row(
+            child: Column(
               children: [
                 Text(
                   text,
