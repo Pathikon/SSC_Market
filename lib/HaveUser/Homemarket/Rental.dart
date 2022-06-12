@@ -2,6 +2,7 @@ import 'package:flutter/material.dart';
 import 'package:page_transition/page_transition.dart';
 import 'package:ssc_market/HaveUser/Homemarket/Baibin_booking.dart';
 import 'package:intl/intl.dart';
+import 'package:ssc_market/HaveUser/Homemarket/Baibin_rental.dart';
 
 class rentals extends StatefulWidget {
   const rentals({Key? key}) : super(key: key);
@@ -30,7 +31,7 @@ class _rentalsState extends State<rentals> {
       appBar: AppBar(
         elevation: 0,
         title: Text(
-          'ເຂົ່າຫ້ອງ',
+          'ເຊົ່າຫ້ອງ',
         ),
         centerTitle: true,
       ),
@@ -49,8 +50,8 @@ class _rentalsState extends State<rentals> {
             child: Column(
               children: [
                 boxtxt(
-                  tital: "ຊື່ຜູ້ຈອງ",
-                  keyid: "Pathikone PHOMMASAN",
+                  tital: "ຊື່ຜູ້ເຊົ່າ",
+                  keyid: "ປາທິກອນ ພົມມະສານ",
                 ),
                 SizedBox(
                   height: 10,
@@ -301,6 +302,13 @@ class _rentalsState extends State<rentals> {
                       Divider(
                         height: 10,
                       ),
+                      Container(
+                        padding: EdgeInsets.all(15),
+                        color: Colors.black12,
+                        width: 250,
+                        height: 190,
+                        child: Image.asset("assets/images/addimg.png"),
+                      ),
                     ],
                   ),
                 ),
@@ -313,7 +321,7 @@ class _rentalsState extends State<rentals> {
         child: InkWell(
           onTap: () {
             Navigator.of(context).push(PageTransition(
-                type: PageTransitionType.rightToLeft, child: baibin_booking()));
+                type: PageTransitionType.rightToLeft, child: baibin_rental()));
           },
           child: Container(
             decoration: BoxDecoration(

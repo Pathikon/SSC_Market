@@ -2,6 +2,7 @@
 
 import 'dart:io';
 
+import 'package:flutter/cupertino.dart';
 import 'package:flutter/material.dart';
 import 'package:flutter/src/foundation/key.dart';
 import 'package:flutter/src/widgets/framework.dart';
@@ -62,6 +63,17 @@ class _u_storeState extends State<u_store> {
                               radius: 50.0,
                               backgroundImage:
                                   AssetImage("assets/icons/user.png")),
+                          Positioned(
+                            child: InkWell(
+                              onTap: () {},
+                              child: Icon(
+                                Icons.camera_alt,
+                                size: 35,
+                              ),
+                            ),
+                            bottom: 0.0,
+                            right: 0.0,
+                          ),
                         ]),
                       ),
                       Container(
@@ -102,7 +114,8 @@ class _u_storeState extends State<u_store> {
                   child: Column(
                     children: [
                       Container(
-                        child: Column(
+                        child: Row(
+                          mainAxisAlignment: MainAxisAlignment.spaceBetween,
                           children: [
                             dateline(
                               icons: Icons.timelapse,
@@ -184,13 +197,58 @@ class _u_storeState extends State<u_store> {
                           color: Colors.green,
                           size: 25,
                         ),
-                        text: Text("ຂໍ້ມູນຫ້ອງເຊົ່າ"),
+                        text: Text(
+                          "ຂໍ້ມູນຫ້ອງເຊົ່າ",
+                          style: TextStyle(
+                              fontSize: 16,
+                              color: Colors.black45,
+                              fontWeight: FontWeight.bold),
+                        ),
                         icons: Icon(
                           Icons.arrow_forward_ios,
                           color: Colors.green,
                           size: 25,
                         ),
                         press: () {},
+                      ),
+                      ProfileMenu(
+                        icon: Icon(
+                          Icons.power_settings_new,
+                          color: Colors.red,
+                          size: 25,
+                        ),
+                        text: Text(
+                          "ອອກຈາກລະບົບ",
+                          style: TextStyle(
+                              fontSize: 16,
+                              color: Colors.black87,
+                              fontWeight: FontWeight.bold),
+                        ),
+                        icons: Icon(
+                          Icons.arrow_forward_ios,
+                          color: Colors.white,
+                          size: 1,
+                        ),
+                        press: () => showDialog<String>(
+                          context: context,
+                          builder: (BuildContext context) => AlertDialog(
+                            title: Text(
+                              'ທ່ານຕ້ອງການອອກຈາກລະບົບແທ້ຫຼືບໍ່?',
+                              textAlign: TextAlign.center,
+                            ),
+                            actions: <Widget>[
+                              TextButton(
+                                onPressed: () =>
+                                    Navigator.pop(context, 'Cancel'),
+                                child: const Text('ຍົກເລີກ'),
+                              ),
+                              TextButton(
+                                onPressed: () => Navigator.pop(context, 'OK'),
+                                child: const Text('ອອກຈາກລະບົບ'),
+                              ),
+                            ],
+                          ),
+                        ),
                       ),
                     ],
                   ),
@@ -218,7 +276,8 @@ class dateline extends StatelessWidget {
   @override
   Widget build(BuildContext context) {
     return Container(
-      child: Row(
+      width: 120,
+      child: Column(
         children: [
           SizedBox(
             child: Icon(
@@ -241,7 +300,7 @@ class dateline extends StatelessWidget {
                 Text(
                   dates,
                   style: TextStyle(
-                      fontSize: 25, color: Color.fromARGB(255, 207, 187, 0)),
+                      fontSize: 20, color: Color.fromARGB(255, 207, 187, 0)),
                 ),
               ],
             ),
@@ -271,6 +330,7 @@ class ProfileMenu extends StatelessWidget {
       child: FlatButton(
           onPressed: press,
           child: Row(
+            mainAxisAlignment: MainAxisAlignment.spaceBetween,
             children: [
               Divider(),
               VerticalDivider(

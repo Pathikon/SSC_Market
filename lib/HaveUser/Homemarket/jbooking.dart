@@ -216,7 +216,13 @@ class _bookingsState extends State<bookings> {
                       Divider(
                         height: 10,
                       ),
-                      
+                       Container(
+                        padding: EdgeInsets.all(15),
+                        color: Colors.black12,
+                        width: 250,
+                        height: 190,
+                        child: Image.asset("assets/images/addimg.png"),
+                      ),
                     ],
                   ),
                 ),

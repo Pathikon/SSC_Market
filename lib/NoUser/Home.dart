@@ -60,7 +60,7 @@ class _homeState extends State<home> {
                       fontWeight: FontWeight.bold),
                 ),
                 Text(
-                  "ຕະຫຼາດສີແສງຈັນ ຍິນດີຕ້ອນຮັບ",
+                  "ຕະຫຼາດແສນອຸດົມ (ຫຼັກ20) ຍິນດີຕ້ອນຮັບ",
                   style: TextStyle(
                       color: Colors.white,
                       fontSize: 22,

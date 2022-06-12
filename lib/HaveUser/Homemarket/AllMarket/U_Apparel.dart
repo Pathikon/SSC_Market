@@ -11,8 +11,8 @@ class u_apparel extends StatefulWidget {
 }
 
 class _u_apparelState extends State<u_apparel> {
-  final String idroom = "APL02";
-  final String status = "ບໍ່ວ່າງ";
+  final String idroom = "APL01";
+  final String status = "ວ່າງ";
   @override
   Widget build(BuildContext context) {
     return Scaffold(
@@ -49,7 +49,7 @@ class _u_apparelState extends State<u_apparel> {
                           },
                         ),
                         cardk1(
-                          tital: idroom,
+                          tital: "APL02",
                           status: status,
                           ontap: () {
                             Navigator.of(context).push(PageTransition(
@@ -58,7 +58,7 @@ class _u_apparelState extends State<u_apparel> {
                           },
                         ),
                         cardk1(
-                          tital: idroom,
+                          tital: "APL03",
                           status: status,
                           ontap: () {
                             Navigator.of(context).push(PageTransition(
@@ -67,7 +67,7 @@ class _u_apparelState extends State<u_apparel> {
                           },
                         ),
                         cardk1(
-                          tital: idroom,
+                          tital: "APL04",
                           status: status,
                           ontap: () {
                             Navigator.of(context).push(PageTransition(
@@ -76,7 +76,7 @@ class _u_apparelState extends State<u_apparel> {
                           },
                         ),
                         cardk1(
-                          tital: idroom,
+                          tital: "APL05",
                           status: status,
                           ontap: () {
                             Navigator.of(context).push(PageTransition(
@@ -85,7 +85,7 @@ class _u_apparelState extends State<u_apparel> {
                           },
                         ),
                         cardk1(
-                          tital: idroom,
+                          tital: "APL06",
                           status: status,
                           ontap: () {
                             Navigator.of(context).push(PageTransition(
@@ -94,7 +94,7 @@ class _u_apparelState extends State<u_apparel> {
                           },
                         ),
                         cardk1(
-                          tital: idroom,
+                          tital: "APL07",
                           status: status,
                           ontap: () {
                             Navigator.of(context).push(PageTransition(
@@ -103,7 +103,7 @@ class _u_apparelState extends State<u_apparel> {
                           },
                         ),
                         cardk1(
-                          tital: idroom,
+                          tital: "APL08",
                           status: status,
                           ontap: () {
                             Navigator.of(context).push(PageTransition(
@@ -112,7 +112,7 @@ class _u_apparelState extends State<u_apparel> {
                           },
                         ),
                         cardk1(
-                          tital: idroom,
+                          tital: "APL09",
                           status: status,
                           ontap: () {
                             Navigator.of(context).push(PageTransition(
@@ -121,7 +121,7 @@ class _u_apparelState extends State<u_apparel> {
                           },
                         ),
                         cardk1(
-                          tital: idroom,
+                          tital: "APL10",
                           status: status,
                           ontap: () {
                             Navigator.of(context).push(PageTransition(
@@ -130,7 +130,7 @@ class _u_apparelState extends State<u_apparel> {
                           },
                         ),
                         cardk1(
-                          tital: idroom,
+                          tital: "APL11",
                           status: status,
                           ontap: () {
                             Navigator.of(context).push(PageTransition(
@@ -139,7 +139,7 @@ class _u_apparelState extends State<u_apparel> {
                           },
                         ),
                         cardk1(
-                          tital: idroom,
+                          tital: "APL12",
                           status: status,
                           ontap: () {
                             Navigator.of(context).push(PageTransition(
@@ -148,7 +148,7 @@ class _u_apparelState extends State<u_apparel> {
                           },
                         ),
                         cardk1(
-                          tital: idroom,
+                          tital: "APL13",
                           status: status,
                           ontap: () {
                             Navigator.of(context).push(PageTransition(

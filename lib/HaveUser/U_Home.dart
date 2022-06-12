@@ -112,7 +112,7 @@ class _u_homeState extends State<u_home> {
                   ],
                 ),
                 Text(
-                  "ຕະຫຼາດສີແສງຈັນ ຍິນດີຕ້ອນຮັບ",
+                  "ຕະຫຼາດແສນອຸດົມ (ຫຼັກ20) ຍິນດີຕ້ອນຮັບ",
                   style: TextStyle(
                       color: Colors.white,
                       fontSize: 22,

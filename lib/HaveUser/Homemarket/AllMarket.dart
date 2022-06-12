@@ -48,7 +48,7 @@ class _u_allmarketState extends State<u_allmarket> {
                 mainAxisAlignment: MainAxisAlignment.center,
                 children: [
                   Text(
-                    "ເລືອກໂຊນຂາຍເຄື່ອງຂອງທ່ານ",
+                    "ເລືອກໂຊນຂາຍເຄື່ອງຂອງທ່ານ ( ການເຊົ່າ )",
                     style: TextStyle(fontSize: 20, color: Colors.grey),
                   ),
                   SizedBox(
