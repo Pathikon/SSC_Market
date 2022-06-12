@@ -1,6 +1,7 @@
 import 'package:flutter/material.dart';
 import 'package:flutter/src/foundation/key.dart';
 import 'package:flutter/src/widgets/framework.dart';
+import 'package:page_transition/page_transition.dart';
 
 class tor_vela extends StatefulWidget {
   const tor_vela({Key? key}) : super(key: key);
@@ -162,6 +163,35 @@ class _tor_velaState extends State<tor_vela> {
                 height: 5,
               ),
             ],
+          ),
+        ),
+      ),
+      bottomNavigationBar: BottomAppBar(
+        child: InkWell(
+          onTap: () {},
+          child: Container(
+            decoration: BoxDecoration(
+              color: Color.fromARGB(255, 49, 128, 51),
+            ),
+            height: 55,
+            child: Row(
+              mainAxisAlignment: MainAxisAlignment.center,
+              children: [
+                Center(
+                  child: Text(
+                    "ດຳເນີນການຕໍ່",
+                    style: TextStyle(fontSize: 22, color: Colors.white),
+                  ),
+                ),
+                SizedBox(
+                  width: 15,
+                ),
+                Icon(
+                  Icons.arrow_forward_ios,
+                  color: Colors.white,
+                )
+              ],
+            ),
           ),
         ),
       ),

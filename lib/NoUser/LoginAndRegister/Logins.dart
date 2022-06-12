@@ -38,129 +38,140 @@ class _loginsState extends State<logins> {
         ],
         centerTitle: true,
       ),
-      body: SingleChildScrollView(
-        child: Container(
-          padding: EdgeInsets.all(30.0),
-          child: Form(
-            key: formkey,
-            child: Column(
-              mainAxisAlignment: MainAxisAlignment.center,
-              children: [
-                SizedBox(
-                  height: 20,
-                ),
-                Container(
-                  child: Image.asset("assets/icons/logo.png",width: 180,),
-                ),
-                Divider(
-                  height: 40,
-                ),
-                TextFormField(
-                  validator: MultiValidator([
-                    RequiredValidator(
-                        errorText: "ກະລຸນາປ້ອນຂໍ້ມູນຂອງທ່ານໃຫ້ຖຶກຕ້ອງ")
-                  ]),
-                  keyboardType: TextInputType.name,
-                  decoration: InputDecoration(
-                      border: OutlineInputBorder(
-                          borderRadius: BorderRadius.circular(15)),
-                      icon: Icon(Icons.person),
-                      hintText: "Email ເຂົ້າໃຊ້ຂອງທ່ານ"),
-                  onSaved: (User_email) {},
-                ),
-                SizedBox(
-                  child: Text(
-                    ac_data1,
-                    style: TextStyle(color: Colors.red),
+      body: Container(
+        color: Colors.green,
+        child: SingleChildScrollView(
+          child: Container(
+            decoration: BoxDecoration(
+                borderRadius: BorderRadius.only(
+                    topLeft: Radius.circular(20),
+                    topRight: Radius.circular(20)),
+                color: Colors.white),
+            padding: EdgeInsets.all(30.0),
+            child: Form(
+              key: formkey,
+              child: Column(
+                mainAxisAlignment: MainAxisAlignment.center,
+                children: [
+                  SizedBox(
+                    height: 20,
                   ),
-                  height: 25,
-                ),
-                TextFormField(
-                  validator: MultiValidator([
-                    RequiredValidator(
-                        errorText: "ກະລຸນາໃສ່ລະຫັດຜ່ານຂອງທ່ານໃຫ້ຖຶກຕ້ອງ")
-                  ]),
-                  onTap: () {
-                    setState(() {});
-                  },
-                  keyboardType: TextInputType.visiblePassword,
-                  decoration: InputDecoration(
-                      border: OutlineInputBorder(
-                          borderRadius: BorderRadius.circular(15)),
-                      icon: Icon(Icons.lock),
-                      suffixIcon: pit_pass
-                          ? Icon(Icons.visibility)
-                          : Icon(Icons.visibility_off),
-                      hintText: "ລະຫັດຜ່ານ"),
-                  onSaved: (Upassw) {},
-                ),
-                SizedBox(
-                  child: Text(
-                    ac_data2,
-                    style: TextStyle(color: Colors.red),
-                  ),
-                  height: 25,
-                ),
-                GestureDetector(
-                  onTap: () {
-                    Navigator.of(context).push(PageTransition(
-                        child: forgetpassword(),
-                        type: PageTransitionType.rightToLeft));
-                  },
-                  child: Text('ລືມລະຫັັດຜ່ານແມ່ນບໍ່.?',
-                      style: TextStyle(
-                          fontSize: 15,
-                          fontWeight: FontWeight.bold,
-                          color: Colors.black54)),
-                ),
-                Divider(
-                  height: 35,
-                ),
-                Container(
-                  child: SizedBox(
-                    height: 60,
-                    width: double.infinity,
-                    child: ElevatedButton.icon(
-                        style: ButtonStyle(
-                          shape:
-                              MaterialStateProperty.all<RoundedRectangleBorder>(
-                            RoundedRectangleBorder(
-                              borderRadius: BorderRadius.circular(20.0),
-                            ),
-                          ),
-                        ),
-                        icon: Icon(Icons.login),
-                        label: Text(
-                          "ເຂົ້າສູ່ລະບົບ",
-                          style: TextStyle(
-                              fontSize: 18, fontWeight: FontWeight.bold),
-                        ),
-                        onPressed: () {
-                          formkey.currentState!.validate();
-                        }),
-                  ),
-                ),
-                const SizedBox(
-                  height: 30,
-                ),
-                Container(
-                  child: Center(
-                    child: Column(
-                      mainAxisAlignment: MainAxisAlignment.spaceAround,
-                      children: [
-                        GestureDetector(
-                          onTap: () {},
-                          child: Text(
-                            'ທ່ານຍັງບໍ່ມີບັນຊີບໍ່.? ກະລຸນາສ້າງບັນຊີຜູ້ໃຊ້ກ່ອນ',
-                            style:
-                                TextStyle(fontSize: 15, color: Colors.black54),
-                          ),
-                        ),
-                      ],
+                  Container(
+                    child: Image.asset(
+                      "assets/icons/logo.png",
+                      width: 180,
                     ),
                   ),
-                ),
-              ],
+                  Divider(
+                    height: 40,
+                  ),
+                  TextFormField(
+                    validator: MultiValidator([
+                      RequiredValidator(
+                          errorText: "ກະລຸນາປ້ອນຂໍ້ມູນຂອງທ່ານໃຫ້ຖຶກຕ້ອງ")
+                    ]),
+                    keyboardType: TextInputType.name,
+                    decoration: InputDecoration(
+                        border: OutlineInputBorder(
+                            borderRadius: BorderRadius.circular(15)),
+                        icon: Icon(Icons.person),
+                        hintText: "ເບີໂທລະສັບຂອງທ່ານ"),
+                    onSaved: (User_email) {},
+                  ),
+                  SizedBox(
+                    child: Text(
+                      ac_data1,
+                      style: TextStyle(color: Colors.red),
+                    ),
+                    height: 25,
+                  ),
+                  TextFormField(
+                    validator: MultiValidator([
+                      RequiredValidator(
+                          errorText: "ກະລຸນາໃສ່ລະຫັດຜ່ານຂອງທ່ານໃຫ້ຖຶກຕ້ອງ")
+                    ]),
+                    onTap: () {
+                      setState(() {});
+                    },
+                    keyboardType: TextInputType.visiblePassword,
+                    decoration: InputDecoration(
+                        border: OutlineInputBorder(
+                            borderRadius: BorderRadius.circular(15)),
+                        icon: Icon(Icons.lock),
+                        suffixIcon: pit_pass
+                            ? Icon(Icons.visibility)
+                            : Icon(Icons.visibility_off),
+                        hintText: "ລະຫັດຜ່ານ"),
+                    onSaved: (Upassw) {},
+                  ),
+                  SizedBox(
+                    child: Text(
+                      ac_data2,
+                      style: TextStyle(color: Colors.red),
+                    ),
+                    height: 25,
+                  ),
+                  GestureDetector(
+                    onTap: () {
+                      Navigator.of(context).push(PageTransition(
+                          child: forgetpassword(),
+                          type: PageTransitionType.rightToLeft));
+                    },
+                    child: Text('ລືມລະຫັັດຜ່ານແມ່ນບໍ່.?',
+                        style: TextStyle(
+                            fontSize: 15,
+                            fontWeight: FontWeight.bold,
+                            color: Colors.black54)),
+                  ),
+                  Divider(
+                    height: 35,
+                  ),
+                  Container(
+                    child: SizedBox(
+                      height: 60,
+                      width: double.infinity,
+                      child: ElevatedButton.icon(
+                          style: ButtonStyle(
+                            shape: MaterialStateProperty.all<
+                                RoundedRectangleBorder>(
+                              RoundedRectangleBorder(
+                                borderRadius: BorderRadius.circular(20.0),
+                              ),
+                            ),
+                          ),
+                          icon: Icon(Icons.login),
+                          label: Text(
+                            "ເຂົ້າສູ່ລະບົບ",
+                            style: TextStyle(
+                                fontSize: 18, fontWeight: FontWeight.bold),
+                          ),
+                          onPressed: () {
+                            formkey.currentState!.validate();
+                          }),
+                    ),
+                  ),
+                  const SizedBox(
+                    height: 30,
+                  ),
+                  Container(
+                    child: Center(
+                      child: Column(
+                        mainAxisAlignment: MainAxisAlignment.spaceAround,
+                        children: [
+                          GestureDetector(
+                            onTap: () {},
+                            child: Text(
+                              'ທ່ານຍັງບໍ່ມີບັນຊີບໍ່.? ກະລຸນາສ້າງບັນຊີຜູ້ໃຊ້ກ່ອນ',
+                              style: TextStyle(
+                                  fontSize: 15, color: Colors.black54),
+                            ),
+                          ),
+                        ],
+                      ),
+                    ),
+                  ),
+                ],
+              ),
             ),
           ),
         ),
