@@ -3,6 +3,7 @@ import 'package:page_transition/page_transition.dart';
 import 'package:ssc_market/HaveUser/Homemarket/Baibin_booking.dart';
 import 'package:intl/intl.dart';
 import 'package:ssc_market/HaveUser/Homemarket/Baibin_rental.dart';
+import 'package:ssc_market/HaveUser/Homemarket/processing.dart';
 
 class rentals extends StatefulWidget {
   const rentals({Key? key}) : super(key: key);
@@ -21,12 +22,18 @@ class _rentalsState extends State<rentals> {
     '3 ປີ',
     '5 ປີ',
   ];
+  var moneyItem = ['ຈ່າບເງີນສົດຢູ່ເຄົາເຕີ', 'ຈ່າຍເງີນໂອນຜ່ານ One Play'];
   var datetime = "500.000 ກີບ/ເດືອນ";
   var perzen = "";
 
   String dropdownvalue = "1 ເດືອນ";
+  String dropdownmoney = "ຈ່າບເງີນສົດຢູ່ເຄົາເຕີ";
+
+  set value(bool value) {}
   @override
   Widget build(BuildContext context) {
+    bool values = false;
+
     return Scaffold(
       appBar: AppBar(
         elevation: 0,
@@ -109,7 +116,7 @@ class _rentalsState extends State<rentals> {
                             width: 10,
                           ),
                           Container(
-                            width: 190,
+                            width: 160,
                             decoration: BoxDecoration(
                                 borderRadius: BorderRadius.circular(10),
                                 color: Colors.white),
@@ -279,8 +286,47 @@ class _rentalsState extends State<rentals> {
                           style: TextStyle(color: Colors.green, fontSize: 22),
                         ),
                       ),
+                      SizedBox(),
+                      Container(
+                        width: 240,
+                        decoration: BoxDecoration(
+                            borderRadius: BorderRadius.circular(10),
+                            color: Colors.white),
+                        child: DropdownButton<String>(
+                          itemHeight: 60,
+                          isExpanded: true,
+                          value: dropdownmoney,
+                          items: moneyItem.map((String items) {
+                            return DropdownMenuItem(
+                              value: items,
+                              child: Container(
+                                  padding: EdgeInsets.all(10),
+                                  child: Text(
+                                    items,
+                                    style: TextStyle(fontSize: 18),
+                                  )),
+                            );
+                          }).toList(),
+                          onChanged: (String? newValue) {
+                            setState(() {
+                              dropdownmoney = newValue!;
+                              if (dropdownmoney == '1 ເດືອນ') {
+                                setState(() {
+                                
+                                });
+                              }
+                            });
+                          },
+                        ),
+                      ),
+                      SizedBox(
+                        height: 15,
+                      ),
                       Container(
                         child: Text("( ທ່ານສາມາດຊຳລະໄດ້ໂດຍໂອນຜ່ານ OnePlay )"),
+                      ),
+                      SizedBox(
+                        height: 15,
                       ),
                       Container(
                         child: Image.asset(
@@ -302,12 +348,15 @@ class _rentalsState extends State<rentals> {
                       Divider(
                         height: 10,
                       ),
-                      Container(
-                        padding: EdgeInsets.all(15),
-                        color: Colors.black12,
-                        width: 250,
-                        height: 190,
-                        child: Image.asset("assets/images/addimg.png"),
+                      InkWell(
+                        onTap: (){},
+                        child: Container(
+                          padding: EdgeInsets.all(15),
+                          color: Colors.black12,
+                          width: 250,
+                          height: 190,
+                          child: Image.asset("assets/images/addimg.png"),
+                        ),
                       ),
                     ],
                   ),
@@ -321,7 +370,7 @@ class _rentalsState extends State<rentals> {
         child: InkWell(
           onTap: () {
             Navigator.of(context).push(PageTransition(
-                type: PageTransitionType.rightToLeft, child: baibin_rental()));
+                type: PageTransitionType.rightToLeft, child: processing()));
           },
           child: Container(
             decoration: BoxDecoration(

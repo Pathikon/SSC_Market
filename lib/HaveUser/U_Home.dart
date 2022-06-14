@@ -1,7 +1,8 @@
 import 'package:flutter/material.dart';
 import 'package:flutter/services.dart';
 import 'package:page_transition/page_transition.dart';
-import 'package:ssc_market/HaveUser/Homemarket/AllMarket.dart';
+import 'package:ssc_market/HaveUser/Homemarket/U_AllMarket_Booking.dart';
+import 'package:ssc_market/HaveUser/Homemarket/U_AllMarket_rental.dart';
 import 'package:ssc_market/HaveUser/Homemarket/jbooking.dart';
 import 'package:ssc_market/HaveUser/Homepage/Staff.dart';
 import 'package:ssc_market/HaveUser/Homepage/haveU_bookingAndRent.dart';
@@ -53,6 +54,7 @@ class _u_homeState extends State<u_home> {
                   margin: EdgeInsets.symmetric(vertical: 10),
                 ),
                 Row(
+                  mainAxisAlignment: MainAxisAlignment.spaceBetween,
                   children: [
                     Container(
                       child: Text(
@@ -73,9 +75,9 @@ class _u_homeState extends State<u_home> {
                             child: profiles()));
                       },
                       child: Container(
-                        height: 60,
-                        width: 240,
-                        padding: EdgeInsets.all(10),
+                        height: 50,
+                        width: 185,
+                        padding: EdgeInsets.all(5),
                         decoration: BoxDecoration(
                             color: Colors.white,
                             borderRadius: BorderRadius.circular(10)),
@@ -83,12 +85,12 @@ class _u_homeState extends State<u_home> {
                           child: Row(
                             children: [
                               Container(
-                                height: 40,
+                                height: 30,
                                 child: ClipRRect(
-                                  borderRadius: BorderRadius.circular(600),
+                                  borderRadius: BorderRadius.circular(20),
                                   child: Image.asset(
                                     "assets/icons/user.png",
-                                    height: 35,
+                                    height: 10,
                                   ),
                                 ),
                               ),
@@ -100,7 +102,7 @@ class _u_homeState extends State<u_home> {
                                   username,
                                   style: TextStyle(
                                     color: Colors.grey,
-                                    fontSize: 18,
+                                    fontSize: 15,
                                   ),
                                 ),
                               ),
@@ -115,7 +117,7 @@ class _u_homeState extends State<u_home> {
                   "ຕະຫຼາດແສນອຸດົມ (ຫຼັກ20) ຍິນດີຕ້ອນຮັບ",
                   style: TextStyle(
                       color: Colors.white,
-                      fontSize: 22,
+                      fontSize: 19,
                       fontWeight: FontWeight.bold),
                 ),
                 Container(
@@ -143,7 +145,7 @@ class _u_homeState extends State<u_home> {
                         oks: () {
                           Navigator.of(context).push(PageTransition(
                               type: PageTransitionType.rightToLeft,
-                              child: bookings()));
+                              child: u_allmarket_booking()));
                         },
                       ),
                       MenuCard(
@@ -210,13 +212,13 @@ class MenuCard extends StatelessWidget {
             Spacer(),
             Image.asset(
               pics,
-              width: 100,
-              height: 100,
+              width: 95,
+              height: 95,
             ),
             Spacer(),
             Text(
               titals,
-              style: TextStyle(fontSize: 18),
+              style: TextStyle(fontSize: 17),
             ),
             Spacer()
           ]),

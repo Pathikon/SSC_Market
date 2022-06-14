@@ -4,19 +4,24 @@ import 'package:ssc_market/HaveUser/Homemarket/AllMarket/U_Gold.dart';
 import 'package:ssc_market/HaveUser/Homemarket/AllMarket/U_electrical.dart';
 import 'package:ssc_market/HaveUser/Homemarket/AllMarket/U_food.dart';
 import 'package:ssc_market/HaveUser/Homemarket/AllMarket/U_meat.dart';
+import 'package:ssc_market/HaveUser/Homemarket/AllMarket_booking/U_Apparel_bk.dart';
+import 'package:ssc_market/HaveUser/Homemarket/AllMarket_booking/U_Gold_bk.dart';
+import 'package:ssc_market/HaveUser/Homemarket/AllMarket_booking/U_electrical_bk.dart';
+import 'package:ssc_market/HaveUser/Homemarket/AllMarket_booking/U_food_bk.dart';
+import 'package:ssc_market/HaveUser/Homemarket/AllMarket_booking/U_meat_bk.dart';
 import 'package:ssc_market/HaveUser/U_BottomBar.dart';
 import 'package:ssc_market/HaveUser/U_Home.dart';
 
 import 'AllMarket/U_Apparel.dart';
 
-class u_allmarket extends StatefulWidget {
-  const u_allmarket({Key? key}) : super(key: key);
+class u_allmarket_booking extends StatefulWidget {
+  const u_allmarket_booking({Key? key}) : super(key: key);
 
   @override
-  State<u_allmarket> createState() => _u_allmarketState();
+  State<u_allmarket_booking> createState() => _u_allmarket_bookingState();
 }
 
-class _u_allmarketState extends State<u_allmarket> {
+class _u_allmarket_bookingState extends State<u_allmarket_booking> {
   @override
   Widget build(BuildContext context) {
     return Scaffold(
@@ -48,7 +53,7 @@ class _u_allmarketState extends State<u_allmarket> {
                 mainAxisAlignment: MainAxisAlignment.center,
                 children: [
                   Text(
-                    "ເລືອກໂຊນຂາຍເຄື່ອງຂອງທ່ານ ( ການເຊົ່າ )",
+                    "ເລືອກໂຊນຂາຍເຄື່ອງຂອງທ່ານ ( ການຈອງ )",
                     style: TextStyle(fontSize: 20, color: Colors.grey),
                   ),
                   SizedBox(
@@ -62,11 +67,11 @@ class _u_allmarketState extends State<u_allmarket> {
                           onTap: () {
                             Navigator.of(context).push(PageTransition(
                                 type: PageTransitionType.rightToLeft,
-                                child: u_apparel()));
+                                child: u_apparel_bk()));
                           },
                           child: Container(
                             padding: EdgeInsets.all(20),
-                            width: 200,
+                            width: 175,
                             height: 200,
                             decoration: BoxDecoration(
                               color: Color(0xffFFE478),
@@ -85,13 +90,13 @@ class _u_allmarketState extends State<u_allmarket> {
                                 SizedBox(
                                   child: Image.asset(
                                     "assets/images/clothes.png",
-                                    width: 100,
+                                    width: 90,
                                   ),
                                 ),
                                 Text(
                                   "ໂຊນຂາຍເຄື່ອງນຸ່ງຮົ່ມ",
                                   style: TextStyle(
-                                      color: Colors.black54, fontSize: 20),
+                                      color: Colors.black54, fontSize: 17),
                                   textAlign: TextAlign.center,
                                 )
                               ],
@@ -107,11 +112,11 @@ class _u_allmarketState extends State<u_allmarket> {
                           onTap: () {
                             Navigator.of(context).push(PageTransition(
                                 type: PageTransitionType.rightToLeft,
-                                child: u_golds()));
+                                child: u_golds_bk()));
                           },
                           child: Container(
                             padding: EdgeInsets.all(10),
-                            width: 125,
+                            width: 120,
                             height: 200,
                             decoration: BoxDecoration(
                               color: Color(0xffFFD609),
@@ -130,13 +135,13 @@ class _u_allmarketState extends State<u_allmarket> {
                                 SizedBox(
                                   child: Image.asset(
                                     "assets/images/diamond.png",
-                                    width: 100,
+                                    width: 90,
                                   ),
                                 ),
                                 Text(
                                   "ໂຊນຂາຍເຄື່ອງຊັບສິນມີຄ່າ",
                                   style: TextStyle(
-                                      color: Colors.white, fontSize: 20),
+                                      color: Colors.white, fontSize: 17),
                                   textAlign: TextAlign.center,
                                 )
                               ],
@@ -153,11 +158,11 @@ class _u_allmarketState extends State<u_allmarket> {
                     onTap: () {
                       Navigator.of(context).push(PageTransition(
                           type: PageTransitionType.rightToLeft,
-                          child: u_electrical()));
+                          child: u_electrical_bk()));
                     },
                     child: Container(
                       padding: EdgeInsets.all(25),
-                      width: 335,
+                      width: 330,
                       height: 150,
                       decoration: BoxDecoration(
                         color: Color(0xff66E5E1),
@@ -176,7 +181,7 @@ class _u_allmarketState extends State<u_allmarket> {
                           SizedBox(
                             child: Image.asset(
                               "assets/images/electrical-energy.png",
-                              width: 100,
+                              width: 90,
                             ),
                           ),
                           SizedBox(
@@ -184,7 +189,7 @@ class _u_allmarketState extends State<u_allmarket> {
                             child: Text(
                               "ໂຊນຂາຍເຄື່ອງໃຊ້ໄຟຟ້າ ແລະ ເຄື່ອງໃຊ້ໃນຄົວເຮືອນ",
                               style: TextStyle(
-                                  color: Colors.black54, fontSize: 20),
+                                  color: Colors.black54, fontSize: 17),
                               textAlign: TextAlign.center,
                             ),
                           )
@@ -202,11 +207,11 @@ class _u_allmarketState extends State<u_allmarket> {
                         onTap: () {
                           Navigator.of(context).push(PageTransition(
                               type: PageTransitionType.rightToLeft,
-                              child: u_foods()));
+                              child: u_foods_bk()));
                         },
                         child: Container(
                           padding: EdgeInsets.all(25),
-                          width: 165,
+                          width: 155,
                           height: 210,
                           decoration: BoxDecoration(
                             color: Color(0xff66E56B),
@@ -231,7 +236,7 @@ class _u_allmarketState extends State<u_allmarket> {
                               Text(
                                 "ໂຊນຂາຍເຄື່ອງບໍລິໂພກ",
                                 style: TextStyle(
-                                    color: Colors.white, fontSize: 20),
+                                    color: Colors.white, fontSize: 17),
                                 textAlign: TextAlign.center,
                               )
                             ],
@@ -245,11 +250,11 @@ class _u_allmarketState extends State<u_allmarket> {
                         onTap: () {
                           Navigator.of(context).push(PageTransition(
                               type: PageTransitionType.rightToLeft,
-                              child: u_meat()));
+                              child: u_meat_bk()));
                         },
                         child: Container(
                           padding: EdgeInsets.all(25),
-                          width: 165,
+                          width: 155,
                           height: 210,
                           decoration: BoxDecoration(
                             color: Color(0xffFF8161),
@@ -274,7 +279,7 @@ class _u_allmarketState extends State<u_allmarket> {
                               Text(
                                 "ໂຊນຂາຍຂອງສົດ",
                                 style: TextStyle(
-                                    color: Colors.white, fontSize: 20),
+                                    color: Colors.white, fontSize: 17),
                                 textAlign: TextAlign.center,
                               )
                             ],

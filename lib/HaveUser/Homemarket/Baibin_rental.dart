@@ -1,6 +1,6 @@
 import 'package:flutter/material.dart';
 import 'package:page_transition/page_transition.dart';
-import 'package:ssc_market/HaveUser/Homemarket/AllMarket.dart';
+import 'package:ssc_market/HaveUser/Homemarket/U_AllMarket_rental.dart';
 
 class baibin_rental extends StatefulWidget {
   const baibin_rental({Key? key}) : super(key: key);
@@ -235,6 +235,18 @@ class _baibin_rentalState extends State<baibin_rental> {
                           Container(
                             child: Text("ວິເສດ ຄຳສຸກຖາວົງ",
                                 style: TextStyle(color: Colors.grey)),
+                          ),
+                        ],
+                      ),
+                      Row(
+                        children: [
+                          Container(
+                            child: Text("ສະຖານະ : ",
+                                style: TextStyle(color: Colors.grey)),
+                          ),
+                          Container(
+                            child: Text("ຈ່າຍແລ້ວ",
+                                style: TextStyle(color: Colors.green)),
                           ),
                         ],
                       ),

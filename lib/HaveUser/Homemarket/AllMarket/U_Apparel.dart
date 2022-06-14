@@ -25,144 +25,139 @@ class _u_apparelState extends State<u_apparel> {
           icon: Icon(Icons.arrow_back_ios),
         ),
       ),
-      body: SizedBox(
-        child: Stack(
-          children: <Widget>[
-            Container(
-              height: 300,
-              child: Center(
-                child: Padding(
-                  padding: EdgeInsets.all(15),
-                  child: Container(
-                    child: GridView.count(
-                      crossAxisCount: 4,
-                      crossAxisSpacing: 20,
-                      mainAxisSpacing: 20,
-                      children: <Widget>[
-                        cardk1(
-                          tital: idroom,
-                          status: status,
-                          ontap: () {
-                            Navigator.of(context).push(PageTransition(
-                                type: PageTransitionType.rightToLeft,
-                                child: rentals()));
-                          },
+      body: Center(
+        child: Container(
+          child: SizedBox(
+            child: Stack(
+              children: <Widget>[
+                Container(
+                  height: 300,
+                  child: Center(
+                    child: Padding(
+                      padding: EdgeInsets.all(15),
+                      child: Container(
+                        child: GridView.count(
+                          crossAxisCount: 4,
+                          crossAxisSpacing: 20,
+                          mainAxisSpacing: 20,
+                          children: <Widget>[
+                            cardk1(
+                              tital: idroom,
+                              status: status,
+                              ontap: () {
+                                Navigator.of(context).push(PageTransition(
+                                    type: PageTransitionType.rightToLeft,
+                                    child: rentals()));
+                              },
+                            ),
+                            cardk1(
+                              tital: "APL02",
+                              status: status,
+                              ontap: () {
+                                Navigator.of(context).push(PageTransition(
+                                    type: PageTransitionType.rightToLeft,
+                                    child: infologin()));
+                              },
+                            ),
+                            cardk1(
+                              tital: "APL03",
+                              status: status,
+                              ontap: () {
+                                Navigator.of(context).push(PageTransition(
+                                    type: PageTransitionType.rightToLeft,
+                                    child: infologin()));
+                              },
+                            ),
+                            cardk1(
+                              tital: "APL04",
+                              status: status,
+                              ontap: () {
+                                Navigator.of(context).push(PageTransition(
+                                    type: PageTransitionType.rightToLeft,
+                                    child: infologin()));
+                              },
+                            ),
+                            cardk1(
+                              tital: "APL05",
+                              status: status,
+                              ontap: () {
+                                Navigator.of(context).push(PageTransition(
+                                    type: PageTransitionType.rightToLeft,
+                                    child: infologin()));
+                              },
+                            ),
+                            cardk1(
+                              tital: "APL06",
+                              status: status,
+                              ontap: () {
+                                Navigator.of(context).push(PageTransition(
+                                    type: PageTransitionType.rightToLeft,
+                                    child: infologin()));
+                              },
+                            ),
+                            cardk1(
+                              tital: "APL07",
+                              status: status,
+                              ontap: () {
+                                Navigator.of(context).push(PageTransition(
+                                    type: PageTransitionType.rightToLeft,
+                                    child: infologin()));
+                              },
+                            ),
+                            cardk1(
+                              tital: "APL08",
+                              status: status,
+                              ontap: () {
+                                Navigator.of(context).push(PageTransition(
+                                    type: PageTransitionType.rightToLeft,
+                                    child: infologin()));
+                              },
+                            ),
+                            cardk1(
+                              tital: "APL09",
+                              status: status,
+                              ontap: () {
+                                Navigator.of(context).push(PageTransition(
+                                    type: PageTransitionType.rightToLeft,
+                                    child: infologin()));
+                              },
+                            ),
+                            cardk1(
+                              tital: "APL10",
+                              status: status,
+                              ontap: () {
+                                Navigator.of(context).push(PageTransition(
+                                    type: PageTransitionType.rightToLeft,
+                                    child: infologin()));
+                              },
+                            ),
+                            cardk1(
+                              tital: "APL11",
+                              status: status,
+                              ontap: () {
+                                Navigator.of(context).push(PageTransition(
+                                    type: PageTransitionType.rightToLeft,
+                                    child: infologin()));
+                              },
+                            ),
+                            cardk1(
+                              tital: "APL12",
+                              status: status,
+                              ontap: () {
+                                Navigator.of(context).push(PageTransition(
+                                    type: PageTransitionType.rightToLeft,
+                                    child: infologin()));
+                              },
+                            ),
+                          ],
                         ),
-                        cardk1(
-                          tital: "APL02",
-                          status: status,
-                          ontap: () {
-                            Navigator.of(context).push(PageTransition(
-                                type: PageTransitionType.rightToLeft,
-                                child: infologin()));
-                          },
-                        ),
-                        cardk1(
-                          tital: "APL03",
-                          status: status,
-                          ontap: () {
-                            Navigator.of(context).push(PageTransition(
-                                type: PageTransitionType.rightToLeft,
-                                child: infologin()));
-                          },
-                        ),
-                        cardk1(
-                          tital: "APL04",
-                          status: status,
-                          ontap: () {
-                            Navigator.of(context).push(PageTransition(
-                                type: PageTransitionType.rightToLeft,
-                                child: infologin()));
-                          },
-                        ),
-                        cardk1(
-                          tital: "APL05",
-                          status: status,
-                          ontap: () {
-                            Navigator.of(context).push(PageTransition(
-                                type: PageTransitionType.rightToLeft,
-                                child: infologin()));
-                          },
-                        ),
-                        cardk1(
-                          tital: "APL06",
-                          status: status,
-                          ontap: () {
-                            Navigator.of(context).push(PageTransition(
-                                type: PageTransitionType.rightToLeft,
-                                child: infologin()));
-                          },
-                        ),
-                        cardk1(
-                          tital: "APL07",
-                          status: status,
-                          ontap: () {
-                            Navigator.of(context).push(PageTransition(
-                                type: PageTransitionType.rightToLeft,
-                                child: infologin()));
-                          },
-                        ),
-                        cardk1(
-                          tital: "APL08",
-                          status: status,
-                          ontap: () {
-                            Navigator.of(context).push(PageTransition(
-                                type: PageTransitionType.rightToLeft,
-                                child: infologin()));
-                          },
-                        ),
-                        cardk1(
-                          tital: "APL09",
-                          status: status,
-                          ontap: () {
-                            Navigator.of(context).push(PageTransition(
-                                type: PageTransitionType.rightToLeft,
-                                child: infologin()));
-                          },
-                        ),
-                        cardk1(
-                          tital: "APL10",
-                          status: status,
-                          ontap: () {
-                            Navigator.of(context).push(PageTransition(
-                                type: PageTransitionType.rightToLeft,
-                                child: infologin()));
-                          },
-                        ),
-                        cardk1(
-                          tital: "APL11",
-                          status: status,
-                          ontap: () {
-                            Navigator.of(context).push(PageTransition(
-                                type: PageTransitionType.rightToLeft,
-                                child: infologin()));
-                          },
-                        ),
-                        cardk1(
-                          tital: "APL12",
-                          status: status,
-                          ontap: () {
-                            Navigator.of(context).push(PageTransition(
-                                type: PageTransitionType.rightToLeft,
-                                child: infologin()));
-                          },
-                        ),
-                        cardk1(
-                          tital: "APL13",
-                          status: status,
-                          ontap: () {
-                            Navigator.of(context).push(PageTransition(
-                                type: PageTransitionType.rightToLeft,
-                                child: infologin()));
-                          },
-                        ),
-                      ],
+                      ),
                     ),
                   ),
                 ),
-              ),
+              ],
             ),
-          ],
+          ),
         ),
       ),
     );

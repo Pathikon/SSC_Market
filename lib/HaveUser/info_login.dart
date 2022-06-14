@@ -6,22 +6,21 @@ import 'package:flutter/src/widgets/framework.dart';
 import 'package:page_transition/page_transition.dart';
 import 'package:ssc_market/NoUser/LoginAndRegister/Bottombar_lg.dart';
 
-class storeNouser extends StatefulWidget {
-  const storeNouser({Key? key}) : super(key: key);
+class infologin extends StatefulWidget {
+  const infologin({Key? key}) : super(key: key);
 
   @override
-  State<storeNouser> createState() => _storeNouserState();
+  State<infologin> createState() => _infologinState();
 }
 
-class _storeNouserState extends State<storeNouser> {
+class _infologinState extends State<infologin> {
   @override
   Widget build(BuildContext context) {
     return Scaffold(
       appBar: AppBar(
         elevation: 0,
-        automaticallyImplyLeading: false,
         title: Text(
-          'ຮ້ານຄ້າຂອງທ່ານ',
+          'ທ່ານຍັງບໍ່ທັນເຂົ້າສູ່ລະບົບ',
           style: TextStyle(fontWeight: FontWeight.bold),
         ),
         centerTitle: true,

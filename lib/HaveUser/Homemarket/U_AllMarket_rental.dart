@@ -1,20 +1,22 @@
 import 'package:flutter/material.dart';
 import 'package:page_transition/page_transition.dart';
-import 'package:ssc_market/NoUser/BottomBar.dart';
-import 'package:ssc_market/NoUser/Homemarket/AllMarket/Apparel.dart';
-import 'package:ssc_market/NoUser/Homemarket/AllMarket/Gold.dart';
-import 'package:ssc_market/NoUser/Homemarket/AllMarket/electrical.dart';
-import 'package:ssc_market/NoUser/Homemarket/AllMarket/food.dart';
-import 'package:ssc_market/NoUser/Homemarket/AllMarket/meat.dart';
+import 'package:ssc_market/HaveUser/Homemarket/AllMarket/U_Gold.dart';
+import 'package:ssc_market/HaveUser/Homemarket/AllMarket/U_electrical.dart';
+import 'package:ssc_market/HaveUser/Homemarket/AllMarket/U_food.dart';
+import 'package:ssc_market/HaveUser/Homemarket/AllMarket/U_meat.dart';
+import 'package:ssc_market/HaveUser/U_BottomBar.dart';
+import 'package:ssc_market/HaveUser/U_Home.dart';
 
-class allmarket extends StatefulWidget {
-  const allmarket({Key? key}) : super(key: key);
+import 'AllMarket/U_Apparel.dart';
+
+class u_allmarket extends StatefulWidget {
+  const u_allmarket({Key? key}) : super(key: key);
 
   @override
-  State<allmarket> createState() => _allmarketState();
+  State<u_allmarket> createState() => _u_allmarketState();
 }
 
-class _allmarketState extends State<allmarket> {
+class _u_allmarketState extends State<u_allmarket> {
   @override
   Widget build(BuildContext context) {
     return Scaffold(
@@ -25,7 +27,7 @@ class _allmarketState extends State<allmarket> {
         leading: IconButton(
           onPressed: () {
             Navigator.of(context).pushReplacement(PageTransition(
-                type: PageTransitionType.leftToRight, child: bottombar()));
+                type: PageTransitionType.leftToRight, child: u_bottombar()));
           },
           icon: Icon(Icons.cancel_rounded),
         ),
@@ -46,7 +48,7 @@ class _allmarketState extends State<allmarket> {
                 mainAxisAlignment: MainAxisAlignment.center,
                 children: [
                   Text(
-                    "ໂຊນຂາຍເຄື່ອງຂອງຕະຫຼາດ",
+                    "ເລືອກໂຊນຂາຍເຄື່ອງຂອງທ່ານ ( ການເຊົ່າ )",
                     style: TextStyle(fontSize: 20, color: Colors.grey),
                   ),
                   SizedBox(
@@ -60,7 +62,7 @@ class _allmarketState extends State<allmarket> {
                           onTap: () {
                             Navigator.of(context).push(PageTransition(
                                 type: PageTransitionType.rightToLeft,
-                                child: apparel()));
+                                child: u_apparel()));
                           },
                           child: Container(
                             padding: EdgeInsets.all(20),
@@ -105,7 +107,7 @@ class _allmarketState extends State<allmarket> {
                           onTap: () {
                             Navigator.of(context).push(PageTransition(
                                 type: PageTransitionType.rightToLeft,
-                                child: golds()));
+                                child: u_golds()));
                           },
                           child: Container(
                             padding: EdgeInsets.all(10),
@@ -151,7 +153,7 @@ class _allmarketState extends State<allmarket> {
                     onTap: () {
                       Navigator.of(context).push(PageTransition(
                           type: PageTransitionType.rightToLeft,
-                          child: electrical()));
+                          child: u_electrical()));
                     },
                     child: Container(
                       padding: EdgeInsets.all(25),
@@ -200,7 +202,7 @@ class _allmarketState extends State<allmarket> {
                         onTap: () {
                           Navigator.of(context).push(PageTransition(
                               type: PageTransitionType.rightToLeft,
-                              child: foods()));
+                              child: u_foods()));
                         },
                         child: Container(
                           padding: EdgeInsets.all(25),
@@ -243,7 +245,7 @@ class _allmarketState extends State<allmarket> {
                         onTap: () {
                           Navigator.of(context).push(PageTransition(
                               type: PageTransitionType.rightToLeft,
-                              child: meat()));
+                              child: u_meat()));
                         },
                         child: Container(
                           padding: EdgeInsets.all(25),

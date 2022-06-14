@@ -2,14 +2,14 @@ import 'package:flutter/material.dart';
 import 'package:page_transition/page_transition.dart';
 import 'package:ssc_market/NoUser/info_login.dart';
 
-class u_electrical extends StatefulWidget {
-  const u_electrical({Key? key}) : super(key: key);
+class u_electrical_bk extends StatefulWidget {
+  const u_electrical_bk({Key? key}) : super(key: key);
 
   @override
-  State<u_electrical> createState() => _electricalState();
+  State<u_electrical_bk> createState() => _electrical_bkState();
 }
 
-class _electricalState extends State<u_electrical> {
+class _electrical_bkState extends State<u_electrical_bk> {
   final String idroom = "APL02";
   final String status = "ບໍ່ວ່າງ";
   @override

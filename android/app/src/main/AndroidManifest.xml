@@ -1,7 +1,7 @@
 <manifest xmlns:android="http://schemas.android.com/apk/res/android"
     package="com.example.ssc_market">
    <application
-        android:label="ssc_market"
+        android:label="SOD Market"
         android:name="${applicationName}"
         android:icon="@mipmap/ic_launcher">
         <activity

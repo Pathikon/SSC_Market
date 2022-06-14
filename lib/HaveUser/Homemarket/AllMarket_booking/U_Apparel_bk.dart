@@ -1,24 +1,27 @@
 import 'package:flutter/material.dart';
 import 'package:page_transition/page_transition.dart';
+import 'package:ssc_market/HaveUser/Homemarket/Baibin_booking.dart';
+import 'package:ssc_market/HaveUser/Homemarket/Rental.dart';
+import 'package:ssc_market/HaveUser/Homemarket/processing.dart';
 import 'package:ssc_market/NoUser/info_login.dart';
 
-class u_electrical extends StatefulWidget {
-  const u_electrical({Key? key}) : super(key: key);
+class u_apparel_bk extends StatefulWidget {
+  const u_apparel_bk({Key? key}) : super(key: key);
 
   @override
-  State<u_electrical> createState() => _electricalState();
+  State<u_apparel_bk> createState() => _u_apparel_bkState();
 }
 
-class _electricalState extends State<u_electrical> {
-  final String idroom = "APL02";
-  final String status = "ບໍ່ວ່າງ";
+class _u_apparel_bkState extends State<u_apparel_bk> {
+  final String idroom = "APL01";
+  final String status = "ວ່າງ";
   @override
   Widget build(BuildContext context) {
     return Scaffold(
       appBar: AppBar(
         elevation: 0,
         centerTitle: true,
-        title: Text("ໂຊນເຄື່ອງໄຟຟ້າ ແລະ ຄົວເຮືອນ"),
+        title: Text("ໂຂນຂາຍເຄື່ອງນຸ່ງຮົ່ມ"),
         leading: IconButton(
           onPressed: () => Navigator.pop(context),
           icon: Icon(Icons.arrow_back_ios),
@@ -46,11 +49,20 @@ class _electricalState extends State<u_electrical> {
                               ontap: () {
                                 Navigator.of(context).push(PageTransition(
                                     type: PageTransitionType.rightToLeft,
-                                    child: infologin()));
+                                    child: processing()));
                               },
                             ),
                             cardk1(
-                              tital: idroom,
+                              tital: "APL02",
+                              status: status,
+                              ontap: () {
+                                Navigator.of(context).push(PageTransition(
+                                    type: PageTransitionType.rightToLeft,
+                                    child: baibin_booking()));
+                              },
+                            ),
+                            cardk1(
+                              tital: "APL03",
                               status: status,
                               ontap: () {
                                 Navigator.of(context).push(PageTransition(
@@ -59,7 +71,7 @@ class _electricalState extends State<u_electrical> {
                               },
                             ),
                             cardk1(
-                              tital: idroom,
+                              tital: "APL04",
                               status: status,
                               ontap: () {
                                 Navigator.of(context).push(PageTransition(
@@ -68,7 +80,7 @@ class _electricalState extends State<u_electrical> {
                               },
                             ),
                             cardk1(
-                              tital: idroom,
+                              tital: "APL05",
                               status: status,
                               ontap: () {
                                 Navigator.of(context).push(PageTransition(
@@ -77,7 +89,7 @@ class _electricalState extends State<u_electrical> {
                               },
                             ),
                             cardk1(
-                              tital: idroom,
+                              tital: "APL06",
                               status: status,
                               ontap: () {
                                 Navigator.of(context).push(PageTransition(
@@ -86,7 +98,7 @@ class _electricalState extends State<u_electrical> {
                               },
                             ),
                             cardk1(
-                              tital: idroom,
+                              tital: "APL07",
                               status: status,
                               ontap: () {
                                 Navigator.of(context).push(PageTransition(
@@ -95,7 +107,7 @@ class _electricalState extends State<u_electrical> {
                               },
                             ),
                             cardk1(
-                              tital: idroom,
+                              tital: "APL08",
                               status: status,
                               ontap: () {
                                 Navigator.of(context).push(PageTransition(
@@ -104,7 +116,34 @@ class _electricalState extends State<u_electrical> {
                               },
                             ),
                             cardk1(
-                              tital: idroom,
+                              tital: "APL09",
+                              status: status,
+                              ontap: () {
+                                Navigator.of(context).push(PageTransition(
+                                    type: PageTransitionType.rightToLeft,
+                                    child: infologin()));
+                              },
+                            ),
+                            cardk1(
+                              tital: "APL10",
+                              status: status,
+                              ontap: () {
+                                Navigator.of(context).push(PageTransition(
+                                    type: PageTransitionType.rightToLeft,
+                                    child: infologin()));
+                              },
+                            ),
+                            cardk1(
+                              tital: "APL11",
+                              status: status,
+                              ontap: () {
+                                Navigator.of(context).push(PageTransition(
+                                    type: PageTransitionType.rightToLeft,
+                                    child: infologin()));
+                              },
+                            ),
+                            cardk1(
+                              tital: "APL12",
                               status: status,
                               ontap: () {
                                 Navigator.of(context).push(PageTransition(
@@ -146,7 +185,7 @@ class cardk1 extends StatelessWidget {
           onTap: ontap,
           child: Container(
             decoration: BoxDecoration(
-              color: Color(0xff66E5E1),
+              color: Color(0xffFFE478),
               borderRadius: BorderRadius.circular(12),
             ),
             child: Center(

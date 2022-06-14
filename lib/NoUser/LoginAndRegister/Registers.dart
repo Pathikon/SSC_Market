@@ -164,8 +164,12 @@ class _registersState extends State<registers> {
                           width: 30,
                         ),
                         Container(
-                          color: Color.fromARGB(255, 221, 221, 221),
-                          width: 250,
+                          padding: EdgeInsets.all(5),
+                          decoration: BoxDecoration(
+                            borderRadius: BorderRadius.circular(12),
+                            color: Color.fromARGB(255, 221, 221, 221),
+                          ),
+                          width: 230,
                           child: DropdownButton<String>(
                             itemHeight: 60,
                             isExpanded: true,
@@ -211,8 +215,12 @@ class _registersState extends State<registers> {
                           width: 30,
                         ),
                         Container(
-                          color: Color.fromARGB(255, 221, 221, 221),
-                          width: 250,
+                          padding: EdgeInsets.all(5),
+                          decoration: BoxDecoration(
+                            borderRadius: BorderRadius.circular(12),
+                            color: Color.fromARGB(255, 221, 221, 221),
+                          ),
+                          width: 230,
                           child: DropdownButton<String>(
                             itemHeight: 60,
                             isExpanded: true,
@@ -248,8 +256,12 @@ class _registersState extends State<registers> {
                           width: 30,
                         ),
                         Container(
-                          color: Color.fromARGB(255, 221, 221, 221),
-                          width: 250,
+                          padding: EdgeInsets.all(5),
+                          decoration: BoxDecoration(
+                            borderRadius: BorderRadius.circular(12),
+                            color: Color.fromARGB(255, 221, 221, 221),
+                          ),
+                          width: 230,
                           child: DropdownButton<String>(
                             itemHeight: 60,
                             isExpanded: true,

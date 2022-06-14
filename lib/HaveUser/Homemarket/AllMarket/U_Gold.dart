@@ -16,6 +16,7 @@ class _u_goldsState extends State<u_golds> {
   Widget build(BuildContext context) {
     return Scaffold(
       appBar: AppBar(
+        elevation: 0,
         centerTitle: true,
         title: Text("ໂຊນຂາຍເຄື່ອງຂັບສິນມີຄ່າ"),
         leading: IconButton(
@@ -23,113 +24,117 @@ class _u_goldsState extends State<u_golds> {
           icon: Icon(Icons.arrow_back_ios),
         ),
       ),
-      body: SizedBox(
-        child: Stack(
-          children: <Widget>[
-            Container(
-              width: 320,
-              height: 350,
-              child: Center(
-                child: Padding(
-                  padding: EdgeInsets.all(15),
+      body: Center(
+        child: Container(
+          child: SizedBox(
+            child: Stack(
+              children: <Widget>[
+                Container(
+                  width: 320,
+                  height: 350,
                   child: Center(
-                    child: Container(
+                    child: Padding(
+                      padding: EdgeInsets.all(15),
                       child: Center(
-                        child: GridView.count(
-                          crossAxisCount: 3,
-                          crossAxisSpacing: 20,
-                          mainAxisSpacing: 20,
-                          children: <Widget>[
-                            cardk1(
-                              tital: idroom,
-                              status: status,
-                              ontap: () {
-                                Navigator.of(context).push(PageTransition(
-                                    type: PageTransitionType.rightToLeft,
-                                    child: infologin()));
-                              },
+                        child: Container(
+                          child: Center(
+                            child: GridView.count(
+                              crossAxisCount: 3,
+                              crossAxisSpacing: 20,
+                              mainAxisSpacing: 20,
+                              children: <Widget>[
+                                cardk1(
+                                  tital: idroom,
+                                  status: status,
+                                  ontap: () {
+                                    Navigator.of(context).push(PageTransition(
+                                        type: PageTransitionType.rightToLeft,
+                                        child: infologin()));
+                                  },
+                                ),
+                                cardk1(
+                                  tital: idroom,
+                                  status: status,
+                                  ontap: () {
+                                    Navigator.of(context).push(PageTransition(
+                                        type: PageTransitionType.rightToLeft,
+                                        child: infologin()));
+                                  },
+                                ),
+                                cardk1(
+                                  tital: idroom,
+                                  status: status,
+                                  ontap: () {
+                                    Navigator.of(context).push(PageTransition(
+                                        type: PageTransitionType.rightToLeft,
+                                        child: infologin()));
+                                  },
+                                ),
+                                cardk1(
+                                  tital: idroom,
+                                  status: status,
+                                  ontap: () {
+                                    Navigator.of(context).push(PageTransition(
+                                        type: PageTransitionType.rightToLeft,
+                                        child: infologin()));
+                                  },
+                                ),
+                                cardk1(
+                                  tital: idroom,
+                                  status: status,
+                                  ontap: () {
+                                    Navigator.of(context).push(PageTransition(
+                                        type: PageTransitionType.rightToLeft,
+                                        child: infologin()));
+                                  },
+                                ),
+                                cardk1(
+                                  tital: idroom,
+                                  status: status,
+                                  ontap: () {
+                                    Navigator.of(context).push(PageTransition(
+                                        type: PageTransitionType.rightToLeft,
+                                        child: infologin()));
+                                  },
+                                ),
+                                cardk1(
+                                  tital: idroom,
+                                  status: status,
+                                  ontap: () {
+                                    Navigator.of(context).push(PageTransition(
+                                        type: PageTransitionType.rightToLeft,
+                                        child: infologin()));
+                                  },
+                                ),
+                                cardk1(
+                                  tital: idroom,
+                                  status: status,
+                                  ontap: () {
+                                    Navigator.of(context).push(PageTransition(
+                                        type: PageTransitionType.rightToLeft,
+                                        child: infologin()));
+                                  },
+                                ),
+                                cardk1(
+                                  tital: idroom,
+                                  status: status,
+                                  ontap: () {
+                                    Navigator.of(context).push(PageTransition(
+                                        type: PageTransitionType.rightToLeft,
+                                        child: infologin()));
+                                  },
+                                ),
+                              ],
                             ),
-                            cardk1(
-                              tital: idroom,
-                              status: status,
-                              ontap: () {
-                                Navigator.of(context).push(PageTransition(
-                                    type: PageTransitionType.rightToLeft,
-                                    child: infologin()));
-                              },
-                            ),
-                            cardk1(
-                              tital: idroom,
-                              status: status,
-                              ontap: () {
-                                Navigator.of(context).push(PageTransition(
-                                    type: PageTransitionType.rightToLeft,
-                                    child: infologin()));
-                              },
-                            ),
-                            cardk1(
-                              tital: idroom,
-                              status: status,
-                              ontap: () {
-                                Navigator.of(context).push(PageTransition(
-                                    type: PageTransitionType.rightToLeft,
-                                    child: infologin()));
-                              },
-                            ),
-                            cardk1(
-                              tital: idroom,
-                              status: status,
-                              ontap: () {
-                                Navigator.of(context).push(PageTransition(
-                                    type: PageTransitionType.rightToLeft,
-                                    child: infologin()));
-                              },
-                            ),
-                            cardk1(
-                              tital: idroom,
-                              status: status,
-                              ontap: () {
-                                Navigator.of(context).push(PageTransition(
-                                    type: PageTransitionType.rightToLeft,
-                                    child: infologin()));
-                              },
-                            ),
-                            cardk1(
-                              tital: idroom,
-                              status: status,
-                              ontap: () {
-                                Navigator.of(context).push(PageTransition(
-                                    type: PageTransitionType.rightToLeft,
-                                    child: infologin()));
-                              },
-                            ),
-                            cardk1(
-                              tital: idroom,
-                              status: status,
-                              ontap: () {
-                                Navigator.of(context).push(PageTransition(
-                                    type: PageTransitionType.rightToLeft,
-                                    child: infologin()));
-                              },
-                            ),
-                            cardk1(
-                              tital: idroom,
-                              status: status,
-                              ontap: () {
-                                Navigator.of(context).push(PageTransition(
-                                    type: PageTransitionType.rightToLeft,
-                                    child: infologin()));
-                              },
-                            ),
-                          ],
+                          ),
                         ),
                       ),
                     ),
                   ),
                 ),
-              ),
+              ],
             ),
-          ],
+          ),
         ),
       ),
     );

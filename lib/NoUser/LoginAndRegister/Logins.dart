@@ -59,7 +59,7 @@ class _loginsState extends State<logins> {
                   Container(
                     child: Image.asset(
                       "assets/icons/logo.png",
-                      width: 180,
+                      width: 170,
                     ),
                   ),
                   Divider(

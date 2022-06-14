@@ -2,14 +2,14 @@ import 'package:flutter/material.dart';
 import 'package:page_transition/page_transition.dart';
 import 'package:ssc_market/NoUser/info_login.dart';
 
-class u_foods extends StatefulWidget {
-  const u_foods({Key? key}) : super(key: key);
+class u_meat_bk extends StatefulWidget {
+  const u_meat_bk({Key? key}) : super(key: key);
 
   @override
-  State<u_foods> createState() => _u_foodsState();
+  State<u_meat_bk> createState() => _u_meat_bkState();
 }
 
-class _u_foodsState extends State<u_foods> {
+class _u_meat_bkState extends State<u_meat_bk> {
   final String idroom = "APL02";
   final String status = "ບໍ່ວ່າງ";
   @override
@@ -18,7 +18,7 @@ class _u_foodsState extends State<u_foods> {
       appBar: AppBar(
         elevation: 0,
         centerTitle: true,
-        title: Text("ໂຊນຂາຍເຄື່ອງບໍລິໂພກ"),
+        title: Text("ໂຊນຂາຍເຄື່ອງຂອງສົດ"),
         leading: IconButton(
           onPressed: () => Navigator.pop(context),
           icon: Icon(Icons.arrow_back_ios),
@@ -160,7 +160,7 @@ class cardk1 extends StatelessWidget {
           onTap: ontap,
           child: Container(
             decoration: BoxDecoration(
-              color: Color(0xff66E56B),
+              color: Color(0xffFF8161),
               borderRadius: BorderRadius.circular(12),
             ),
             child: Center(
@@ -171,13 +171,15 @@ class cardk1 extends StatelessWidget {
                     textAlign: TextAlign.center,
                     style: TextStyle(
                         color: Color.fromARGB(255, 77, 77, 77),
-                        fontSize: 20,
+                        fontSize: 19,
                         fontWeight: FontWeight.bold),
                   ),
                   Text(
                     status,
                     textAlign: TextAlign.center,
-                    style: TextStyle(color: Colors.grey, fontSize: 20),
+                    style: TextStyle(
+                        color: Color.fromARGB(255, 255, 255, 255),
+                        fontSize: 17),
                   ),
                 ],
               ),

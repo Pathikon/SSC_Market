@@ -8,6 +8,7 @@ import 'package:flutter/src/foundation/key.dart';
 import 'package:flutter/src/widgets/framework.dart';
 import 'package:page_transition/page_transition.dart';
 import 'package:ssc_market/HaveUser/Homemarket/Tor_Vela_rental.dart';
+import 'package:ssc_market/NoUser/BottomBar.dart';
 
 class u_store extends StatefulWidget {
   const u_store({Key? key}) : super(key: key);
@@ -77,7 +78,7 @@ class _u_storeState extends State<u_store> {
                         ]),
                       ),
                       Container(
-                        width: 240,
+                        width: 200,
                         padding: EdgeInsets.all(10),
                         decoration: BoxDecoration(
                           borderRadius: BorderRadius.circular(10),
@@ -89,18 +90,18 @@ class _u_storeState extends State<u_store> {
                             Container(
                               child: Text(
                                 "ປາທິກອນ ພົມມະສານ",
-                                style: TextStyle(fontSize: 20),
+                                style: TextStyle(fontSize: 17),
                               ),
                             ),
                             Divider(),
                             Container(
                               child: Text("ຮ້ານຂາຍເສື້ອຜ້າທົ່ວໄປ",
-                                  style: TextStyle(fontSize: 18)),
+                                  style: TextStyle(fontSize: 15)),
                             ),
                             Divider(),
                             Container(
                               child: Text("020 97625343",
-                                  style: TextStyle(fontSize: 18)),
+                                  style: TextStyle(fontSize: 15)),
                             ),
                           ],
                         ),
@@ -235,16 +236,33 @@ class _u_storeState extends State<u_store> {
                             title: Text(
                               'ທ່ານຕ້ອງການອອກຈາກລະບົບແທ້ຫຼືບໍ່?',
                               textAlign: TextAlign.center,
+                              style: TextStyle(fontSize: 14),
                             ),
                             actions: <Widget>[
-                              TextButton(
-                                onPressed: () =>
-                                    Navigator.pop(context, 'Cancel'),
-                                child: const Text('ຍົກເລີກ'),
-                              ),
-                              TextButton(
-                                onPressed: () => Navigator.pop(context, 'OK'),
-                                child: const Text('ອອກຈາກລະບົບ'),
+                              Row(
+                                mainAxisAlignment:
+                                    MainAxisAlignment.spaceBetween,
+                                children: [
+                                  Container(
+                                    width: 130,
+                                    child: TextButton(
+                                      onPressed: () =>
+                                          Navigator.pop(context, 'Cancel'),
+                                      child: const Text(
+                                        'ຍົກເລີກ',
+                                        style: TextStyle(fontSize: 16),
+                                      ),
+                                    ),
+                                  ),
+                                  Container(
+                                    width: 130,
+                                    child: TextButton(
+                                      onPressed: () => null,
+                                      child: const Text('ອອກຈາກລະບົບ',
+                                          style: TextStyle(fontSize: 16)),
+                                    ),
+                                  ),
+                                ],
                               ),
                             ],
                           ),
@@ -283,7 +301,7 @@ class dateline extends StatelessWidget {
             child: Icon(
               icons,
               color: Color.fromARGB(255, 207, 187, 0),
-              size: 45,
+              size: 42,
             ),
           ),
           SizedBox(
@@ -300,7 +318,7 @@ class dateline extends StatelessWidget {
                 Text(
                   dates,
                   style: TextStyle(
-                      fontSize: 20, color: Color.fromARGB(255, 207, 187, 0)),
+                      fontSize: 18, color: Color.fromARGB(255, 207, 187, 0)),
                 ),
               ],
             ),

@@ -38,7 +38,7 @@ dependencies:
   form_field_validator: ^1.1.0
   image_picker: ^0.8.5+3
   currency_formatter: ^1.2.1
-  
+  animated_splash_screen: ^1.2.0
  
 
 

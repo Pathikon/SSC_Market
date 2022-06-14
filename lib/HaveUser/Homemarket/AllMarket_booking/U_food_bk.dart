@@ -2,14 +2,14 @@ import 'package:flutter/material.dart';
 import 'package:page_transition/page_transition.dart';
 import 'package:ssc_market/NoUser/info_login.dart';
 
-class u_foods extends StatefulWidget {
-  const u_foods({Key? key}) : super(key: key);
+class u_foods_bk extends StatefulWidget {
+  const u_foods_bk({Key? key}) : super(key: key);
 
   @override
-  State<u_foods> createState() => _u_foodsState();
+  State<u_foods_bk> createState() => _u_foods_bkState();
 }
 
-class _u_foodsState extends State<u_foods> {
+class _u_foods_bkState extends State<u_foods_bk> {
   final String idroom = "APL02";
   final String status = "ບໍ່ວ່າງ";
   @override

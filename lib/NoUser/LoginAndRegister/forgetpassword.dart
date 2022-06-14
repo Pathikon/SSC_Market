@@ -16,6 +16,7 @@ class _forgetpasswordState extends State<forgetpassword> {
   Widget build(BuildContext context) {
     return Scaffold(
       appBar: AppBar(
+        elevation: 0,
         centerTitle: true,
         title: Text("ປ່ຽນລະຫັດຜ່ານໃໝ່"),
         leading: IconButton(

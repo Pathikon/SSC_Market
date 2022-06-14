@@ -5,6 +5,7 @@ import 'package:ssc_market/HaveUser/U_BottomBar.dart';
 import 'package:ssc_market/NoUser/Homemarket/AllMarket.dart';
 import 'package:ssc_market/NoUser/Homepage/Staff.dart';
 import 'package:ssc_market/NoUser/Homepage/about_bookingAndRental.dart';
+import 'package:ssc_market/splash.dart';
 
 class home extends StatefulWidget {
   const home({Key? key}) : super(key: key);
@@ -63,7 +64,7 @@ class _homeState extends State<home> {
                   "ຕະຫຼາດແສນອຸດົມ (ຫຼັກ20) ຍິນດີຕ້ອນຮັບ",
                   style: TextStyle(
                       color: Colors.white,
-                      fontSize: 22,
+                      fontSize: 19,
                       fontWeight: FontWeight.bold),
                 ),
                 Container(
@@ -100,7 +101,7 @@ class _homeState extends State<home> {
                         oks: () {
                           Navigator.of(context).push(PageTransition(
                               type: PageTransitionType.rightToLeft,
-                              child: about_bkAndRen()));
+                              child: splashs()));
                         },
                       ),
                     ],
@@ -149,13 +150,13 @@ class MenuCard extends StatelessWidget {
             Spacer(),
             Image.asset(
               pics,
-              width: 100,
-              height: 100,
+              width: 95,
+              height: 95,
             ),
             Spacer(),
             Text(
               titals,
-              style: TextStyle(fontSize: 18),
+              style: TextStyle(fontSize: 17),
             ),
             Spacer()
           ]),
