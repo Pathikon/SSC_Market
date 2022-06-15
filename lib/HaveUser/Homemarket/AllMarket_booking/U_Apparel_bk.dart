@@ -2,6 +2,7 @@ import 'package:flutter/material.dart';
 import 'package:page_transition/page_transition.dart';
 import 'package:ssc_market/HaveUser/Homemarket/Baibin_booking.dart';
 import 'package:ssc_market/HaveUser/Homemarket/Rental.dart';
+import 'package:ssc_market/HaveUser/Homemarket/jbooking.dart';
 import 'package:ssc_market/HaveUser/Homemarket/processing.dart';
 import 'package:ssc_market/NoUser/info_login.dart';
 
@@ -49,7 +50,7 @@ class _u_apparel_bkState extends State<u_apparel_bk> {
                               ontap: () {
                                 Navigator.of(context).push(PageTransition(
                                     type: PageTransitionType.rightToLeft,
-                                    child: processing()));
+                                    child: bookings()));
                               },
                             ),
                             cardk1(

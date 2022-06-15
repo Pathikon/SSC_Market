@@ -1,6 +1,7 @@
 import 'package:flutter/material.dart';
 import 'package:page_transition/page_transition.dart';
 import 'package:ssc_market/HaveUser/Homemarket/Baibin_booking.dart';
+import 'package:ssc_market/HaveUser/Homemarket/processing.dart';
 
 class bookings extends StatefulWidget {
   const bookings({Key? key}) : super(key: key);
@@ -35,11 +36,11 @@ class _bookingsState extends State<bookings> {
             padding: EdgeInsets.all(10),
             width: double.infinity,
             decoration: BoxDecoration(
-                borderRadius: BorderRadius.only(
-                  topLeft: Radius.circular(20),
-                  topRight: Radius.circular(20),
-                ),
-               ),
+              borderRadius: BorderRadius.only(
+                topLeft: Radius.circular(20),
+                topRight: Radius.circular(20),
+              ),
+            ),
             child: Column(
               children: [
                 boxtxt(
@@ -216,7 +217,7 @@ class _bookingsState extends State<bookings> {
                       Divider(
                         height: 10,
                       ),
-                       Container(
+                      Container(
                         padding: EdgeInsets.all(15),
                         color: Colors.black12,
                         width: 250,
@@ -235,11 +236,12 @@ class _bookingsState extends State<bookings> {
         child: InkWell(
           onTap: () {
             Navigator.of(context).push(PageTransition(
-                type: PageTransitionType.rightToLeft, child: baibin_booking()));
+                type: PageTransitionType.rightToLeft, child: processing()));
           },
           child: Container(
-            decoration: BoxDecoration(color: Color.fromARGB(255, 49, 128, 51),),
-            
+            decoration: BoxDecoration(
+              color: Color.fromARGB(255, 49, 128, 51),
+            ),
             height: 55,
             child: Row(
               mainAxisAlignment: MainAxisAlignment.center,

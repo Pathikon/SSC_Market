@@ -2,6 +2,7 @@ import 'package:flutter/material.dart';
 import 'package:flutter/src/foundation/key.dart';
 import 'package:flutter/src/widgets/framework.dart';
 import 'package:page_transition/page_transition.dart';
+import 'package:intl/intl.dart';
 
 class tor_vela extends StatefulWidget {
   const tor_vela({Key? key}) : super(key: key);
@@ -22,6 +23,9 @@ class _tor_velaState extends State<tor_vela> {
   ];
   var datetime = "500.000 ກີບ/ເດືອນ";
   var perzen = "";
+  var velaLuea = 356;
+  var duean = null;
+  var Newday = null;
 
   String dropdownvalue = "1 ເດືອນ";
   @override
@@ -53,11 +57,14 @@ class _tor_velaState extends State<tor_vela> {
               Divider(
                 height: 10,
               ),
+              SizedBox(
+                height: 10,
+              ),
               Row(
                 mainAxisAlignment: MainAxisAlignment.center,
                 children: [
                   Container(
-                    width: 170,
+                    width: 150,
                     padding: EdgeInsets.all(10),
                     decoration: BoxDecoration(
                         color: Color.fromARGB(255, 255, 247, 175),
@@ -69,21 +76,21 @@ class _tor_velaState extends State<tor_vela> {
                       children: [
                         Text(
                           "ລະຫັດຫ້ອງ : ",
-                          style: TextStyle(color: Colors.green, fontSize: 18),
+                          style: TextStyle(color: Colors.green, fontSize: 16),
                         ),
                         Text("APL01",
-                            style: TextStyle(color: Colors.grey, fontSize: 18))
+                            style: TextStyle(color: Colors.grey, fontSize: 16))
                       ],
                     ),
                   ),
                   Divider(
-                    height: 5,
+                    height: 10,
                   ),
                   SizedBox(
                     width: 10,
                   ),
                   Container(
-                    width: 190,
+                    width: 170,
                     padding: EdgeInsets.all(10),
                     decoration: BoxDecoration(
                         color: Color.fromARGB(255, 255, 247, 175),
@@ -95,12 +102,12 @@ class _tor_velaState extends State<tor_vela> {
                       children: [
                         Text(
                           "ເວລາທີ່ຍັງເຫຼືອ : ",
-                          style: TextStyle(color: Colors.green, fontSize: 17),
+                          style: TextStyle(color: Colors.green, fontSize: 16),
                         ),
-                        Text("356",
-                            style: TextStyle(color: Colors.grey, fontSize: 18)),
+                        Text(velaLuea.toString(),
+                            style: TextStyle(color: Colors.grey, fontSize: 17)),
                         Text(" ມື້",
-                            style: TextStyle(color: Colors.green, fontSize: 17))
+                            style: TextStyle(color: Colors.green, fontSize: 16))
                       ],
                     ),
                   ),
@@ -110,7 +117,10 @@ class _tor_velaState extends State<tor_vela> {
                 height: 10,
               ),
               Divider(
-                height: 5,
+                height: 10,
+              ),
+              SizedBox(
+                height: 10,
               ),
               Container(
                 child: Row(
@@ -125,8 +135,11 @@ class _tor_velaState extends State<tor_vela> {
                   ],
                 ),
               ),
+              SizedBox(
+                height: 10,
+              ),
               Divider(
-                height: 5,
+                height: 10,
               ),
               SizedBox(
                 height: 10,
@@ -159,8 +172,39 @@ class _tor_velaState extends State<tor_vela> {
                   ],
                 ),
               ),
+              SizedBox(
+                height: 10,
+              ),
               Divider(
-                height: 5,
+                height: 10,
+              ),
+              Container(
+                child: Row(
+                  mainAxisAlignment: MainAxisAlignment.spaceBetween,
+                  children: [
+                    Container(
+                      child: Text(
+                        "ຕໍ່ເວລາທັງໝົດ + ເວລາເກົ່າ ",
+                        style: TextStyle(fontSize: 18, color: Colors.green),
+                      ),
+                    ),
+                    SizedBox(
+                      width: 10,
+                    ),
+                    Container(
+                      child: Text(
+                        Newday.toString(),
+                        style: TextStyle(color: Colors.blueGrey, fontSize: 20),
+                      ),
+                    ),
+                    Container(
+                      child: Text(
+                        " ວັນ ",
+                        style: TextStyle(color: Colors.green, fontSize: 20),
+                      ),
+                    ),
+                  ],
+                ),
               ),
             ],
           ),
@@ -222,6 +266,92 @@ class _tor_velaState extends State<tor_vela> {
         onChanged: (String? newValue) {
           setState(() {
             dropdownvalue = newValue!;
+            if (dropdownvalue == '1 ເດືອນ') {
+              setState(() {
+                datetime = "500.000 ກີບ/ເດືອນ";
+                perzen = "";
+                duean = 30;
+                Newday = velaLuea + duean;
+              });
+            } else if (dropdownvalue == '3 ເດືອນ') {
+              setState(() {
+                var data = ((500 * 3) / 100) * 5;
+                var all = (500 * 3) - data;
+                datetime = NumberFormat.currency(
+                            locale: 'id', symbol: '', decimalDigits: 0)
+                        .format(all)
+                        .toString() +
+                    ".000 ກີບ";
+                perzen = "ຫຼຸດ 5%";
+                duean = 30 * 3;
+                Newday = velaLuea + duean;
+              });
+            } else if (dropdownvalue == '6 ເດືອນ') {
+              setState(() {
+                var data = ((500 * 6) / 100) * 10;
+                var all = (500 * 6) - data;
+                datetime = NumberFormat.currency(
+                            locale: 'id', symbol: '', decimalDigits: 0)
+                        .format(all)
+                        .toString() +
+                    ".000 ກີບ";
+                perzen = "ຫຼຸດ 10%";
+                duean = 30 * 6;
+                Newday = velaLuea + duean;
+              });
+            } else if (dropdownvalue == '9 ເດືອນ') {
+              setState(() {
+                var data = ((500 * 9) / 100) * 15;
+                var all = (500 * 9) - data;
+                datetime = NumberFormat.currency(
+                            locale: 'id', symbol: '', decimalDigits: 0)
+                        .format(all)
+                        .toString() +
+                    ".000 ກີບ";
+                perzen = "ຫຼຸດ 15%";
+                duean = 30 * 9;
+                Newday = velaLuea + duean;
+              });
+            } else if (dropdownvalue == '1 ປີ') {
+              setState(() {
+                var data = ((500 * 12) / 100) * 20;
+                var all = (500 * 12) - data;
+                datetime = NumberFormat.currency(
+                            locale: 'id', symbol: '', decimalDigits: 0)
+                        .format(all)
+                        .toString() +
+                    ".000 ກີບ";
+                perzen = "ຫຼຸດ 20%";
+                duean = 30 * 12;
+                Newday = velaLuea + duean;
+              });
+            } else if (dropdownvalue == '3 ປີ') {
+              setState(() {
+                var data = ((500 * 36) / 100) * 25;
+                var all = (500 * 36) - data;
+                datetime = NumberFormat.currency(
+                            locale: 'id', symbol: '', decimalDigits: 0)
+                        .format(all)
+                        .toString() +
+                    ".000 ກີບ";
+                perzen = "ຫຼຸດ 25%";
+                duean = 30 * 36;
+                Newday = velaLuea + duean;
+              });
+            } else if (dropdownvalue == '5 ປີ') {
+              setState(() {
+                var data = ((500 * 60) / 100) * 30;
+                var all = (500 * 60) - data;
+                datetime = NumberFormat.currency(
+                            locale: 'id', symbol: '', decimalDigits: 0)
+                        .format(all)
+                        .toString() +
+                    ".000 ກີບ";
+                perzen = "ຫຼຸດ 30%";
+                duean = 30 * 60;
+                Newday = velaLuea + duean;
+              });
+            }
           });
         },
       ),

@@ -2,7 +2,7 @@ import 'package:flutter/material.dart';
 import 'package:page_transition/page_transition.dart';
 import 'package:ssc_market/HaveUser/Homemarket/Baibin_booking.dart';
 import 'package:intl/intl.dart';
-import 'package:ssc_market/HaveUser/Homemarket/Baibin_rental.dart';
+
 import 'package:ssc_market/HaveUser/Homemarket/processing.dart';
 
 class rentals extends StatefulWidget {
@@ -311,9 +311,7 @@ class _rentalsState extends State<rentals> {
                             setState(() {
                               dropdownmoney = newValue!;
                               if (dropdownmoney == '1 ເດືອນ') {
-                                setState(() {
-                                
-                                });
+                                setState(() {});
                               }
                             });
                           },
@@ -349,7 +347,7 @@ class _rentalsState extends State<rentals> {
                         height: 10,
                       ),
                       InkWell(
-                        onTap: (){},
+                        onTap: () {},
                         child: Container(
                           padding: EdgeInsets.all(15),
                           color: Colors.black12,
