@@ -83,7 +83,7 @@ class _HomeappState extends State<bottombar_lg> {
                               currentTab == 1 ? Colors.white : Colors.white54,
                         ),
                         Text(
-                          "ສ້າງບັນຊີຜູ້ໃຊ້",
+                          "ລົງທະບຽນ",
                           style: TextStyle(
                               fontWeight: FontWeight.bold,
                               color: currentTab == 1

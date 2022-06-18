@@ -37,11 +37,7 @@ class _splashsState extends State<splashs> {
             SizedBox(
               height: 20,
             ),
-            Container(
-              child: CircularProgressIndicator(
-                strokeWidth: 3,
-              ),
-            )
+           
           ],
         ),
       ),

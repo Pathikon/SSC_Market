@@ -34,122 +34,136 @@ class _otherState extends State<other> {
             ),
             centerTitle: true,
           ),
-          body: SingleChildScrollView(
-            child: Column(
-              children: [
-                SizedBox(
-                  height: 20,
+          body: Container(
+            color: Colors.green,
+            child: Container(
+              height: double.infinity,
+              decoration: BoxDecoration(
+                  borderRadius: BorderRadius.only(
+                    topLeft: Radius.circular(20),
+                    topRight: Radius.circular(20),
+                  ),
+                  color: Colors.white),
+              child: SingleChildScrollView(
+                child: Container(
+                  child: Column(
+                    children: [
+                      SizedBox(
+                        height: 20,
+                      ),
+                      Image.asset(
+                        'assets/icons/logo.png',
+                        height: 120,
+                      ),
+                      SizedBox(
+                        height: 20,
+                      ),
+                      Divider(
+                        height: 20,
+                      ),
+                      ProfileMenu(
+                        icon: Icon(
+                          Icons.account_circle_outlined,
+                          color: Colors.black45,
+                          size: 30,
+                        ),
+                        text: Text(
+                          "   ຈັດການບັນຊີຂອງຂ້ອຍ",
+                          style: TextStyle(
+                              fontSize: 18,
+                              color: Colors.black45,
+                              fontWeight: FontWeight.bold),
+                        ),
+                        press: () {
+                          Navigator.of(context).push(PageTransition(
+                              type: PageTransitionType.rightToLeft,
+                              child: infologin()));
+                        },
+                      ),
+                      Divider(),
+                      ProfileMenu(
+                        icon: Icon(
+                          Icons.description_outlined,
+                          color: Colors.black45,
+                          size: 30,
+                        ),
+                        text: Text(
+                          "   ເງື່ອນໄຂ ແລະ ຂໍ້ກຳນົດ",
+                          style: TextStyle(
+                              fontSize: 18,
+                              color: Colors.black45,
+                              fontWeight: FontWeight.bold),
+                        ),
+                        press: () {
+                          Navigator.of(context).push(PageTransition(
+                              type: PageTransitionType.rightToLeft,
+                              child: condition()));
+                        },
+                      ),
+                      Divider(),
+                      ProfileMenu(
+                        icon: Icon(
+                          Icons.phone_android,
+                          color: Colors.black45,
+                          size: 30,
+                        ),
+                        text: Text(
+                          "   ຂໍ້ມູນຕິດຕໍ່່ & ສອບຖາມພະນັກງານ",
+                          style: TextStyle(
+                              fontSize: 18,
+                              color: Colors.black45,
+                              fontWeight: FontWeight.bold),
+                        ),
+                        press: () {
+                          Navigator.of(context).push(PageTransition(
+                              type: PageTransitionType.rightToLeft,
+                              child: staffall()));
+                        },
+                      ),
+                      Divider(),
+                      ProfileMenu(
+                        icon: Icon(
+                          Icons.settings,
+                          color: Colors.black45,
+                          size: 30,
+                        ),
+                        text: Text(
+                          "   ການຕັ້ງຄ່າ",
+                          style: TextStyle(
+                              fontSize: 18,
+                              color: Colors.black45,
+                              fontWeight: FontWeight.bold),
+                        ),
+                        press: () {
+                          Navigator.of(context).push(PageTransition(
+                              type: PageTransitionType.rightToLeft,
+                              child: settings()));
+                        },
+                      ),
+                      Divider(),
+                      ProfileMenu(
+                        icon: Icon(
+                          Icons.info_outline,
+                          color: Colors.black45,
+                          size: 30,
+                        ),
+                        text: Text(
+                          "   ກ່ຽວກັບແອັບພິເຄຊັ່ນ ແລະ ຜູ້ພັດທະນາ",
+                          style: TextStyle(
+                              fontSize: 18,
+                              color: Colors.black45,
+                              fontWeight: FontWeight.bold),
+                        ),
+                        press: () {
+                          Navigator.of(context).push(PageTransition(
+                              type: PageTransitionType.rightToLeft,
+                              child: aboutappAndcreator()));
+                        },
+                      ),
+                    ],
+                  ),
                 ),
-                Image.asset(
-                  'assets/icons/logo.png',
-                  height: 120,
-                ),
-                SizedBox(
-                  height: 20,
-                ),
-                Divider(
-                  height: 20,
-                ),
-                ProfileMenu(
-                  icon: Icon(
-                    Icons.account_circle_outlined,
-                    color: Colors.black45,
-                    size: 30,
-                  ),
-                  text: Text(
-                    "   ຈັດການບັນຊີຂອງຂ້ອຍ",
-                    style: TextStyle(
-                        fontSize: 18,
-                        color: Colors.black45,
-                        fontWeight: FontWeight.bold),
-                  ),
-                  press: () {
-                    Navigator.of(context).push(PageTransition(
-                        type: PageTransitionType.rightToLeft,
-                        child: infologin()));
-                  },
-                ),
-                Divider(),
-                ProfileMenu(
-                  icon: Icon(
-                    Icons.description_outlined,
-                    color: Colors.black45,
-                    size: 30,
-                  ),
-                  text: Text(
-                    "   ເງື່ອນໄຂ ແລະ ຂໍ້ກຳນົດ",
-                    style: TextStyle(
-                        fontSize: 18,
-                        color: Colors.black45,
-                        fontWeight: FontWeight.bold),
-                  ),
-                  press: () {
-                    Navigator.of(context).push(PageTransition(
-                        type: PageTransitionType.rightToLeft,
-                        child: condition()));
-                  },
-                ),
-                Divider(),
-                ProfileMenu(
-                  icon: Icon(
-                    Icons.phone_android,
-                    color: Colors.black45,
-                    size: 30,
-                  ),
-                  text: Text(
-                    "   ຂໍ້ມູນຕິດຕໍ່່ & ສອບຖາມພະນັກງານ",
-                    style: TextStyle(
-                        fontSize: 18,
-                        color: Colors.black45,
-                        fontWeight: FontWeight.bold),
-                  ),
-                  press: () {
-                    Navigator.of(context).push(PageTransition(
-                        type: PageTransitionType.rightToLeft,
-                        child: staffall()));
-                  },
-                ),
-                Divider(),
-                ProfileMenu(
-                  icon: Icon(
-                    Icons.settings,
-                    color: Colors.black45,
-                    size: 30,
-                  ),
-                  text: Text(
-                    "   ການຕັ້ງຄ່າ",
-                    style: TextStyle(
-                        fontSize: 18,
-                        color: Colors.black45,
-                        fontWeight: FontWeight.bold),
-                  ),
-                  press: () {
-                    Navigator.of(context).push(PageTransition(
-                        type: PageTransitionType.rightToLeft,
-                        child: settings()));
-                  },
-                ),
-                Divider(),
-                ProfileMenu(
-                  icon: Icon(
-                    Icons.info_outline,
-                    color: Colors.black45,
-                    size: 30,
-                  ),
-                  text: Text(
-                    "   ກ່ຽວກັບແອັບພິເຄຊັ່ນ ແລະ ຜູ້ພັດທະນາ",
-                    style: TextStyle(
-                        fontSize: 18,
-                        color: Colors.black45,
-                        fontWeight: FontWeight.bold),
-                  ),
-                  press: () {
-                    Navigator.of(context).push(PageTransition(
-                        type: PageTransitionType.rightToLeft,
-                        child: aboutappAndcreator()));
-                  },
-                ),
-              ],
+              ),
             ),
           )),
       onWillPop: () async {

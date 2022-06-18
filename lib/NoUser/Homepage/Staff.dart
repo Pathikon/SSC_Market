@@ -21,35 +21,49 @@ class _staffallState extends State<staffall> {
         ),
         centerTitle: true,
       ),
-      body: SingleChildScrollView(
-        padding: EdgeInsets.all(20),
-        child: Column(
-          children: [
-            stewards(
-              pic: "assets/icons/steward.png",
-              name: "ທ້າວ ປາທິກອນ ພົມມະສານ",
-              position: "ຕຳແໜ່ງ ພະນັກງານຈັດສັນ",
-              tel: "+85620 97625343",
+      body: Container(
+        color: Colors.green,
+        child: Container(
+          height: double.infinity,
+          decoration: BoxDecoration(
+              borderRadius: BorderRadius.only(
+                topLeft: Radius.circular(20),
+                topRight: Radius.circular(20),
+              ),
+              color: Colors.white),
+          child: SingleChildScrollView(
+            child: Container(
+              padding: EdgeInsets.all(20),
+              child: Column(
+                children: [
+                  stewards(
+                    pic: "assets/images/pelou.jpg",
+                    name: "ທ້າວ ປາທິກອນ ພົມມະສານ",
+                    position: "ຕຳແໜ່ງ ພະນັກງານຈັດສັນ",
+                    tel: "+85620 97625343",
+                  ),
+                  SizedBox(
+                    height: 15,
+                  ),
+                  stewards(
+                    pic: "assets/images/viseth.jpg",
+                    name: "ທ້າວ ວິເສດ ຄຳສຸກຖາວົງ",
+                    position: "ຕຳແໜ່ງ ພະນັກງານຈັດສັນ",
+                    tel: "+85620 93039850",
+                  ),
+                  SizedBox(
+                    height: 15,
+                  ),
+                  stewards(
+                    pic: "assets/images/aek.jpg",
+                    name: "ທ້າວ ຈີລະຍຸ ວົງສິລິ",
+                    position: "ຕຳແໜ່ງ ພະນັກງານຈັດສັນ",
+                    tel: "+85620 96218527",
+                  ),
+                ],
+              ),
             ),
-            SizedBox(
-              height: 15,
-            ),
-            stewards(
-              pic: "assets/icons/steward.png",
-              name: "ທ້າວ ວິເສດ ຄຳສຸກຖາວົງ",
-              position: "ຕຳແໜ່ງ ພະນັກງານຈັດສັນ",
-              tel: "+85620 93039850",
-            ),
-            SizedBox(
-              height: 15,
-            ),
-            stewards(
-              pic: "assets/icons/steward.png",
-              name: "ທ້າວ ຈີລະຍຸ ວົງສິລິ",
-              position: "ຕຳແໜ່ງ ພະນັກງານຈັດສັນ",
-              tel: "+85620 96218527",
-            ),
-          ],
+          ),
         ),
       ),
     );
@@ -74,7 +88,8 @@ class stewards extends StatelessWidget {
     return Container(
       height: 120,
       decoration: BoxDecoration(
-          borderRadius: BorderRadius.circular(20), color: Colors.green),
+          borderRadius: BorderRadius.circular(20),
+          color: Color.fromARGB(255, 240, 240, 240)),
       child: Row(
         children: [
           Padding(padding: EdgeInsets.all(10)),
@@ -82,9 +97,14 @@ class stewards extends StatelessWidget {
             width: 100,
             height: 100,
             decoration: BoxDecoration(
-                borderRadius: BorderRadius.circular(50), color: Colors.white),
-            child: Image.asset(
-              pic,
+                borderRadius: BorderRadius.circular(50), color: Colors.green),
+            child: ClipRRect(
+              borderRadius: BorderRadius.circular(600),
+              child: Image.asset(
+                pic,
+                width: 100,
+                height: 100,
+              ),
             ),
           ),
           Container(
@@ -95,21 +115,19 @@ class stewards extends StatelessWidget {
                 SizedBox(
                   child: Text(
                     name,
-                    style: TextStyle(color: Colors.white, fontSize: 18),
+                    style: TextStyle(color: Colors.green, fontSize: 18),
                   ),
                 ),
                 SizedBox(
                   child: Text(
                     position,
-                    style: TextStyle(
-                        color: Color.fromARGB(255, 212, 212, 212),
-                        fontSize: 16),
+                    style: TextStyle(color: Colors.grey, fontSize: 16),
                   ),
                 ),
                 SizedBox(
                   child: Text(
                     tel,
-                    style: TextStyle(color: Colors.white, fontSize: 18),
+                    style: TextStyle(color: Colors.grey, fontSize: 18),
                   ),
                 ),
               ],

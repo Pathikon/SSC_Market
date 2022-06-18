@@ -21,81 +21,92 @@ class _aboutappAndcreatorState extends State<aboutappAndcreator> {
         ),
         centerTitle: true,
       ),
-      body: SingleChildScrollView(
-          padding: EdgeInsets.all(20),
-          child: Center(
-            child: Column(
-              children: [
-                Container(
-                  padding: EdgeInsets.all(15),
-                  child: Text(
-                    "ແອັບພິເຄຊັ່ນ",
-                    textAlign: TextAlign.center,
-                    style: TextStyle(
-                        color: Colors.green,
-                        fontSize: 22,
-                        fontWeight: FontWeight.bold),
-                  ),
+      body: Container(
+        color: Colors.green,
+        child: Container(
+          decoration: BoxDecoration(
+              borderRadius: BorderRadius.only(
+                topLeft: Radius.circular(20),
+                topRight: Radius.circular(20),
+              ),
+              color: Colors.white),
+          child: SingleChildScrollView(
+              padding: EdgeInsets.all(20),
+              child: Center(
+                child: Column(
+                  children: [
+                    Container(
+                      padding: EdgeInsets.all(15),
+                      child: Text(
+                        "ແອັບພິເຄຊັ່ນ",
+                        textAlign: TextAlign.center,
+                        style: TextStyle(
+                            color: Colors.green,
+                            fontSize: 22,
+                            fontWeight: FontWeight.bold),
+                      ),
+                    ),
+                    Container(
+                      padding: EdgeInsets.all(20),
+                      decoration: BoxDecoration(
+                        borderRadius: BorderRadius.circular(20),
+                        color: Colors.black12,
+                      ),
+                      child: Text(
+                        "ການສ້າງ Application ເພື່ອໃຊ້ເຂົ້າໃນວຽກງານຂອງຕະຫຼາດສີແສງຈັນ. ໂດຍມີຈຸດປະສົງ ເພື່ອສ້າງຄວາມສະດວກສະບາຍໃນການພົວເຊິ່ງກັນ ແລະ ກັນລະຫວ່າງ ພະນັກງານຂອງຕະຫຼາດ ກັບ ພໍ່ຄ້າຊາວຂາຍ ແລະ ເຈົ້າຂອງຕະຫຼາດ ທີ່ຕ້ອງການຈະເຮັດທຸລະກໍາຕ່າງໆເຊັ່ນ: ການຊໍາລະເງິນ, ການເບິ່ງສະຖານະຫ້ອງເຊົ່າ, ການເບິ່ງລາຍລະອຽດຕ່າງຂອງຕະຫຼາດ... ",
+                        textAlign: TextAlign.center,
+                        style: TextStyle(color: Colors.black54, fontSize: 16),
+                      ),
+                    ),
+                    Container(
+                      padding: EdgeInsets.all(15),
+                      child: Text(
+                        "ຜູ້ພັດທະນາ",
+                        textAlign: TextAlign.center,
+                        style: TextStyle(
+                            color: Colors.green,
+                            fontSize: 22,
+                            fontWeight: FontWeight.bold),
+                      ),
+                    ),
+                    profile(
+                      pic: "assets/images/pelou.jpg",
+                      name: "ທ້າວ ປາທິກອນ ພົມມະສານ",
+                      student: "ນັກສຶກສາ ສະຖາບັນ ເຕັກໂນໂລຊີ ສຸດສະກະ",
+                      dev: "Frontend Developer",
+                      mail: "pelou.pms@gmail.com",
+                      tel: "+85620 97625343",
+                      facebook: "Pathikone Phommasan",
+                    ),
+                    SizedBox(
+                      height: 20,
+                    ),
+                    profile(
+                      pic: "assets/images/aek.jpg",
+                      name: "ທ້າວ ຈີລະຍຸ ວົງສິລິ",
+                      student: "ນັກສຶກສາ ສະຖາບັນ ເຕັກໂນໂລຊີ ສຸດສະກະ",
+                      dev: "Backend Developer",
+                      mail: "aek123806@gmail.com",
+                      tel: "+85620 96218527",
+                      facebook: "A'aek Vongsili",
+                    ),
+                    SizedBox(
+                      height: 20,
+                    ),
+                    profile(
+                      pic: "assets/images/viseth.jpg",
+                      name: "ທ້າວ ວິເສດ ຄຳສຸກຖາວົງ",
+                      student: "ນັກສຶກສາ ສະຖາບັນ ເຕັກໂນໂລຊີ ສຸດສະກະ",
+                      dev: "----------------",
+                      mail: "visethmie@gmail.com",
+                      tel: "+85620 93039850",
+                      facebook: "Viseth Khamsoukthavong",
+                    )
+                  ],
                 ),
-                Container(
-                  padding: EdgeInsets.all(20),
-                  decoration: BoxDecoration(
-                    borderRadius: BorderRadius.circular(20),
-                    color: Colors.black12,
-                  ),
-                  child: Text(
-                    "ພວກຂ້າພະເຈົ້າຂໍສະແດງຄວາມຮູ້ບຸນຄຸນ ແລະ ຂອບໃຈ ທ່ານ ປທ. ນາງ ມະນິດດາ ທະວົງຈິດ ທີ່ເປັນອາຈານທີ່ປຶກສາຂອງພວກນ້ອງ ເຊິ່ງໄດ້ສະຫຼະເວລາໃຫ້ຄຳແນະນຳ, ປະກອບຄຳຄິດຄຳເຫັນ ແລະ ຊ່ວຍເຫຼືອ ໃນການຂຽນບົດຄົ້ນຄ້ວາເຫຼັ້ມນີ້. ໃນຂະນະດຽວກັນ ພວກນ້ອງຂໍສະແດງຄວາມຂອບໃຈມາຍັງ ທ່ານ ປທ. ລັດຕະພົນໄຊຍະວົງ ທີ່ໄດ້ໃຫ້ຄຳຄິດຄຳເຫັນທາງດ້ານວິເຄາະລະບົບ ແລະ ວິທີການຂຽນບົດໂດຍລວມ.",
-                    textAlign: TextAlign.center,
-                    style: TextStyle(color: Colors.black54, fontSize: 19),
-                  ),
-                ),
-                Container(
-                  padding: EdgeInsets.all(15),
-                  child: Text(
-                    "ຜູ້ພັດທະນາ",
-                    textAlign: TextAlign.center,
-                    style: TextStyle(
-                        color: Colors.green,
-                        fontSize: 22,
-                        fontWeight: FontWeight.bold),
-                  ),
-                ),
-                profile(
-                  pic: "assets/images/pelou.jpg",
-                  name: "ທ້າວ ປາທິກອນ ພົມມະສານ",
-                  student: "ນັກສຶກສາ ສະຖາບັນ ເຕັກໂນໂລຊີ ສຸດສະກະ",
-                  dev: "Frontend Developer",
-                  mail: "pelou.pms@gmail.com",
-                  tel: "+85620 97625343",
-                  facebook: "Pathikone Phommasan",
-                ),
-                SizedBox(
-                  height: 20,
-                ),
-                profile(
-                  pic: "assets/images/aek.jpg",
-                  name: "ທ້າວ ຈີລະຍຸ ວົງສິລິ",
-                  student: "ນັກສຶກສາ ສະຖາບັນ ເຕັກໂນໂລຊີ ສຸດສະກະ",
-                  dev: "Backend Developer",
-                  mail: "aek123806@gmail.com",
-                  tel: "+85620 96218527",
-                  facebook: "A'aek Vongsili",
-                ),
-                SizedBox(
-                  height: 20,
-                ),
-                profile(
-                  pic: "assets/images/viseth.jpg",
-                  name: "ທ້າວ ວິເສດ ຄຳສຸກຖາວົງ",
-                  student: "ນັກສຶກສາ ສະຖາບັນ ເຕັກໂນໂລຊີ ສຸດສະກະ",
-                  dev: "----------------",
-                  mail: "visethmie@gmail.com",
-                  tel: "+85620 93039850",
-                  facebook: "Viseth Khamsoukthavong",
-                )
-              ],
-            ),
-          )),
+              )),
+        ),
+      ),
     );
   }
 }
@@ -149,8 +160,7 @@ class profile extends StatelessWidget {
                   topRight: Radius.circular(0),
                   bottomLeft: Radius.circular(20),
                   bottomRight: Radius.circular(20),
-                )
-                ),
+                )),
             padding: EdgeInsets.all(10),
             child: Column(
               children: [

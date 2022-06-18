@@ -28,39 +28,62 @@ class _storeNouserState extends State<storeNouser> {
         centerTitle: true,
       ),
       body: Center(
-        child: SingleChildScrollView(
-          padding: EdgeInsets.all(20),
-          child: Column(
-            children: [
-              SizedBox(
-                child: Text(
-                  "ທ່ານຍັງບໍ່ທັນເຂົ້າສູ່ລະບົບເທື່ອ ກະລຸນາເຂົ້າສູ່ລະບົບກ່ອນ",
-                  style: TextStyle(fontSize: 20),
-                  textAlign: TextAlign.center,
+        child: Container(
+          color: Colors.green,
+          child: Container(
+            height: double.infinity,
+            decoration: BoxDecoration(
+                borderRadius: BorderRadius.only(
+                  topLeft: Radius.circular(20),
+                  topRight: Radius.circular(20),
                 ),
-              ),
-              SizedBox(
-                width: 250,
-                height: 50,
-                child: ElevatedButton.icon(
-                  onPressed: () {
-                    Navigator.of(context).push(PageTransition(
-                        type: PageTransitionType.rightToLeft,
-                        child: u_bottombar()));
-                  },
-                  label: Icon(Icons.arrow_forward_ios),
-                  icon: Text(
-                    "ເຂົ້າສູ່ລະບົບ",
-                    style: TextStyle(fontSize: 20),
-                  ),
-                  style: ElevatedButton.styleFrom(
-                    shape: new RoundedRectangleBorder(
-                      borderRadius: new BorderRadius.circular(20.0),
+                color: Colors.white),
+            child: Center(
+              child: SingleChildScrollView(
+                child: Center(
+                  child: Container(
+                    padding: EdgeInsets.all(20),
+                    child: Center(
+                      child: Column(
+                        children: [
+                          SizedBox(
+                            child: Text(
+                              "ທ່ານຍັງບໍ່ທັນເຂົ້າສູ່ລະບົບເທື່ອ ກະລຸນາເຂົ້າສູ່ລະບົບກ່ອນ",
+                              style: TextStyle(fontSize: 18),
+                              textAlign: TextAlign.center,
+                            ),
+                          ),
+                          SizedBox(
+                            height: 15,
+                          ),
+                          SizedBox(
+                            width: 250,
+                            height: 50,
+                            child: ElevatedButton.icon(
+                              onPressed: () {
+                                Navigator.of(context).push(PageTransition(
+                                    type: PageTransitionType.rightToLeft,
+                                    child: bottombar_lg()));
+                              },
+                              label: Icon(Icons.arrow_forward_ios),
+                              icon: Text(
+                                "ເຂົ້າສູ່ລະບົບ",
+                                style: TextStyle(fontSize: 20),
+                              ),
+                              style: ElevatedButton.styleFrom(
+                                shape: new RoundedRectangleBorder(
+                                  borderRadius: new BorderRadius.circular(20.0),
+                                ),
+                              ),
+                            ),
+                          ),
+                        ],
+                      ),
                     ),
                   ),
                 ),
               ),
-            ],
+            ),
           ),
         ),
       ),

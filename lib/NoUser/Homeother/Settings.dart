@@ -2,7 +2,6 @@
 
 import 'package:flutter/material.dart';
 
-
 class settings extends StatefulWidget {
   const settings({Key? key}) : super(key: key);
 
@@ -22,98 +21,124 @@ class _settingsState extends State<settings> {
         ),
         centerTitle: true,
       ),
-      body: SingleChildScrollView(
-        padding: EdgeInsets.all(20),
-        child: Column(
-          children: [
-            Divider(),
-            ProfileMenu(
-              icon: Image.asset(
-                "assets/icons/laos.png",
-                width: 45,
-                height: 45,
+      body: Container(
+        color: Colors.green,
+        child: Container(
+          height: double.infinity,
+          decoration: BoxDecoration(
+              borderRadius: BorderRadius.only(
+                topLeft: Radius.circular(20),
+                topRight: Radius.circular(20),
               ),
-              text: "ພາສາ",
-              press: () {
-                showDialog(
-                    context: context,
-                    builder: (context) => AlertDialog(
-                          titlePadding: EdgeInsets.all(0),
-                          title: Column(
-                            children: [
-                              Container(
-                                padding: EdgeInsets.all(12),
-                                color: Colors.green,
-                                child: Row(
-                                  children: [
-                                    Container(
-                                        child: Text(
-                                      "ເລືອກພາສາ",
-                                      textAlign: TextAlign.center,
-                                      style: TextStyle(
-                                          color: Colors.white, fontSize: 25),
-                                    )),
-                                    SizedBox(
-                                      width: 120,
-                                    ),
-                                    SizedBox(
-                                      child: InkWell(
-                                        onTap: () {
-                                          Navigator.pop(context);
-                                        },
-                                        child: Icon(
-                                          Icons.cancel,
-                                          color: Colors.white,
-                                          size: 28,
-                                        ),
-                                      ),
-                                    )
-                                  ],
-                                ),
-                              ),
-                            ],
-                          ),
-                          content: Container(
-                            padding: EdgeInsets.all(0),
-                            height: 75,
-                            child: FlatButton(
-                              onPressed: () {},
-                              child: Column(children: [
-                                Divider(),
-                                Container(
-                                  child: Row(
-                                    children: [
-                                      SizedBox(
-                                        child: Image.asset(
-                                          "assets/icons/laos.png",
-                                          width: 40,
-                                          height: 40,
-                                        ),
-                                      ),
-                                      SizedBox(
-                                        width: 20,
-                                      ),
-                                      SizedBox(
-                                        child: Text(
-                                          "ພາສາລາວ",
-                                          style: TextStyle(fontSize: 20),
-                                        ),
-                                      )
-                                    ],
-                                  ),
-                                ),
-                                Divider(),
-                              ]),
-                            ),
-                          ),
-                        ));
-              },
+              color: Colors.white),
+          child: SingleChildScrollView(
+            padding: EdgeInsets.all(20),
+            child: Container(
+              child: Column(
+                children: [
+                  Divider(),
+                  ProfileMenu(
+                    icon: Image.asset(
+                      "assets/icons/laos.png",
+                      width: 45,
+                      height: 45,
+                    ),
+                    text: "ພາສາ",
+                    press: () {
+                      showphasa(context);
+                    },
+                  ),
+                  Divider(),
+                ],
+              ),
             ),
-            Divider(),
-          ],
+          ),
         ),
       ),
     );
+  }
+
+  Future<dynamic> showphasa(BuildContext context) {
+    return showDialog(
+        context: context,
+        builder: (context) => AlertDialog(
+              shape: RoundedRectangleBorder(
+                  borderRadius: BorderRadius.circular(12)),
+              titlePadding: EdgeInsets.all(0),
+              title: Column(
+                children: [
+                  Container(
+                    decoration: BoxDecoration(
+                        borderRadius: BorderRadius.only(
+                      topLeft: Radius.circular(12),
+                      topRight: Radius.circular(12),
+                        
+                    ),
+                    color: Colors.green,),
+                    padding: EdgeInsets.all(12),
+                  
+                    child: Row(
+                      children: [
+                        Container(
+                            child: Text(
+                          "ເລືອກພາສາ",
+                          textAlign: TextAlign.center,
+                          style: TextStyle(color: Colors.white, fontSize: 25),
+                        )),
+                        SizedBox(
+                          width: 120,
+                        ),
+                        SizedBox(
+                          child: InkWell(
+                            onTap: () {
+                              Navigator.pop(context);
+                            },
+                            child: Icon(
+                              Icons.cancel,
+                              color: Colors.white,
+                              size: 28,
+                            ),
+                          ),
+                        )
+                      ],
+                    ),
+                  ),
+                ],
+              ),
+              content: Container(
+                padding: EdgeInsets.all(0),
+                height: 75,
+                child: FlatButton(
+                  onPressed: () {},
+                  child: Column(children: [
+                    Divider(),
+                    Container(
+                      child: Row(
+                        children: [
+                          SizedBox(
+                            child: Image.asset(
+                              "assets/icons/laos.png",
+                              width: 40,
+                              height: 40,
+                            ),
+                          ),
+                          SizedBox(
+                            width: 20,
+                          ),
+                          SizedBox(
+                            child: Text(
+                              "ພາສາລາວ",
+                              style: TextStyle(fontSize: 20),
+                            ),
+                          )
+                        ],
+                      ),
+                    ),
+                    Divider(),
+                  ]),
+                ),
+              ),
+            ));
   }
 }
 

@@ -24,90 +24,104 @@ class _forgetpasswordState extends State<forgetpassword> {
           icon: Icon(Icons.arrow_back_ios),
         ),
       ),
-      body: SingleChildScrollView(
-        padding: EdgeInsets.all(40),
-        child: Column(
-          children: [
-            Form(
-              key: formkey,
+      body: Container(
+        color: Colors.green,
+        child: Container(
+          decoration: BoxDecoration(
+              borderRadius: BorderRadius.only(
+                  topLeft: Radius.circular(20), topRight: Radius.circular(20)),
+              color: Colors.white),
+          child: SingleChildScrollView(
+            child: Container(
+              padding: EdgeInsets.all(40),
               child: Column(
                 children: [
-                  TextFormField(
-                    validator: ((value) {
-                      if (value!.isNotEmpty && value.length < 8) {
-                        return 'ກະລຸນາປ້ອນເບີໂທລະສັບຂອງທ່ານໃຫ້ຄົບ 8 ຕົວເລກ';
-                      } else if (value.length > 8 && value.isNotEmpty) {
-                        return 'ກະລຸນາປ້ອນເບີໂທລະສັບຂອງທ່ານຫ້າມກາຍ 8 ຕົວເລກ';
-                      } else if (value == null || value.isEmpty) {
-                        return 'ກະລຸນາປ້ອນເບີໂທ';
-                      }
+                  Form(
+                    key: formkey,
+                    child: Column(
+                      children: [
+                        TextFormField(
+                          validator: ((value) {
+                            if (value!.isNotEmpty && value.length < 8) {
+                              return 'ກະລຸນາປ້ອນເບີໂທລະສັບຂອງທ່ານໃຫ້ຄົບ 8 ຕົວເລກ';
+                            } else if (value.length > 8 && value.isNotEmpty) {
+                              return 'ກະລຸນາປ້ອນເບີໂທລະສັບຂອງທ່ານຫ້າມກາຍ 8 ຕົວເລກ';
+                            } else if (value == null || value.isEmpty) {
+                              return 'ກະລຸນາປ້ອນເບີໂທ';
+                            }
 
-                      return null;
-                    }),
-                    keyboardType: TextInputType.phone,
-                    decoration: InputDecoration(
-                        prefixIcon: Padding(
-                          padding: const EdgeInsets.only(top: 10, left: 15),
-                          child: Text(
-                            '+856 20 | ',
-                            style:
-                                TextStyle(fontSize: 16, color: Colors.black38),
-                          ),
+                            return null;
+                          }),
+                          keyboardType: TextInputType.phone,
+                          decoration: InputDecoration(
+                              prefixIcon: Padding(
+                                padding:
+                                    const EdgeInsets.only(top: 10, left: 15),
+                                child: Text(
+                                  '+856 20 | ',
+                                  style: TextStyle(
+                                      fontSize: 16, color: Colors.black38),
+                                ),
+                              ),
+                              border: OutlineInputBorder(
+                                  borderRadius: BorderRadius.circular(15)),
+                              icon: Icon(Icons.person),
+                              hintText: "ໃສ່ເບີໂທຂອງທ່ານ"),
+                          onSaved: (Uphone) {},
                         ),
-                        border: OutlineInputBorder(
-                            borderRadius: BorderRadius.circular(15)),
-                        icon: Icon(Icons.person),
-                        hintText: "ໃສ່ເບີໂທຂອງທ່ານ"),
-                    onSaved: (Uphone) {},
+                        SizedBox(
+                          height: 30,
+                        ),
+                        TextFormField(
+                          validator: MultiValidator([
+                            RequiredValidator(
+                                errorText: "ກະລຸນາໃສ່ລະຫັດຜ່ານຂອງທ່ານ")
+                          ]),
+                          onTap: () {
+                            setState(() {});
+                          },
+                          keyboardType: TextInputType.visiblePassword,
+                          decoration: InputDecoration(
+                              border: OutlineInputBorder(
+                                  borderRadius: BorderRadius.circular(15)),
+                              icon: Icon(Icons.lock),
+                              hintText: "ໃສ່ລະຫັດຜ່ານໃໝ່ຂອງທ່ານ"),
+                          onSaved: (Upassw) {},
+                        ),
+                      ],
+                    ),
                   ),
                   SizedBox(
                     height: 30,
                   ),
-                  TextFormField(
-                    validator: MultiValidator([
-                      RequiredValidator(errorText: "ກະລຸນາໃສ່ລະຫັດຜ່ານຂອງທ່ານ")
-                    ]),
-                    onTap: () {
-                      setState(() {});
-                    },
-                    keyboardType: TextInputType.visiblePassword,
-                    decoration: InputDecoration(
-                        border: OutlineInputBorder(
-                            borderRadius: BorderRadius.circular(15)),
-                        icon: Icon(Icons.lock),
-                        hintText: "ໃສ່ລະຫັດຜ່ານໃໝ່ຂອງທ່ານ"),
-                    onSaved: (Upassw) {},
+                  Container(
+                    child: SizedBox(
+                      height: 60,
+                      width: double.infinity,
+                      child: ElevatedButton.icon(
+                          style: ButtonStyle(
+                            shape: MaterialStateProperty.all<
+                                RoundedRectangleBorder>(
+                              RoundedRectangleBorder(
+                                borderRadius: BorderRadius.circular(20.0),
+                              ),
+                            ),
+                          ),
+                          icon: Icon(Icons.password),
+                          label: Text(
+                            "ຢືນຢັນ",
+                            style: TextStyle(
+                                fontSize: 18, fontWeight: FontWeight.bold),
+                          ),
+                          onPressed: () {
+                            formkey.currentState!.validate();
+                          }),
+                    ),
                   ),
                 ],
               ),
             ),
-            SizedBox(
-              height: 30,
-            ),
-            Container(
-              child: SizedBox(
-                height: 60,
-                width: double.infinity,
-                child: ElevatedButton.icon(
-                    style: ButtonStyle(
-                      shape: MaterialStateProperty.all<RoundedRectangleBorder>(
-                        RoundedRectangleBorder(
-                          borderRadius: BorderRadius.circular(20.0),
-                        ),
-                      ),
-                    ),
-                    icon: Icon(Icons.password),
-                    label: Text(
-                      "ຢືນຢັນ",
-                      style:
-                          TextStyle(fontSize: 18, fontWeight: FontWeight.bold),
-                    ),
-                    onPressed: () {
-                      formkey.currentState!.validate();
-                    }),
-              ),
-            ),
-          ],
+          ),
         ),
       ),
     );

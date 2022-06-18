@@ -35,7 +35,49 @@ class _u_homeState extends State<u_home> {
               crossAxisAlignment: CrossAxisAlignment.start,
               children: <Widget>[
                 InkWell(
-                  onTap: () => SystemNavigator.pop,
+                  onTap: () => showDialog(
+                    context: context,
+                    builder: (BuildContext context) => AlertDialog(
+                      shape: RoundedRectangleBorder(
+                          borderRadius: BorderRadius.circular(12)),
+                      title: Text(
+                        'ທ່ານຕ້ອງການອອກຈາກແອັບບໍ່?',
+                        textAlign: TextAlign.center,
+                        style: TextStyle(fontSize: 18),
+                      ),
+                      actions: <Widget>[
+                        Row(
+                          mainAxisAlignment: MainAxisAlignment.spaceBetween,
+                          children: [
+                            Container(
+                              width: 130,
+                              decoration: BoxDecoration(
+                                  color: Color.fromARGB(255, 236, 236, 236),
+                                  borderRadius: BorderRadius.circular(10)),
+                              child: TextButton(
+                                onPressed: () => Navigator.of(context).pop(),
+                                child: const Text(
+                                  'ຍົກເລີກ',
+                                  style: TextStyle(fontSize: 16),
+                                ),
+                              ),
+                            ),
+                            Container(
+                              decoration: BoxDecoration(
+                                  color: Color.fromARGB(255, 236, 236, 236),
+                                  borderRadius: BorderRadius.circular(10)),
+                              width: 130,
+                              child: TextButton(
+                                onPressed: () => SystemNavigator.pop(),
+                                child: const Text('ອອກ',
+                                    style: TextStyle(fontSize: 16)),
+                              ),
+                            ),
+                          ],
+                        ),
+                      ],
+                    ),
+                  ),
                   child: Align(
                     alignment: Alignment.centerRight,
                     child: Container(
@@ -44,7 +86,7 @@ class _u_homeState extends State<u_home> {
                       width: 55,
                       child: Icon(
                         Icons.power_settings_new,
-                        color: Colors.white,
+                        color: Color.fromARGB(255, 255, 255, 255),
                         size: 35,
                       ),
                     ),
@@ -79,7 +121,7 @@ class _u_homeState extends State<u_home> {
                         width: 185,
                         padding: EdgeInsets.all(5),
                         decoration: BoxDecoration(
-                            color: Colors.white,
+                            color: Color.fromARGB(99, 255, 255, 255),
                             borderRadius: BorderRadius.circular(10)),
                         child: Center(
                           child: Row(
@@ -101,7 +143,7 @@ class _u_homeState extends State<u_home> {
                                 child: Text(
                                   username,
                                   style: TextStyle(
-                                    color: Colors.grey,
+                                    color: Color.fromARGB(255, 255, 255, 255),
                                     fontSize: 15,
                                   ),
                                 ),
