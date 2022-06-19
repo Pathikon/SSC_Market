@@ -164,7 +164,7 @@ class _loginsState extends State<logins> {
                             ),
                             onPressed: () {
                               formkey.currentState!.validate();
-                              Navigator.of(context).push(PageTransition(
+                              Navigator.of(context).pushReplacement(PageTransition(
                                   type: PageTransitionType.rightToLeft,
                                   child: u_bottombar()));
                             }),

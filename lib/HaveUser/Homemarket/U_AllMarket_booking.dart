@@ -1,18 +1,12 @@
 import 'package:flutter/material.dart';
 import 'package:page_transition/page_transition.dart';
-import 'package:ssc_market/HaveUser/Homemarket/AllMarket/U_Gold.dart';
-import 'package:ssc_market/HaveUser/Homemarket/AllMarket/U_electrical.dart';
-import 'package:ssc_market/HaveUser/Homemarket/AllMarket/U_food.dart';
-import 'package:ssc_market/HaveUser/Homemarket/AllMarket/U_meat.dart';
 import 'package:ssc_market/HaveUser/Homemarket/AllMarket_booking/U_Apparel_bk.dart';
 import 'package:ssc_market/HaveUser/Homemarket/AllMarket_booking/U_Gold_bk.dart';
 import 'package:ssc_market/HaveUser/Homemarket/AllMarket_booking/U_electrical_bk.dart';
 import 'package:ssc_market/HaveUser/Homemarket/AllMarket_booking/U_food_bk.dart';
 import 'package:ssc_market/HaveUser/Homemarket/AllMarket_booking/U_meat_bk.dart';
 import 'package:ssc_market/HaveUser/U_BottomBar.dart';
-import 'package:ssc_market/HaveUser/U_Home.dart';
 
-import 'AllMarket/U_Apparel.dart';
 
 class u_allmarket_booking extends StatefulWidget {
   const u_allmarket_booking({Key? key}) : super(key: key);

@@ -6,6 +6,7 @@ import 'package:flutter/cupertino.dart';
 import 'package:flutter/material.dart';
 import 'package:flutter/src/foundation/key.dart';
 import 'package:flutter/src/widgets/framework.dart';
+import 'package:image_picker/image_picker.dart';
 import 'package:page_transition/page_transition.dart';
 import 'package:ssc_market/HaveUser/Homemarket/Edit_Data_accout_store.dart';
 import 'package:ssc_market/HaveUser/Homemarket/Tor_Vela_rental.dart';
@@ -19,6 +20,35 @@ class u_store extends StatefulWidget {
 }
 
 class _u_storeState extends State<u_store> {
+  XFile? _image;
+  late String urlImag;
+  late var imagepath;
+
+  ImagePicker? picker = ImagePicker();
+  Future getimagePic() async {
+    final XFile? pickedFile = await picker!.pickImage(
+      source: ImageSource.gallery,
+      maxWidth: 2000,
+      maxHeight: 2000,
+    );
+    setState(() {
+      _image = pickedFile!;
+      imagepath = _image!.path;
+    });
+  }
+
+  Future getimageCam() async {
+    final XFile? pickedFile = await picker!.pickImage(
+      source: ImageSource.camera,
+      maxWidth: 2000,
+      maxHeight: 2000,
+    );
+    setState(() {
+      _image = pickedFile!;
+      imagepath = _image!.path;
+    });
+  }
+
   @override
   Widget build(BuildContext context) {
     return Scaffold(
@@ -67,7 +97,9 @@ class _u_storeState extends State<u_store> {
                                     AssetImage("assets/icons/user.png")),
                             Positioned(
                               child: InkWell(
-                                onTap: () {},
+                                onTap: () {
+                                  changePic(context);
+                                },
                                 child: Icon(
                                   Icons.camera_alt,
                                   size: 35,
@@ -83,7 +115,7 @@ class _u_storeState extends State<u_store> {
                           padding: EdgeInsets.all(10),
                           decoration: BoxDecoration(
                             borderRadius: BorderRadius.circular(10),
-                            color: Color.fromARGB(255, 255, 247, 175),
+                            color: Color.fromARGB(255, 255, 251, 223),
                           ),
                           child: Column(
                             mainAxisAlignment: MainAxisAlignment.start,
@@ -224,6 +256,121 @@ class _u_storeState extends State<u_store> {
               ),
             ),
           ),
+        ),
+      ),
+    );
+  }
+
+  Future<dynamic> changePic(BuildContext context) {
+    return showDialog(
+      context: context,
+      builder: (context) => AlertDialog(
+        shape: RoundedRectangleBorder(borderRadius: BorderRadius.circular(12)),
+        titlePadding: const EdgeInsets.all(0),
+        title: Column(
+          children: [
+            Container(
+              decoration: BoxDecoration(
+                  color: Colors.green,
+                  borderRadius: BorderRadius.only(
+                    topLeft: Radius.circular(12),
+                    topRight: Radius.circular(12),
+                  )),
+              child: Row(
+                children: [
+                  Container(
+                      padding: const EdgeInsets.all(10),
+                      child: const Text(
+                        "ເລືອກຮູບໂປຟາຍຂອງທ່ານ",
+                        textAlign: TextAlign.center,
+                        style: TextStyle(color: Colors.white, fontSize: 18),
+                      )),
+                  const SizedBox(
+                    width: 60,
+                  ),
+                  SizedBox(
+                    child: InkWell(
+                      onTap: () {
+                        Navigator.pop(context);
+                      },
+                      child: const Icon(
+                        Icons.cancel,
+                        color: Colors.white,
+                        size: 28,
+                      ),
+                    ),
+                  )
+                ],
+              ),
+            ),
+            const SizedBox(
+              height: 10,
+            ),
+            Container(
+              child: FlatButton(
+                onPressed: getimageCam,
+                child: Column(children: [
+                  Container(
+                    padding: EdgeInsets.all(10),
+                    decoration: BoxDecoration(
+                      borderRadius: BorderRadius.circular(12),
+                      color: Color.fromARGB(255, 236, 236, 236),
+                    ),
+                    child: Row(
+                      mainAxisAlignment: MainAxisAlignment.center,
+                      children: [
+                        const SizedBox(child: const Icon(Icons.camera_alt)),
+                        const SizedBox(
+                          width: 20,
+                        ),
+                        const SizedBox(
+                          child: const Text(
+                            "ກ້ອງຖ່າຍຮູບ",
+                            style: TextStyle(fontSize: 18),
+                          ),
+                        )
+                      ],
+                    ),
+                  ),
+                ]),
+              ),
+            ),
+            const SizedBox(
+              height: 10,
+            ),
+            Container(
+              child: FlatButton(
+                onPressed: getimagePic,
+                child: Column(children: [
+                  Container(
+                    decoration: BoxDecoration(
+                      borderRadius: BorderRadius.circular(12),
+                      color: Color.fromARGB(255, 236, 236, 236),
+                    ),
+                    padding: EdgeInsets.all(10),
+                    child: Row(
+                      mainAxisAlignment: MainAxisAlignment.center,
+                      children: [
+                        const SizedBox(child: const Icon(Icons.photo)),
+                        const SizedBox(
+                          width: 20,
+                        ),
+                        const SizedBox(
+                          child: const Text(
+                            "ຄັງຮູບພາບ",
+                            style: TextStyle(fontSize: 18),
+                          ),
+                        )
+                      ],
+                    ),
+                  ),
+                ]),
+              ),
+            ),
+            const SizedBox(
+              height: 10,
+            ),
+          ],
         ),
       ),
     );

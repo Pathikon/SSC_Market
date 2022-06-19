@@ -3,10 +3,9 @@ import 'package:flutter/services.dart';
 import 'package:page_transition/page_transition.dart';
 import 'package:ssc_market/HaveUser/Homemarket/U_AllMarket_Booking.dart';
 import 'package:ssc_market/HaveUser/Homemarket/U_AllMarket_rental.dart';
-import 'package:ssc_market/HaveUser/Homemarket/jbooking.dart';
-import 'package:ssc_market/HaveUser/Homepage/Staff.dart';
-import 'package:ssc_market/HaveUser/Homepage/haveU_bookingAndRent.dart';
+import 'package:ssc_market/HaveUser/Homepage/MessageBox.dart';
 import 'package:ssc_market/HaveUser/Homepage/profiles.dart';
+import 'package:ssc_market/NoUser/Homepage/Staff.dart';
 
 class u_home extends StatefulWidget {
   const u_home({Key? key}) : super(key: key);
@@ -200,12 +199,12 @@ class _u_homeState extends State<u_home> {
                         },
                       ),
                       MenuCard(
-                        pics: "assets/icons/booking.png",
-                        titals: "ຂໍ້ມູນການເຊົ່າ & ຈອງ",
+                        pics: "assets/icons/message.png",
+                        titals: "ກ່ອງຂໍ້ຄວາມ",
                         oks: () {
                           Navigator.of(context).push(PageTransition(
                               type: PageTransitionType.rightToLeft,
-                              child: u_bookingAndrent()));
+                              child: messagebox()));
                         },
                       ),
                     ],

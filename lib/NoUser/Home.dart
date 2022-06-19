@@ -1,11 +1,9 @@
 import 'package:flutter/material.dart';
 import 'package:flutter/services.dart';
 import 'package:page_transition/page_transition.dart';
-import 'package:ssc_market/HaveUser/U_BottomBar.dart';
 import 'package:ssc_market/NoUser/Homemarket/AllMarket.dart';
 import 'package:ssc_market/NoUser/Homepage/Staff.dart';
-import 'package:ssc_market/NoUser/Homepage/about_bookingAndRental.dart';
-import 'package:ssc_market/splash.dart';
+import 'package:ssc_market/NoUser/info_login.dart';
 
 class home extends StatefulWidget {
   const home({Key? key}) : super(key: key);
@@ -34,7 +32,49 @@ class _homeState extends State<home> {
               children: <Widget>[
                 Container(
                   child: InkWell(
-                    onTap: () => SystemNavigator.pop,
+                    onTap: () => showDialog(
+                      context: context,
+                      builder: (BuildContext context) => AlertDialog(
+                        shape: RoundedRectangleBorder(
+                            borderRadius: BorderRadius.circular(12)),
+                        title: Text(
+                          'ທ່ານຕ້ອງການອອກຈາກແອັບບໍ່?',
+                          textAlign: TextAlign.center,
+                          style: TextStyle(fontSize: 18),
+                        ),
+                        actions: <Widget>[
+                          Row(
+                            mainAxisAlignment: MainAxisAlignment.spaceBetween,
+                            children: [
+                              Container(
+                                width: 130,
+                                decoration: BoxDecoration(
+                                    color: Color.fromARGB(255, 236, 236, 236),
+                                    borderRadius: BorderRadius.circular(10)),
+                                child: TextButton(
+                                  onPressed: () => Navigator.of(context).pop(),
+                                  child: const Text(
+                                    'ຍົກເລີກ',
+                                    style: TextStyle(fontSize: 16),
+                                  ),
+                                ),
+                              ),
+                              Container(
+                                decoration: BoxDecoration(
+                                    color: Color.fromARGB(255, 236, 236, 236),
+                                    borderRadius: BorderRadius.circular(10)),
+                                width: 130,
+                                child: TextButton(
+                                  onPressed: () => SystemNavigator.pop(),
+                                  child: const Text('ອອກ',
+                                      style: TextStyle(fontSize: 16)),
+                                ),
+                              ),
+                            ],
+                          ),
+                        ],
+                      ),
+                    ),
                     child: Align(
                       alignment: Alignment.centerRight,
                       child: Container(
@@ -96,12 +136,12 @@ class _homeState extends State<home> {
                         },
                       ),
                       MenuCard(
-                        pics: "assets/icons/booking.png",
-                        titals: "ຂໍ້ມູນການເຊົ່າ & ຈອງ",
+                        pics: "assets/icons/message.png",
+                        titals: "ກ່ອງຂໍ້ຄວາມ",
                         oks: () {
                           Navigator.of(context).push(PageTransition(
                               type: PageTransitionType.rightToLeft,
-                              child: splashs()));
+                              child:infologin()));
                         },
                       ),
                     ],
